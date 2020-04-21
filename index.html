@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <title>My webpage</title>
+
+<meta name="theme-color" content="" />
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="This is my personal webpage" />
+<meta name="author" content="Maria Carolina" />
+<meta name="generator" content="aafu theme by Darshan in Hugo 0.57.2" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">        
+
+  <link
+    rel="stylesheet"
+    href="/css/bootstrap/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+  <link rel="stylesheet" href="/css/aafu_light.css" />
+  <link rel="stylesheet" href="/css/aafu.css" />
+
+  <script>
+    var themeColor = document.querySelector("meta[name=theme-color]");
+    window.onload = () => {
+      themeColor.content = getComputedStyle(document.body)["background-color"];
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+<body class="container">
+    <main style="min-height: calc(100vh - 60px);">
+      
+      <div class="d-flex flex-row row p-2">
+  <h3 class="main-menu mr-3">
+    <a href="/">Home</a>
+  </h3>
+  <h3 class="main-menu mr-3">
+    <a href="/blog">Blog</a>
+  </h3>
+</div>
+
+      
+<div class="ml-auto mr-auto row row-eq-height rounded">
+  <div class="col-md-5 text-center p-2 mt-1">
+    <div class="profile-area rounded text-center position-relative shadow">
+      <div class="d-flex justify-content-center pt-2">
+  <div class="w-100 h-100">
+    <img
+      class="rounded rounded-circle mt-4"
+      src="/images/profile.jpg"
+      alt="Maria Carolina"
+      style="width: 95%; max-width: 300px;"
+    />
+  </div>
+</div>
+
+      <div class="p-2">
+        <h1 class="mb-0">Maria Carolina da S. Andrea</h1>
+<h2 class="mb-0">DSc.</h2>
+<h3 class="mb-0">Brazil</h3>
+<div class="mt-2 d-flex flex-wrap justify-content-center">
+  
+  <div style="height:45px; width:45px;">
+    <a href="https://www.linkedin.com/in/maria-carolina-s-andrea-73b46737/">
+      <i class="zoomlink mt-1 fab fa-linkedin-in"></i>
+    </a>
+  </div>
+  
+  <div style="height:45px; width:45px;">
+    <a href="https://github.com/mcarolinaa">
+      <i class="zoomlink mt-1 fab fa-github"></i>
+    </a>
+  </div>
+  
+  <div style="height:45px; width:45px;">
+    <a href="https://www.researchgate.net/profile/Maria_S_andrea">
+      <i class="zoomlink mt-1 ai ai-researchgate"></i>
+    </a>
+  </div>
+  
+</div>
+ <footer class=" mt-2 mb-2 ">
+  <span class="markdownify">aaa</span>
+  <span >
+    &middot;
+    <i>
+      <a href="https://github.com/darshanbaral/aafu">
+        aafu
+      </a>
+    </i>
+    by
+    <a href="https://www.darshanbaral.com/">
+      darshan
+    </a>
+  </span>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7 pt-2 mt-3">
+    
+    <h2 class="accordion  active ">
+      
+      <span onclick="expandAccordion(this)" style="cursor: pointer;">
+        <i class="fas fa-user"></i>
+        About Me</span>
+    </h2>
+    <div
+      class="panel overflow-hidden"
+      
+    >
+      <p class="markdownify">
+  <strong>Hello, I&rsquo;m Maria Carolina</strong>. I have a background in <strong>agricultural sciences</strong> and have been working in the academic area. I have a deep interest in <strong>data science and GIS</strong>, and I&rsquo;ve been working on my path to learn it more. I enjoy reading and learning about technologies related to <strong>programming and data analysis</strong>. I&rsquo;m also interested in <strong>reading</strong> about different subjects, and I have been doing side-projects, in which I help people with their <strong>english translations and data analysis</strong>.
+</p>
+
+    </div>
+    
+    <h2 class="accordion ">
+      
+      <span onclick="expandAccordion(this)" style="cursor: pointer;">
+        <i class="fas fa-briefcase"></i>
+        Experiences</span>
+    </h2>
+    <div
+      class="panel overflow-hidden"
+      
+    >
+      
+<dl>
+  <dt class="mb-0">
+    University Professor
+  </dt>
+  <dd class="mb-0 ml-3">
+    <span class="markdownify">2020 - <em>Present</em></span>
+    &middot;
+    
+    State University of Mato Grosso
+    
+  </dd>
+  <dd class="mb-0 ml-4 markdownify">Teaching agricultural engineering related courses to Agronomy bachelor.</dd>
+</dl>
+
+<dl>
+  <dt class="mb-0">
+    MBA advisor
+  </dt>
+  <dd class="mb-0 ml-3">
+    <span class="markdownify">2019 - <em>Present</em></span>
+    &middot;
+    
+    University of São Paulo MBA / Pecege
+    
+  </dd>
+  <dd class="mb-0 ml-4 markdownify">I have been advising students on their MBA projects in the Agribusiness area of knowledge.</dd>
+</dl>
+
+<dl>
+  <dt class="mb-0">
+    Post doctoral researcher
+  </dt>
+  <dd class="mb-0 ml-3">
+    <span class="markdownify">2017 - 2019</span>
+    &middot;
+    
+    State University of Mato Grosso
+    
+  </dd>
+  <dd class="mb-0 ml-4 markdownify">Developed a research project that analysed the impact of future climate projections on soybean-maize cropping system in Mato Grosso</dd>
+</dl>
+
+<dl>
+  <dt class="mb-0">
+    University Professor
+  </dt>
+  <dd class="mb-0 ml-3">
+    <span class="markdownify">2017 - 2017</span>
+    &middot;
+    
+    State University of Mato Grosso
+    
+  </dd>
+  <dd class="mb-0 ml-4 markdownify">Teached entomology related courses to Agronomy bachelor.</dd>
+</dl>
+
+
+    </div>
+    
+    <h2 class="accordion ">
+      
+      <span onclick="expandAccordion(this)" style="cursor: pointer;">
+        <i class="fas fa-graduation-cap"></i>
+        Education</span>
+    </h2>
+    <div
+      class="panel overflow-hidden"
+      
+    >
+      
+<dl>
+  <dt>Ph.D. in Agricultural Engineering</dt>
+  <dd class="mb-0 ml-3">2013 - 2016 &middot; University of São Paulo</dd>
+  
+  <dd class="mb-0 ml-4">
+    Thesis:
+    <a href="https://www.teses.usp.br/teses/disponiveis/11/11152/tde-09112016-135415/en.php"
+      ><i>Model-based approach for maize yield gap analysis related to climate variability and nitrogen management</i></a
+    >
+  </dd>
+  
+</dl>
+
+<dl>
+  <dt>M.S. in Agricultural Engineering</dt>
+  <dd class="mb-0 ml-3">2011 - 2013 &middot; University of São Paulo</dd>
+  
+  <dd class="mb-0 ml-4">
+    Thesis:
+    <a href="https://www.teses.usp.br/teses/disponiveis/11/11152/tde-17072013-085223/pt-br.php"
+      ><i>Energy flows in forage production systems</i></a
+    >
+  </dd>
+  
+</dl>
+
+<dl>
+  <dt>B.S. in Agronomy</dt>
+  <dd class="mb-0 ml-3">2005 - 2010 &middot; University of São Paulo</dd>
+  
+</dl>
+
+
+    </div>
+    
+    <h2 class="accordion ">
+      
+      <span onclick="expandAccordion(this)" style="cursor: pointer;">
+        <i class="fas fa-book"></i>
+        Publications</span>
+    </h2>
+    <div
+      class="panel overflow-hidden"
+      
+    >
+      
+
+
+<h4 style="text-decoration: underline;">Journal Articles</h4><p>2020.
+MCS Andrea, R Dallacort, RC Tieppo, JD Barbieri.
+
+
+<a href="https://doi.org/10.1007/s42452-020-2325-z">
+  <em>Assessment of climate change impact on double-cropping systems.</em>
+</a>
+
+
+SN Applied Sciences (2020) 2:544.
+</p>
+<p>2019.
+MCS Andrea, R Dallacort, JD Barbieri, RC Tieppo.
+
+
+<a href="https://doi.org/10.1590/0102-77863340241">
+  <em>Impacts of future climate predictions on second season maize in an agrosystem on a biome transition in Mato Grosso state.</em>
+</a>
+
+
+Rev Bras Meteorologia (34-2), 335-357.
+</p>
+<p>2018.
+MCS Andrea, KJ Boote, PC Sentelhas, TL Romanelli.
+
+
+<a href="https://doi.org/10.1016/j.agsy.2018.07.004">
+  <em>Variability and limitations of maize production in Brazil: Potential yield, water-limited yield and yield gaps.</em>
+</a>
+
+
+Agricultural Systems (165), 264-273.
+</p>
+<p>2019.
+MCS Andrea, JD Barbieri, R Dallacort, PSL Freitas, MAC Carvalho .
+
+
+<a href="http://www.revista.ccba.uady.mx/urn:ISSN:1870-0462-tsaes.v22i1.2705">
+  <em>Adjustment and evaluation of Cropgro-Soybean and Ceres-Maize for different genetic material in a region of Mato Grosso state, Brazil.</em>
+</a>
+
+
+Tropical and Subtropical Agroecosystems (22) 189-201.
+</p>
+<p>2016.
+MCS Andrea, TL Romanelli, JP Molin.
+
+
+<a href="#ZgotmplZ">
+  <em>Energy flows in lowland soybean production system in Brazil.</em>
+</a>
+
+
+Ciência Rural (46), 1395-1400.
+</p>
+<p>2014.
+MCS Andrea, RC Tieppo, LM Gimenez, FP Povh, T Katsman, TL Romanelli.
+
+
+<a href="https://cigrjournal.org/index.php/Ejounral/article/viewFile/2916/1878">
+  <em>Energy Demand in Agricultural Biomass Production in Parana state, Brazil.</em>
+</a>
+
+
+E-journal - CIGR (1), 42.
+</p>
+<p>2014.
+RC Tieppo, MCS Andrea, LM Gimenez, TL Romanelli.
+
+
+<a href="https://cigrjournal.org/index.php/Ejounral/article/view/2913">
+  <em>Energy Demand in Sugarcane Residue Collection and Transportation.</em>
+</a>
+
+
+E-journal - CIGR (1), 52-58.
+</p>
+
+
+<h4 style="text-decoration: underline;">Proceedings</h4>
+
+
+
+    </div>
+    
+    <h2 class="accordion ">
+      
+      <span onclick="expandAccordion(this)" style="cursor: pointer;">
+        <i class="fas fa-project-diagram"></i>
+        Projects</span>
+    </h2>
+    <div
+      class="panel overflow-hidden"
+      
+    >
+      <dl>
+  
+  <dt>
+    <a href="http://pesquisa.unemat.br/geoclimamt/cursos.php?post=5" style="font-variant: small-caps; ">R for data analysis in agriculture (Introdução ao uso do R no ambiente agrícola)</a>
+  </dt>
+  <dd class="mb-0 ml-3 markdownify">Course teaching about the use of R in agricultural systems. Covered language concepts and statistical applications: experimental design and common statistical analysis.</dd>
+  
+</dl>
+
+    </div>
+    
+    <h2 class="accordion ">
+      
+      <span onclick="expandAccordion(this)" style="cursor: pointer;">
+        <i class="fas fa-cogs"></i>
+        Skills</span>
+    </h2>
+    <div
+      class="panel overflow-hidden"
+      
+      id="skill-panel"
+      
+    >
+      <script>
+  let skillPanel = document.querySelector("#skill-panel")
+    .previousElementSibling;
+  skillPanel.addEventListener("click", function() {
+    let skillBars = document.querySelectorAll("#skill-percent");
+    skillBars.forEach(elem => {
+      elem.style.width = elem.classList[0];
+    });
+  });
+</script>
+
+<code>Agricultural engineering, agrometeorology</code>
+<div class="w-100 skillbar mt-1 mb-3">
+  <div id="skill-percent" class="80%" style="width: 0;"></div>
+</div>
+
+<code>English</code>
+<div class="w-100 skillbar mt-1 mb-3">
+  <div id="skill-percent" class="80%" style="width: 0;"></div>
+</div>
+
+<code>Data analysis</code>
+<div class="w-100 skillbar mt-1 mb-3">
+  <div id="skill-percent" class="70%" style="width: 0;"></div>
+</div>
+
+<code>GIS</code>
+<div class="w-100 skillbar mt-1 mb-3">
+  <div id="skill-percent" class="60%" style="width: 0;"></div>
+</div>
+
+
+    </div>
+    
+    <h2 class="accordion ">
+      
+      <span onclick="expandAccordion(this)" style="cursor: pointer;">
+        <i class="fas fa-gamepad"></i>
+        Hobbies</span>
+    </h2>
+    <div
+      class="panel overflow-hidden"
+      
+    >
+      <ul class="pl-0">
+  
+  <li class="list-unstyled mb-2">Cooking</li>
+  
+  <li class="list-unstyled mb-2">Reading</li>
+  
+  <li class="list-unstyled mb-2">Baking</li>
+  
+</ul>
+
+    </div>
+    
+    <script src="/js/accordion.js"></script>
+  </div>
+</div>
+
+    </main>
+    
+  </body>
+</html>
