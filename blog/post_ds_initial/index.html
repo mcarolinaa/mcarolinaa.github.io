@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <title>My webpage</title>
+
+<meta name="theme-color" content="" />
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="This is my personal webpage" />
+<meta name="author" content="Maria Carolina" />
+<meta name="generator" content="aafu theme by Darshan in Hugo 0.57.2" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">        
+
+  <link
+    rel="stylesheet"
+    href="/css/bootstrap/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+  <link rel="stylesheet" href="/css/aafu_light.css" />
+  <link rel="stylesheet" href="/css/aafu.css" />
+
+  <script>
+    var themeColor = document.querySelector("meta[name=theme-color]");
+    window.onload = () => {
+      themeColor.content = getComputedStyle(document.body)["background-color"];
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+<body class="container">
+    <main style="min-height: calc(100vh - 60px);">
+      
+      <div class="d-flex flex-row row p-2">
+  <h3 class="main-menu mr-3">
+    <a href="/">Home</a>
+  </h3>
+  <h3 class="main-menu mr-3">
+    <a href="/blog">Blog</a>
+  </h3>
+</div>
+
+      
+<div class="rounded p-2 aafu-border border">
+  <div class="border-bottom aafu-border">
+    <h1 class="top-h1" style="font-size: 2.75em;">Data science and machine learning at first</h1><div class="mb-2">
+  <p class="mb-1">April 22, 2020</p>
+   
+  
+  <p class="metadata-value mb-1 taxa taxa-container-div list-categories">
+    Categories: 
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="/categories/data-science"
+      title="categories"
+    >data science</a>
+    
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="/categories/opinion"
+      title="categories"
+    >opinion</a>
+    
+  </p>
+  
+  
+  
+  <p class="metadata-value mb-1 taxa taxa-container-div list-tags">
+    Tags: 
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="/tags/data-science"
+      title="tags"
+    >data science</a>
+    
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="/tags/machine-learning"
+      title="tags"
+    >machine learning</a>
+    
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="/tags/beginner"
+      title="tags"
+    >beginner</a>
+    
+  </p>
+  
+  
+</div>
+</div>
+  <div class="content">
+    
+
+<h1 id="initial-impressions-on-data-science-and-machine-learning">Initial impressions on data science and machine learning</h1>
+
+<p><em>(All posts in this blog may not reflect true scientific value, since they are merely reflecting my opinions and views on certain matters at the time it was written.)</em></p>
+
+<p><br></br></p>
+
+<p>Objective: <strong>register some of my understanding on those topics at the moment</strong>, the beggining of my more in-depth learning journey.</p>
+
+<p>Reason: since I&rsquo;m on a journey towards learning all I can about the subjects, I want to be able to <strong>compare my initial understanding with my future understanding</strong>.</p>
+
+<p><br></br></p>
+
+<p>As already presented in the &lsquo;reason&rsquo; for writing this post, I want to record here some ideas I have about certain points that I think are important in the subject of Data Science / Machine Learning (DS/ML).</p>
+
+<p>I hope in the near future to be able to do the same type of analysis and to realize points where I could change (or not) my mind, deepen conceptual issues and have a more broad overview. Thus, I will have a kind of idea of the path taken for this learning. Some sort of a self-analysis.</p>
+
+<p>That said, I quickly listed some points that come to my mind when I think about the subject. For each of them, I write a little of what I think for now and why.</p>
+
+<p><br></br></p>
+
+<p><strong>1. Statistics (and all its foundation and basic concepts) are REALLY important for any machine-learning especialists wannabe.</strong></p>
+
+<p>Although I have always read something about it, and without thinking too much, I agreed on that statement, I now see why with a little more clarity.</p>
+
+<p>As I have an interest in learning everything I can on the subject, I&rsquo;ve recently spent some time trying to evaluate some (of the thousands) of courses that we have available on the internet today.</p>
+
+<p>Initially, without much time available, I did not take the time to do the most important thing in the first place: understanding the context of the area of ​​knowledge, its origin and its objectives. Kind of its placement in our world today.</p>
+
+<p>Because of that, I engaged in some short courses, tutorials, and things like that that directly addressed M.L. (because that was what they were proposing) and of course, they already assumed a previous basic knowledge of statistics. The knowledge most related to understanding basic concepts of inference, data modeling and regression, for example. I did not take it too seriously since I had already had contact with the basics in undergraduate and graduate courses, so I assumed I already had what I needed. But I hadn&rsquo;t. The &lsquo;why&rsquo; of this maybe goes beyond my goal here, but I find reasons such as not having studied in the most appropriate way, not having put much into practice and not having given much attention at all as some probable examples of that.</p>
+
+<p>In those courses that I first engaged, I did not succeed in feeling that I was managing to connect the main points and see the big picture (something that happens to me when I realize that I am managing to learn about something). In addition, the concern to learn more about programming was together, so I lost the focus on knowledge of the base, the structure to follow the path. It <strong>seemed like a waste of time to go back to basics, the structure, and not focus on the enormous amount of technologies</strong> and how to apply them anymore. Well, <strong>it didn&rsquo;t work for me.</strong></p>
+
+<p>From the moment I slowed down from that and changed may main idea, and started to focus on basic statistics (inference, models, regression), I started to feel more comfort and confidence in what was being built (even as a total beginner). I also started to understand better about the texts I was always reading about ML (out of curiosity and desire to know about the area). So I believe that, at least for me, <strong>this has been a better path.</strong></p>
+
+<p><br></br></p>
+
+<p><strong>2. ML algorithms are hardly new, but they can be used in newer ways, that technology and computational power allows today</strong></p>
+
+<p>I think this statement connects with the first. When I started studying (for real) models and regression, for example, I was able to understand that many (perhaps all?) Of ML algorithms are somehow derived from the statistical models that have been known for a long time.</p>
+
+<p>Data modeling as we learned it in statistics, has as one of its main objectives (in addition to adjusting the model), that of understanding and interpreting the available data, making the best use of that understanding when adjusting a model that values ​​interpretability.</p>
+
+<p>In ML, the biggest focus is on the ability to predict. In this context, there are many criticisms about ML algorithms being &lsquo;black boxes&rsquo;, which have good precision, accuracy, but tend to have their interpretability reduced. This reduction in interpretability seems to be directly related to the existence of more complex algorithms, that is, that make use of statistics involving thousands of steps, now possible due to the capacity of the machines.</p>
+
+<p><br></br></p>
+
+<p><strong>3. ML found fertile ground in today&rsquo;s world of great competitiveness and large amount of data in the business world, due to its promised power to anticipate and predict the future</strong></p>
+
+<p>As redundant as it may be, today we live in the moment of history with the largest number of people, advancement in technology and, consequently, of data generated.</p>
+
+<p>With this, there is also a greater number of companies looking for strategies to increase customer acquisition, business efficiency, identify opportunities, etc.</p>
+
+<p>To make this possible, there was an advance in several areas of technology. This allows us to currently be able to work with large amounts of data (&lsquo;big data&rsquo;) in the most simultaneous way possible, feeding the systems and generating the desired information. I understand that many areas of technology must &lsquo;work&rsquo; together with that of data science in order for the application to be viable on a large scale, in a short time, connection with other sources and bases, etc. Some examples may be systems architecture, analytics, web development and so on.</p>
+
+<p><br></br></p>
+
+<p><strong>4. &lsquo;Your data is only as good as what you do with it and how you manage it.&rsquo;</strong> (Hurwitz and Kirsch, from IBM&rsquo;s: &lsquo;Machine Learning for Dummies&rsquo;)</p>
+
+<p>That&rsquo;s it, very self-explanatory. I remember the quote &lsquo;Garbage in, Garbage out&rsquo;. Or &lsquo;The quality of information that you get from your model cannot be better than the quality of information that you insert in your model&rsquo;.
+(When doing a quick search for some illustration, I found that this quote that I remembered is a concept with an acronym in computer science: <em>GIGO</em> (Garbage In, Garbage Out) I had no idea of that.)</p>
+
+<p>Perhaps to some it may still seem that complex ML algorithms have some miraculous power to draw incredible insights from bad data. I think not.</p>
+
+<p>I believe that bad data is related not only to the (obvious) fact of incorrect data, in the sense of measurements with some type of error, but also to data that simply has nothing to do with your problem. Data that may serve another problem, but not necessarily all.</p>
+
+  </div>
+</div>
+<div class="d-flex flex-row justify-content-center">
+  <h3 class="mb-1 mt-1 text-left mr-4">
+    
+    <i class="nav-menu-disabled fas fa-chevron-circle-left"></i>
+    
+  </h3>
+  <h3 class="mb-1 mt-1 text-left ml-4">
+    
+    <i class="nav-menu-disabled fas fa-chevron-circle-right"></i>
+    
+  </h3>
+</div>
+
+
+    </main>
+    
+    <footer class=" mt-2 mb-4 text-center ">
+  <span class="markdownify">aaa</span>
+  <span >
+    &middot;
+    <i>
+      <a href="https://github.com/darshanbaral/aafu">
+        aafu
+      </a>
+    </i>
+    by
+    <a href="https://www.darshanbaral.com/">
+      darshan
+    </a>
+  </span>
+</footer>
+
+    
+  </body>
+</html>

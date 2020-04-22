@@ -6,71 +6,35 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>aliquam incididunt</title>
-      <link>/tags/aliquam-incididunt/</link>
-      <pubDate>Wed, 23 May 2018 00:00:00 +0000</pubDate>
+      <title>beginner</title>
+      <link>/tags/beginner/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/aliquam-incididunt/</guid>
+      <guid>/tags/beginner/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>notes</title>
-      <link>/tags/notes/</link>
-      <pubDate>Wed, 23 May 2018 00:00:00 +0000</pubDate>
+      <title>data science</title>
+      <link>/tags/data-science/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/notes/</guid>
+      <guid>/tags/data-science/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>velit</title>
-      <link>/tags/velit/</link>
-      <pubDate>Wed, 23 May 2018 00:00:00 +0000</pubDate>
+      <title>machine learning</title>
+      <link>/tags/machine-learning/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/tags/velit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>eu fames</title>
-      <link>/tags/eu-fames/</link>
-      <pubDate>Fri, 18 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/eu-fames/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pharetra</title>
-      <link>/tags/pharetra/</link>
-      <pubDate>Fri, 18 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/pharetra/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>laoreet</title>
-      <link>/tags/laoreet/</link>
-      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/laoreet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mollis urna</title>
-      <link>/tags/mollis-urna/</link>
-      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/mollis-urna/</guid>
+      <guid>/tags/machine-learning/</guid>
       <description></description>
     </item>
     
