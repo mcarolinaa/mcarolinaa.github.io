@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>opinion on </title>
-    <link>/categories/opinion/</link>
-    <description>Recent content in opinion on </description>
+    <title>learning on </title>
+    <link>/tags/learning/</link>
+    <description>Recent content in learning on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/opinion/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/learning/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Data science and machine learning at first</title>
-      <link>/blog/post_ds_initial/</link>
-      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/post_ds_initial/</guid>
-      <description>Initial impressions on data science and machine learning (All posts in this blog may not reflect true scientific value, since they are merely reflecting my opinions and views on certain matters at the time it was written.)
-
-
-Objective: register some of my understanding on those topics at the moment, the beggining of my more in-depth learning journey.
-Reason: since I&amp;rsquo;m on a journey towards learning all I can about the subjects, I want to be able to compare my initial understanding with my future understanding.</description>
-    </item>
     
     <item>
       <title>Learning is easier when you enjoy the process (and have patience) - my experience with english</title>
