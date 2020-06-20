@@ -4,21 +4,51 @@
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post_wikibooks/</loc>
+    <loc>/tags/datascience/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/datascience/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/post_2020_06_20/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/learning/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/opinion/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/post_2020_05_30/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -38,22 +68,7 @@
   </url>
   
   <url>
-    <loc>/tags/learning/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/opinion/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/post_english_1/</loc>
+    <loc>/blog/post_2020_05_26/</loc>
     <lastmod>2020-05-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -63,17 +78,17 @@
   </url>
   
   <url>
-    <loc>/categories/data-science/</loc>
-    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/data-science/</loc>
     <lastmod>2020-04-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/post_ds_initial/</loc>
+    <loc>/categories/data-science/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/post_2020_04_22/</loc>
     <lastmod>2020-04-22T00:00:00+00:00</lastmod>
   </url>
   

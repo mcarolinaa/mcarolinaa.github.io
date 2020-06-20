@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <title>My webpage</title>
+
+<meta name="theme-color" content="" />
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="This is my personal webpage" />
+<meta name="author" content="Maria Carolina" />
+<meta name="generator" content="aafu theme by Darshan in Hugo 0.57.2" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">        
+
+  <link
+    rel="stylesheet"
+    href="/css/bootstrap/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+  <link rel="stylesheet" href="/css/aafu_light.css" />
+  <link rel="stylesheet" href="/css/aafu.css" />
+
+  <script>
+    var themeColor = document.querySelector("meta[name=theme-color]");
+    window.onload = () => {
+      themeColor.content = getComputedStyle(document.body)["background-color"];
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+<body class="container">
+    <main style="min-height: calc(100vh - 60px);">
+      
+      <div class="d-flex flex-row row p-2">
+  <h3 class="main-menu mr-3">
+    <a href="/">Home</a>
+  </h3>
+  <h3 class="main-menu mr-3">
+    <a href="/blog">Blog</a>
+  </h3>
+</div>
+
+      
+<div class="rounded p-2 aafu-border border">
+  <div class="border-bottom aafu-border">
+    <h1 class="top-h1" style="font-size: 2.75em;">Important steps in data science</h1><div class="mb-2">
+  <p class="mb-1">June 20, 2020</p>
+   
+  
+  <p class="metadata-value mb-1 taxa taxa-container-div list-categories">
+    Categories: 
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="/categories/datascience"
+      title="categories"
+    >datascience</a>
+    
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="/categories/opinion"
+      title="categories"
+    >opinion</a>
+    
+  </p>
+  
+  
+  
+  <p class="metadata-value mb-1 taxa taxa-container-div list-tags">
+    Tags: 
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="/tags/datascience"
+      title="tags"
+    >datascience</a>
+    
+    <a
+      class="pl-1 pr-1 rounded border border-secondary"
+      href="/tags/learning"
+      title="tags"
+    >learning</a>
+    
+  </p>
+  
+  
+</div>
+</div>
+  <div class="content">
+    
+
+<p><br></br></p>
+
+<p><em>(All posts in this blog may not reflect true scientific value, since they are merely reflecting my opinions and views on certain matters at the time it was written.)</em></p>
+
+<p><br></br></p>
+
+<h1 id="important-steps-when-you-re-starting-to-put-your-hands-into-data-science">Important steps when you&rsquo;re starting to put your hands into Data Science</h1>
+
+<p>I&rsquo;m aware that once I get to actually work with ML and DS, things might change (and certainly sum up) from what I&rsquo;ve written here. But it&rsquo;s a start, and most important, it&rsquo;s a start which I am truly feeling about how things should start to be done in a simple ML task.</p>
+
+<p>I was inspired by this &lsquo;division&rsquo; of ideas which I got from here (<a href="https://www.insidesherpa.com/virtual-internships/theme/m7W4GMqeT3bh9Nb2c/KPMG-Data-Analytics-Virtual-Internship)(Inside">https://www.insidesherpa.com/virtual-internships/theme/m7W4GMqeT3bh9Nb2c/KPMG-Data-Analytics-Virtual-Internship)(Inside</a> Sherpa - KPMG virtual internship). In this post I&rsquo;ll cover part 1: <strong>Assessment of data quality</strong>.</p>
+
+<p><br></br></p>
+
+<h2 id="1-assessment-of-data-quality">1. Assessment of data quality</h2>
+
+<h3 id="1-1-importing-data">1.1 Importing data</h3>
+
+<p>First of all, you should start by acquiring your data.</p>
+
+<p>I am assuming that your data is not extremely large, e.g., in a way that you wouldn&rsquo;t be able to download in your machine.</p>
+
+<p>Maybe the client sent you, maybe you&rsquo;ve found it yourself. Anyway, let&rsquo;s assume you&rsquo;ll get the data and use it locally.</p>
+
+<p>Data can be found in a variety of formats (.xls, .csv, .txt). Similarly, you can also choose to work with your data through some tools (R, python,..). Within each tool, there&rsquo;s even more than one (sometimes much more than one) packages for you to choose and start working with your data.</p>
+
+<p>Define a tool (language), check main packages to deal with the most common tasks of analyzing data, and try to keep some consistency - it may be easier for you to follow things this way, instead of jumping around packages that may have a different syntax.</p>
+
+<p>Currently, I usually start using R, which I can do things more smoothly (less &lsquo;googling&rsquo;), but I&rsquo;ve been trying to use python on a more frequent basis - both languages are great!</p>
+
+<p>So, suppose I just started and I&rsquo;m using R to import a dataset.
+I&rsquo;ll use a dataset with information about penguins. More about this dataset can be found here: <a href="https://github.com/allisonhorst/palmerpenguins">https://github.com/allisonhorst/palmerpenguins</a> (also see references at the end of the post).</p>
+
+<pre><code># Install remotes R package to get data from github and downlowad the dataset
+#install.packages('remotes')
+#remotes::install_github(&quot;allisonhorst/palmerpenguins&quot;)
+</code></pre>
+
+<p><br></br></p>
+
+<h3 id="1-2-check-all-datasets">1.2 Check all datasets</h3>
+
+<p>It may be the case that you got a file with more than one dataset (i.e., more than one spreadsheet in a .xls or .csv).
+Open them all, take a look and confirm with your client (or the person you&rsquo;re helping with the analysis) everything that you&rsquo;re looking at.</p>
+
+<p>Example:
+Suppose I just opened this .xls file, and I can see some spreadsheets, each one of them with a different name:</p>
+
+<p>Probably each one has an important meaning that we should be aware of. It may even happen that one (or more) of them should&rsquo;t be considered in the analysis. So, confirming all that you get and that you should use seems a good idea and may save you some time.</p>
+
+<p>You can report a summary of information like this:</p>
+
+<p><img src="/images/pics/table_1.png" alt="Summary info of dataset"></p>
+
+<p>An you can do the same for all datasets, putting in relevant information that you should have in mind . In this case, I wanted to confirm the amount of records, if it presented the id&rsquo;s and the columns that presented some issue. Other columns, that were ok, were out of this table.</p>
+
+<p>You don&rsquo;t even have to use R or python to do this, a simple filter and other tools in the spreadsheets application will do.</p>
+
+<p><br></br></p>
+
+<h3 id="1-3-check-all-variables-structure-metadata-completeness-consistency-format">1.3 Check all variables (structure, metadata, completeness, consistency, format)</h3>
+
+<p>Ok, so you confirmed with the client/friend and you have in your hands the data that was supposed to be with you to start the analysis.</p>
+
+<p>Now you can start to actually &lsquo;feel&rsquo; the data - and probably realize that you still don&rsquo;t have everything you need to answer all questions!</p>
+
+<p>Going back to the penguim dataset example. I did not get it from a file, it was directly downloaded into R, but let&rsquo;s suppose I already check the data, and now I am going to put my hands on it.</p>
+
+<pre><code># we'll check the simplified version of this dataset
+
+library(palmerpenguins) # load dataset
+library(tibble) # load package to deal with dataframes
+
+glimpse(penguins) # take a look at the dataset: dimensions, head, types of variables
+
+# Even if you have some categorical data, it is good to take a look at the statistical summary. We can deal with the categorical data later.
+summary(penguins)
+
+# How many NAs cells:
+sum(is.na(penguins))
+
+# Omit all NAs
+penguins_clean &lt;- na.omit(penguins)
+</code></pre>
+
+<p>Some relevant insights here: I have 4 numerical variables and 4 categoricals. No dates (that usually gives us some hard time to put into the right format).</p>
+
+<p>By running the summary, I can see that I have few NAs in some columns. The cells with NAs represent a small portion (altough my dataset is small). If I omit all NAs, I&rsquo;ll loose 10 rows. Let&rsquo;s suppose this is fine for our purpose.</p>
+
+<p>Other option to NAs would be to fill the variables with value like their average, for example. In this particular case, for the numerical cols, like body mass, with only 2 NAs, that could be fine.</p>
+
+<p>But we also have more than 10 NAs on a categorical, sex, which I may want to treat as a target. This is one of the many situations in which you&rsquo;ll see that <em>it depends, each case should be analyzed separetely</em>.</p>
+
+<p>Now it&rsquo;s a good idea to take a closer look to data&rsquo;s distributions. Let&rsquo;s visualize some data.</p>
+
+<pre><code># My dataset is small, so I'll take a look at all variables
+
+# For categorical variables, a simple histogram is usually a good ideia:
+penguins %&gt;%
+  ggplot(aes(x=species))+
+  geom_histogram(stat = 'count')+
+  theme_light()+
+  ggtitle('Penguins species')
+
+# and you can do the same for island and sex
+</code></pre>
+
+<p><img src="/images/pics/plot_1.png" alt="Penguins species"></p>
+
+<p><br></br></p>
+
+<p><img src="/images/pics/plot_2.png" alt="Penguins species island"></p>
+
+<p><br></br></p>
+
+<p><img src="/images/pics/plot_3.png" alt="Penguins sex"></p>
+
+<p><br></br></p>
+
+<p>I&rsquo;ll take a look in the association between numerical variables
+(not all combinations, just some that makes sense righ now)</p>
+
+<pre><code>penguins %&gt;%
+  ggplot(aes(x=culmen_length_mm, y=culmen_depth_mm))+
+  geom_point(shape=21, color='black', fill='blue')+
+  theme_light()
+
+penguins %&gt;%
+  ggplot(aes(x=body_mass_g, y=flipper_length_mm))+
+  geom_point(shape=21, color='black', fill='green')+
+  theme_light()
+</code></pre>
+
+<p><img src="/images/pics/plot_4.png"></p>
+
+<p><br></br></p>
+
+<p><img src="/images/pics/plot_5.png"></p>
+
+<p>This dataset looks great! Perfect for some clustering, regression, classification!</p>
+
+<p><br></br></p>
+
+<h3 id="1-4-thinking-step-what-you-understood-about-the-dataset-and-how-and-if-it-can-be-used-to-answer-questions-ex-the-client-s-questions">1.4 Thinking step: what you understood about the dataset and how (and if) it can be used to answer questions (ex, the client&rsquo;s questions)</h3>
+
+<p>After taking a closer look at the data, in terms of what you really have, what&rsquo;s its structure, missing values and possible transformation, you can have a clearer idea of what can be done.</p>
+
+<p>However, you need to combine these &lsquo;thoughts&rsquo; with what the client expects/wants. I think this is a critical step!</p>
+
+<p>Imagine that your client expects something unreal from the data, i.e., some prediction that would rely on data that they don&rsquo;t have and it is unfeasible to get. Or, they do want something that will require you to research external data - that it&rsquo;s also important to be aware of!</p>
+
+<p>To sum up, I think some important questions to bring to this conversation:</p>
+
+<ul>
+<li><p>Can I provide insights on the desired questions with the data that I was given?</p></li>
+
+<li><p>Will I have to research external data to give these insights? If so, is it possible to get these external data?</p></li>
+</ul>
+
+<p>This is probably a phase where common-sense and awareness are very important. You have to be aligned with what you&rsquo;re expected, and should be aware if that&rsquo;s possible and be honest about what can and will be done.</p>
+
+<p><br></br></p>
+
+<h3 id="references">References:</h3>
+
+<p>Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism
+and Environmental Variability within a Community of Antarctic
+Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081.
+<a href="https://doi.org/10.1371/journal.pone.0090081">https://doi.org/10.1371/journal.pone.0090081</a></p>
+
+  </div>
+</div>
+<div class="d-flex flex-row justify-content-center">
+  <h3 class="mb-1 mt-1 text-left mr-4">
+    
+    <a
+      href="/blog/post_2020_05_30/"
+      title="Collaborate to develop"
+    >
+      <i class="nav-menu fas fa-chevron-circle-left"></i>
+    </a>
+    
+  </h3>
+  <h3 class="mb-1 mt-1 text-left ml-4">
+    
+    <i class="nav-menu-disabled fas fa-chevron-circle-right"></i>
+    
+  </h3>
+</div>
+
+
+    </main>
+    
+    <footer class=" mt-2 mb-4 text-center ">
+  <span class="markdownify">aaa</span>
+  <span >
+    &middot;
+    <i>
+      <a href="https://github.com/darshanbaral/aafu">
+        aafu
+      </a>
+    </i>
+    by
+    <a href="https://www.darshanbaral.com/">
+      darshan
+    </a>
+  </span>
+</footer>
+
+    
+  </body>
+</html>

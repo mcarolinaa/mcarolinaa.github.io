@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>datascience on </title>
+    <link>/categories/datascience/</link>
+    <description>Recent content in datascience on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/datascience/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Important steps in data science</title>
+      <link>/blog/post_2020_06_20/</link>
+      <pubDate>Sat, 20 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/post_2020_06_20/</guid>
+      <description>(All posts in this blog may not reflect true scientific value, since they are merely reflecting my opinions and views on certain matters at the time it was written.)
+
+
+Important steps when you&amp;rsquo;re starting to put your hands into Data Science I&amp;rsquo;m aware that once I get to actually work with ML and DS, things might change (and certainly sum up) from what I&amp;rsquo;ve written here.</description>
+    </item>
+    
+  </channel>
+</rss>
