@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>s3 on Data thoughts</title>
+    <link>http://mcarolinaa.github.io/tags/s3/</link>
+    <description>Recent content in s3 on Data thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Acessar arquivos S3 via python</title>
+      <link>http://mcarolinaa.github.io/posts/acessar_s3/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/acessar_s3/</guid>
+      <description>Acessando arquivos no Amazon S3 Objetivo: Acessar arquivos contidos no serviço de armazenamento da Amazon Web Services via python.
+Sobre o serviço:
+https://aws.amazon.com/pt/s3/
+A rotina abaixo contempla uma situação de identificar e avaliar alguns arquivos que você possa ter no S3.
+Considera-se que as credenciais de acesso já estejam corretamente setadas na sua máquina.
+from osgeo import gdal import numpy as np import pandas as pd import matplotlib.pyplot as plt import boto3 import io 1.</description>
+    </item>
+    
+  </channel>
+</rss>

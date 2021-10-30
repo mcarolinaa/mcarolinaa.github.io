@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>idw on Data thoughts</title>
+    <link>http://mcarolinaa.github.io/tags/idw/</link>
+    <description>Recent content in idw on Data thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/idw/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interpolação com GDAL e python - 3</title>
+      <link>http://mcarolinaa.github.io/posts/interpolation_gdal_3/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_3/</guid>
+      <description>Manipulações de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
+o GDAL tem API para diversas linguagens, incluindo o python. A API para python pode ser consultada aqui:</description>
+    </item>
+    
+  </channel>
+</rss>

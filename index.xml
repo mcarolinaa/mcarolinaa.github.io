@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data thoughts</title>
+    <link>http://mcarolinaa.github.io/</link>
+    <description>Recent content on Data thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conceitos Fundamentais em SIG - 1</title>
+      <link>http://mcarolinaa.github.io/posts/conceitos_fund_1/</link>
+      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/conceitos_fund_1/</guid>
+      <description>Georreferenciamento, Pontos de Controle, CRS e ITRS   O que é georreferenciamento
+  O que são pontos de controle
+  Como ambos estão interligados
+  Conceito de CRS
+  Conceito de ITRS
+  Georreferenciamento se refere ao processo de associar uma imagem/mapa a um sistema de coordenadas, ou seja, associar uma imagem a determinadas localizações num certo espaço físico.
+Esse processo pode ser feito com qualquer objeto no qual se possa associar a uma localização geográfica.</description>
+    </item>
+    
+    <item>
+      <title>Acessar arquivos S3 via python</title>
+      <link>http://mcarolinaa.github.io/posts/acessar_s3/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/acessar_s3/</guid>
+      <description>Acessando arquivos no Amazon S3 Objetivo: Acessar arquivos contidos no serviço de armazenamento da Amazon Web Services via python.
+Sobre o serviço:
+https://aws.amazon.com/pt/s3/
+A rotina abaixo contempla uma situação de identificar e avaliar alguns arquivos que você possa ter no S3.
+Considera-se que as credenciais de acesso já estejam corretamente setadas na sua máquina.
+from osgeo import gdal import numpy as np import pandas as pd import matplotlib.pyplot as plt import boto3 import io 1.</description>
+    </item>
+    
+    <item>
+      <title>Acessar arquivos via Athena e python</title>
+      <link>http://mcarolinaa.github.io/posts/acessar_athena/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/acessar_athena/</guid>
+      <description>Rodando queries no Amazon Athena por usando python O Amazon Athena é um serviço de queries que facilita o acesso de dados no S3 por meio do uso do SQL.
+É interessante ler mais sobre as estruturas de serviços do Amazon e como elas se conectam para que fique um pouco mais claro.
+Boto3 é um grande aliado nisso para quem usará python para pegar/analisar os dados. A sua documentação é bem completa e ajuda bastante no entendimento:</description>
+    </item>
+    
+    <item>
+      <title>Interpolação com GDAL e python - 1</title>
+      <link>http://mcarolinaa.github.io/posts/interpolation_gdal_1/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_1/</guid>
+      <description>Manipulações de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
+o GDAL tem API para diversas linguagens, incluindo o python. A API para python pode ser consultada aqui:</description>
+    </item>
+    
+    <item>
+      <title>Interpolação com GDAL e python - 2</title>
+      <link>http://mcarolinaa.github.io/posts/interpolation_gdal_2/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_2/</guid>
+      <description>Manipulações de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
+o GDAL tem API para diversas linguagens, incluindo o python. A API para python pode ser consultada aqui:</description>
+    </item>
+    
+    <item>
+      <title>Interpolação com GDAL e python - 3</title>
+      <link>http://mcarolinaa.github.io/posts/interpolation_gdal_3/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_3/</guid>
+      <description>Manipulações de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
+o GDAL tem API para diversas linguagens, incluindo o python. A API para python pode ser consultada aqui:</description>
+    </item>
+    
+    <item>
+      <title>Interpolação com GDAL e python - 4</title>
+      <link>http://mcarolinaa.github.io/posts/interpolation_gdal_4/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_4/</guid>
+      <description>Manipulações de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
+o GDAL tem API para diversas linguagens, incluindo o python. A API para python pode ser consultada aqui:</description>
+    </item>
+    
+    <item>
+      <title>Operações com raster GDAL e python - 1</title>
+      <link>http://mcarolinaa.github.io/posts/rasters_gdal_1/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_1/</guid>
+      <description>Manipulações básicas de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
+o GDAL tem API para diversas linguagens, incluindo o python.</description>
+    </item>
+    
+    <item>
+      <title>Operações com raster GDAL e python - 2</title>
+      <link>http://mcarolinaa.github.io/posts/rasters_gdal_2/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_2/</guid>
+      <description>Manipulações básicas de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
+o GDAL tem API para diversas linguagens, incluindo o python.</description>
+    </item>
+    
+    <item>
+      <title>Operações com raster GDAL e python - 3</title>
+      <link>http://mcarolinaa.github.io/posts/rasters_gdal_3/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_3/</guid>
+      <description>Manipulações básicas de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
+o GDAL tem API para diversas linguagens, incluindo o python.</description>
+    </item>
+    
+    <item>
+      <title>Operações com raster GDAL e python - 4</title>
+      <link>http://mcarolinaa.github.io/posts/rasters_gdal_4/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_4/</guid>
+      <description>Manipulações básicas de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
+o GDAL tem API para diversas linguagens, incluindo o python.</description>
+    </item>
+    
+    <item>
+      <title>Environments python</title>
+      <link>http://mcarolinaa.github.io/posts/criar_envs/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/criar_envs/</guid>
+      <description>Criar e manejar environments python Objetivo: reunir e resumir principais comandos e passos utilizandos na criação e principais operações de um novo environment usando pyhton.
+Duas maneiras são abordadas aqui: por meio do conda e do pip.
+Conda e pip, apesar de aqui estarem sendo usados como exemplos para o mesmo resultado final, não são ferramentas iguais.
+Para entender um pouco melhor o que cada um deles representa, alguns materiais como esse https://www.</description>
+    </item>
+    
+    <item>
+      <title>Emoji Support</title>
+      <link>http://mcarolinaa.github.io/posts/emoji-support/</link>
+      <pubDate>Thu, 01 Oct 2020 17:55:28 +0800</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/emoji-support/</guid>
+      <description>Emoji can be enabled in a Hugo project in a number of ways.
+The emojify function can be called directly in templates or Inline Shortcodes.
+To enable emoji globally, set enableEmoji to true in your site configuration and then you can type emoji shorthand codes directly in content files.
+These begin and end with a colon and include the code of an emoji:
+Gone camping! {?:}tent: Be back soon. That is so funny!</description>
+    </item>
+    
+    <item>
+      <title>Blüdhaven</title>
+      <link>http://mcarolinaa.github.io/projects/bludhaven/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/projects/bludhaven/</guid>
+      <description>History Blüdhaven was a former whaling town, which was officially incorporated as a &amp;ldquo;Commonwealth&amp;rdquo; in 1912. The town had a generally poor socio-economic populace, owing in part to failed efforts to transform itself into a manufacturing and shipping center.</description>
+    </item>
+    
+    <item>
+      <title>Hydra</title>
+      <link>http://mcarolinaa.github.io/projects/hydra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/projects/hydra/</guid>
+      <description>Motto Cut off one head and two will take their place</description>
+    </item>
+    
+    <item>
+      <title>Tatooine</title>
+      <link>http://mcarolinaa.github.io/projects/tatooine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/projects/tatooine/</guid>
+      <description>A long time ago in a galaxy far, far away&amp;hellip;. A project was planned, but never completed</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Acessar arquivos via Athena e python</title>
+    <meta name="description" content="Acessar arquivos AWS usando serviço Athena e python">
+    <meta name="keywords" content='athena, aws, python'>
+
+    <meta property="og:url" content="http://mcarolinaa.github.io/posts/acessar_athena/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Acessar arquivos via Athena e python">
+    <meta property="og:description" content="Acessar arquivos AWS usando serviço Athena e python">
+    <meta property="og:image" content="/images/avatar.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Acessar arquivos via Athena e python">
+    <meta name="twitter:description" content="Acessar arquivos AWS usando serviço Athena e python">
+    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/acessar_athena/">
+    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/acessar_athena/">
+    <meta name="twitter:image" content="/images/avatar.webp">
+
+    
+    <link rel="canonical" href="http://mcarolinaa.github.io/posts/acessar_athena/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/svg-injector.min.js"></script>
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://mcarolinaa.github.io/">
+                <img src="/images/avatar.webp" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Data thoughts</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/projects/"> Projects </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/mcarolinaa"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.buymeacoffee.com/xxxxxx"><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/index.xml"><span data-feather='rss'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/projects/"> Projects </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/mcarolinaa"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.buymeacoffee.com/xxxxxx"><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/index.xml"><span data-feather='rss'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>Acessar arquivos via Athena e python</h1>
+        <small role="doc-subtitle">Acessar arquivos AWS usando serviço Athena e python</small>
+        <p class="post-date">
+            October 26, 2021
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/athena">athena</a></li>
+        
+            <li class="post-tag"><a href="/tags/aws">aws</a></li>
+        
+            <li class="post-tag"><a href="/tags/python">python</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="rodando-queries-no-amazon-athena-por-usando-python">Rodando queries no Amazon Athena por usando python</h1>
+<p>O Amazon Athena é um serviço de queries que facilita o acesso de dados no
+S3 por meio do uso do SQL.</p>
+<p>É interessante ler mais sobre as estruturas de serviços do Amazon e como
+elas se conectam para que fique um pouco mais claro.</p>
+<p>Boto3 é um grande aliado nisso para quem usará python para pegar/analisar
+os dados. A sua documentação é bem completa e ajuda bastante no entendimento:</p>
+<p><a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html">https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html</a></p>
+<p>(Obs: Considerando que as credencias aws estejam já corretamente setadas na máquina)</p>
+<pre tabindex="0"><code>import boto3
+import time
+</code></pre><ul>
+<li>Checar em qual perfil estão os dados</li>
+</ul>
+<pre tabindex="0"><code>session = boto3.Session(profile_name='profile_name')
+athena = session.client(service_name='athena', region_name='sa-east-1')
+</code></pre><p>Aqui, diferença com pegar arquivos diretamente de bucket do S3.</p>
+<p>Para lidar com problema de paginação, numa view ou tabela, por exemplo:</p>
+<blockquote>
+<p>query_string: a SQL-like query that Athena will execute</p>
+</blockquote>
+<blockquote>
+<p>client: an Athena client created with boto3</p>
+</blockquote>
+<blockquote>
+<p>source: <a href="https://gist.github.com/schledererj/b2e2a800998d61af2bbdd1cd50e08b76">https://gist.github.com/schledererj/b2e2a800998d61af2bbdd1cd50e08b76</a></p>
+</blockquote>
+<pre tabindex="0"><code>def fetchall_athena(query_string, client):
+    query_id = client.start_query_execution(
+        QueryString=query_string,
+        QueryExecutionContext={
+            'Database': 'zeus'
+        },
+        ResultConfiguration={
+            'OutputLocation': 'path_para_a_query'
+        }
+    )['QueryExecutionId']
+    query_status = None
+    while query_status == 'QUEUED' or query_status == 'RUNNING' or query_status is None:
+        query_status = client.get_query_execution(QueryExecutionId=query_id)['QueryExecution']['Status']['State']
+        if query_status == 'FAILED' or query_status == 'CANCELLED':
+            raise Exception('Athena query with the string &quot;{}&quot; failed or was cancelled'.format(query_string))
+        time.sleep(100)
+    results_paginator = client.get_paginator('get_query_results')
+    results_iter = results_paginator.paginate(
+        QueryExecutionId=query_id,
+        PaginationConfig={
+            'PageSize': 1000
+        }
+    )
+    results = []
+    column_names = None
+    for results_page in results_iter:
+        for row in results_page['ResultSet']['Rows']:
+            column_values = [col.get('VarCharValue', None) for col in row['Data']]
+            if not column_names:
+                column_names = column_values
+            else:
+                results.append(dict(zip(column_names, column_values)))
+    return results
+</code></pre><ul>
+<li>Get</li>
+</ul>
+<pre tabindex="0"><code>query_string = 'SELECT * FROM xxxx' # coloque aqui sua query
+client = athena
+</code></pre><pre tabindex="0"><code>data_zeus = fetchall_athena(query_string=query_string, client=client)
+df_data = pd.DataFrame(data_frame)
+</code></pre><p>Export, para que não tenha que sempre fazer a query, e
+compressed, porque é relativamente grande:</p>
+<pre tabindex="0"><code>compression_opts = dict(method='zip', archive_name='df.csv')
+df_data.to_csv('df.zip', index=False, compression=compression_opts)
+</code></pre>
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2021 Data thoughts</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

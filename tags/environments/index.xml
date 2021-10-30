@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>environments on Data thoughts</title>
+    <link>http://mcarolinaa.github.io/tags/environments/</link>
+    <description>Recent content in environments on Data thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/environments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Environments python</title>
+      <link>http://mcarolinaa.github.io/posts/criar_envs/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/criar_envs/</guid>
+      <description>Criar e manejar environments python Objetivo: reunir e resumir principais comandos e passos utilizandos na criação e principais operações de um novo environment usando pyhton.
+Duas maneiras são abordadas aqui: por meio do conda e do pip.
+Conda e pip, apesar de aqui estarem sendo usados como exemplos para o mesmo resultado final, não são ferramentas iguais.
+Para entender um pouco melhor o que cada um deles representa, alguns materiais como esse https://www.</description>
+    </item>
+    
+  </channel>
+</rss>

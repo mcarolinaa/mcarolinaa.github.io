@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>athena on Data thoughts</title>
+    <link>http://mcarolinaa.github.io/tags/athena/</link>
+    <description>Recent content in athena on Data thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/athena/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Acessar arquivos via Athena e python</title>
+      <link>http://mcarolinaa.github.io/posts/acessar_athena/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/acessar_athena/</guid>
+      <description>Rodando queries no Amazon Athena por usando python O Amazon Athena é um serviço de queries que facilita o acesso de dados no S3 por meio do uso do SQL.
+É interessante ler mais sobre as estruturas de serviços do Amazon e como elas se conectam para que fique um pouco mais claro.
+Boto3 é um grande aliado nisso para quem usará python para pegar/analisar os dados. A sua documentação é bem completa e ajuda bastante no entendimento:</description>
+    </item>
+    
+  </channel>
+</rss>
