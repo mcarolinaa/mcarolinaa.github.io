@@ -17,25 +17,25 @@
     
 
     
-    <title>Conceitos Fundamentais em SIG - 1</title>
-    <meta name="description" content="Conceitos Fundamentais: Georreferenciamento, Pontos de controle, CRS e ITRS">
+    <title>Conceitos Fundamentais em SIG - 2</title>
+    <meta name="description" content="Map Projection, UTM, Horizontal and Vertical Datum">
     <meta name="keywords" content='gis, conceitos fundamentais'>
 
-    <meta property="og:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_1/">
+    <meta property="og:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_2/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Conceitos Fundamentais em SIG - 1">
-    <meta property="og:description" content="Conceitos Fundamentais: Georreferenciamento, Pontos de controle, CRS e ITRS">
+    <meta property="og:title" content="Conceitos Fundamentais em SIG - 2">
+    <meta property="og:description" content="Map Projection, UTM, Horizontal and Vertical Datum">
     <meta property="og:image" content="/images/via_lactea.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Conceitos Fundamentais em SIG - 1">
-    <meta name="twitter:description" content="Conceitos Fundamentais: Georreferenciamento, Pontos de controle, CRS e ITRS">
-    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/conceitos_fund_1/">
-    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_1/">
+    <meta name="twitter:title" content="Conceitos Fundamentais em SIG - 2">
+    <meta name="twitter:description" content="Map Projection, UTM, Horizontal and Vertical Datum">
+    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/conceitos_fund_2/">
+    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_2/">
     <meta name="twitter:image" content="/images/via_lactea.jpg">
 
     
-    <link rel="canonical" href="http://mcarolinaa.github.io/posts/conceitos_fund_1/" />
+    <link rel="canonical" href="http://mcarolinaa.github.io/posts/conceitos_fund_2/" />
 
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -156,10 +156,10 @@
     <div class="post container">
 
     <div class="post-header-section">
-        <h1>Conceitos Fundamentais em SIG - 1</h1>
-        <small role="doc-subtitle">Conceitos Fundamentais: Georreferenciamento, Pontos de controle, CRS e ITRS</small>
+        <h1>Conceitos Fundamentais em SIG - 2</h1>
+        <small role="doc-subtitle">Map Projection, UTM, Horizontal and Vertical Datum</small>
         <p class="post-date">
-            October 29, 2021
+            October 31, 2021
         </p>
 
         <ul class="post-tags">
@@ -173,78 +173,76 @@
 
     <div class="post-content">
         <p>
-            <h1 id="georreferenciamento-pontos-de-controle-crs-e-itrs">Georreferenciamento, Pontos de Controle, CRS e ITRS</h1>
+            <h1 id="map-projection-utm-horizontal-and-vertical-datum-navd88-geodetic-datum">Map Projection, UTM, Horizontal and Vertical Datum, NAVD88, Geodetic Datum</h1>
 <ul>
 <li>
-<p>O que é georreferenciamento</p>
+<p>O que é Map Projection</p>
 </li>
 <li>
-<p>O que são pontos de controle</p>
+<p>O que é UTM</p>
 </li>
 <li>
-<p>Como ambos estão interligados</p>
+<p>O que são Horizontal e Vertical Datum</p>
 </li>
 <li>
-<p>Conceito de CRS ou SRS</p>
+<p>O que é o NAVD88</p>
 </li>
 <li>
-<p>Conceito de ITRS</p>
+<p>O que é Geodetic Datum</p>
 </li>
 </ul>
-<p><strong>Georreferenciamento</strong> se refere ao processo de associar uma imagem/mapa a um sistema
-de coordenadas, ou seja, associar uma imagem a determinadas localizações num certo
-espaço físico.</p>
-<p>Esse processo pode ser feito com qualquer objeto no qual se possa associar a uma
-localização geográfica.</p>
-<p>Os produtos modernos, como imagens de satélite, já possuem relativa precisão com
-relação à sua localização. Porém outros tipos de informações, como alguns bancos
-de dados, figuras, fotos podem não possuir informações referentes à localização
-geográfica. E é aí que o processo de georreferenciamento pode ajudar a trazer
-uma adequada associação com o espaço geográfico a esses materiais.</p>
-<p>Os <strong>pontos de controle</strong></p>
-<p>O processo de georreferenciamento costuma se dar com o uso de uma camada referência,
-a qual está no sistema de coordenadas já desejado, e em geral possui a maior resolução
-espacial, a camada na qual queremos fazer o processo, e também costuma-se fazer o uso
-dos pontos de controle.</p>
-<p>Os pontos de controle são localizações, bem conhecidas e adequadamente localizadas,
-e que vão servir como um tipo de conexão entre a camada referência para alinhamento
-da camada na qual se deseja fazer o georreferenciamento.</p>
-<p>Esses pontos serão usados para o processo de transformação na camada que se deseja
-trazer para o local correto. Já a conexão entre o ponto de controle da camada
-referência e o ponto correspondente na camada a ser georreferenciada, chama-se
-par de pontos de controle.</p>
-<p>O chamado <strong>spatial reference system (SRS)</strong> ou <strong>coordinate reference system (CRS)</strong>,
-às vezes entendidos como coisas diferentes, são na verdade sinônimos.</p>
-<p>Uma informação só pode ser considerada geoespacial se estiver acompanhada de uma
-informação de CRS.
-O software SIG usa essa informação para saber onde seu raster ou vetor está localizado,
-por exemplo, além disso o software também deverá saber que método usará para
-representar a superfície da Terra e a informação geoespacial.</p>
-<p>É interessante saber que a mesma informação, vista sob diferentes CRS não apresentará
-alinhamento, devido à essas diferenças de representação.</p>
-<p>Um CRS possui como principais componentes:</p>
+<p>Sendo o <em>Datum</em> uma ferramenta para que entendamos a localização das coordenadas
+de features num elipsoide, a <strong>map projection</strong> ou projeção do mapa, é o processo
+posterior para que possamos transferir essa localização para um mapa plano.</p>
+<p>Ou seja, é uma maneira de renderizarmos localizações de um superfície curva da Terra
+para uma superfície plana de um mapa.</p>
+<p>Nesse mesmo contexto, quando estamos analisando dados geoespaciais, é comum
+trabalharmos com o <strong>UTM</strong> (Universal Transversal Mercator), um sistema de grid
+de coordenadas planas para que possamos definir uma <em>map projection</em>.</p>
+<p>É um sistema global, baseado no Transverse Mercator, e possui 60 zonas,
+as quais estão separadas por 6 graus de longitude.</p>
+<p>UTM pode ser usado com qualquer Datum, mas os resultados variam entre os mesmos.
+Seu uso é mais comum em grandes pojetos de GIS, ou seja, que abrangem grandes
+áreas.</p>
+<p>As distâncias nesse sistemas são especificadas em metros (north, east) de acordo
+com uma origem.</p>
+<p>Apesar de o termo <em>datum</em> ser usado de maneira análoga ao CRS, esses não são a mesma
+coisa. O Datum é na verdade um importante componente do CRS.</p>
+<p>Nesse sentido, é importante lembrar que <em>elipsoide</em> e <em>geoide</em> são distintas
+maneiras de se modelar o formato do planeta.</p>
+<p>O modelo elipsoide é um modelo aproximado, e mais uniforme, do planeta.
+É esférico, mas de maneira imperfeita, com superfície mais suave e ininterrupta.
+Possui 2 parâmetros, o raio ao Equador, e a distância do centro a um dos pólos.</p>
+<p>O modelo geoide é mais dinâmico, e considera as ondulações naturais do planeta.
+A superfície do planeta é de fato irregular, com elevações e depressões, que o modelo
+tenta considerar.</p>
+<p>Considerando que elipsoide e geoide são duas maneiras de tentar descrever o formato
+do planeta, é aí que entram os Datuns, horizontais ou verticais.</p>
+<p>O <strong>datum horizontal</strong> usa o modelo elipsoide e associa seu centro a um ponto de
+origem relativo ao centro do planeta.</p>
+<p>O exemplo mais conhecido disso é o <strong>WGS 84</strong>, desenvolvido para ser de uso global,
+e com boa acurácia.</p>
+<p>Importante porque: além de ser um dos mais usados, é o datum no qual os dados
+de <strong>GPS</strong> são referenciados.</p>
+<p>The WGS 84 is an example of a geocentric datum. The center of the WGS 84 ellipsoid
+is generally considered to be about 2cm off the center of the earth’s mass.</p>
+<p>Entendendo que o <em>datum horizontal</em> nos auxilia a determinar uma localização na
+superfície terrestre, o <strong>datum vertical</strong> nos auxilia com as informações de
+elevação.</p>
+<p>Encontram-se em 3 grandes categorias: os baseados no <em>Mean Sea Level</em>,
+os baseados em superfícies derivadas de marés <em>Tidal Datums</em>, e os tri-dimensionais,
+<em>3-D Datums</em>.</p>
+<p>Importante lembrar que ao analisarmos bancos de dados de maneira comparativa,
+eles devem estar referenciados no mesmo Datum.</p>
+<p>Referências</p>
 <ul>
 <li>
-<p>DATUM (um modelo que tenta representar o formato da terra, sendo o mais comum
-o WGS84)</p>
+<p><a href="https://giscourses.cfans.umn.edu/sites/giscourses.cfans.umn.edu/files/5480chapter3_projections_excerpt.pdf">https://giscourses.cfans.umn.edu/sites/giscourses.cfans.umn.edu/files/5480chapter3_projections_excerpt.pdf</a></p>
 </li>
 <li>
-<p>Projeção (transformação matemática das medidas do planeta em uma superfície
-plana. Pode ser feita em diferentes unidades, como as lineares, mais comumente
-usadas em análises).</p>
+<p><a href="https://epsg.io/">https://epsg.io/</a></p>
 </li>
 </ul>
-<p>Há muitas projeções, e a escolha por uma deve ser feita de maneira a estar de acordo
-com o objetivo de sua análise. Fatores como tolerância a distorções, a nível local,
-global, localização, são alguns que devem ser considerados nessa escolha.</p>
-<p>Uma maneira muito comum de transmitirmos as informações de CRS, estando de acordo com
-a ISO 19111, é o uso do <em>epsg</em> (um tipo de sistema de sintetização e descrição dessas
-informações, mas não o único).</p>
-<p>O <strong>ITRS</strong> ou International Terrestrial Reference System é um sistema desenvolvido
-para ser de fato geocêntrico. Tem origem no centro de massa de todo o planeta,
-incluindo oceanos e atmosfera. Sua unidade é o metro.
-Possui um <em>frame</em> derivado, International Terrestrial
-Reference Frame (ITRF).</p>
 <blockquote>
 <p>Obs: Os tópicos nos posts teóricos, de conceitos, foram retirados de um ótimo
 material e guia (não oficial) de estudo para o <em>GISP Exam</em>, que pode ser encontrado aqui:</p>

@@ -6,17 +6,31 @@
     <description>Recent content in Posts on Data thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conceitos Fundamentais em SIG - 2</title>
+      <link>http://mcarolinaa.github.io/posts/conceitos_fund_2/</link>
+      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/conceitos_fund_2/</guid>
+      <description>Map Projection, UTM, Horizontal and Vertical Datum, NAVD88, Geodetic Datum   O que é Map Projection
+  O que é UTM
+  O que são Horizontal e Vertical Datum
+  O que é o NAVD88
+  O que é Geodetic Datum
+  Sendo o Datum uma ferramenta para que entendamos a localização das coordenadas de features num elipsoide, a map projection ou projeção do mapa, é o processo posterior para que possamos transferir essa localização para um mapa plano.</description>
+    </item>
+    
     <item>
       <title>Conceitos Fundamentais em SIG - 1</title>
       <link>http://mcarolinaa.github.io/posts/conceitos_fund_1/</link>
-      <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>http://mcarolinaa.github.io/posts/conceitos_fund_1/</guid>
       <description>Georreferenciamento, Pontos de Controle, CRS e ITRS   O que é georreferenciamento
   O que são pontos de controle
   Como ambos estão interligados
-  Conceito de CRS
+  Conceito de CRS ou SRS
   Conceito de ITRS
   Georreferenciamento se refere ao processo de associar uma imagem/mapa a um sistema de coordenadas, ou seja, associar uma imagem a determinadas localizações num certo espaço físico.
 Esse processo pode ser feito com qualquer objeto no qual se possa associar a uma localização geográfica.</description>
