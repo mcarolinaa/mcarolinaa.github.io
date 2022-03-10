@@ -17,25 +17,25 @@
     
 
     
-    <title>Operações com raster GDAL e python - 1</title>
-    <meta name="description" content="Manipulações básicas de raster usando GDAL e python">
-    <meta name="keywords" content='gis, python, gdal'>
+    <title>Entendendo os dados de um raster - 1</title>
+    <meta name="description" content="Entendendo os dados de um raster">
+    <meta name="keywords" content='gis, conceitos fundamentais, python'>
 
-    <meta property="og:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
+    <meta property="og:url" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Operações com raster GDAL e python - 1">
-    <meta property="og:description" content="Manipulações básicas de raster usando GDAL e python">
+    <meta property="og:title" content="Entendendo os dados de um raster - 1">
+    <meta property="og:description" content="Entendendo os dados de um raster">
     <meta property="og:image" content="/images/via_lactea.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Operações com raster GDAL e python - 1">
-    <meta name="twitter:description" content="Manipulações básicas de raster usando GDAL e python">
-    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
-    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
+    <meta name="twitter:title" content="Entendendo os dados de um raster - 1">
+    <meta name="twitter:description" content="Entendendo os dados de um raster">
+    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
+    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
     <meta name="twitter:image" content="/images/via_lactea.jpg">
 
     
-    <link rel="canonical" href="http://mcarolinaa.github.io/posts/rasters_gdal_1/" />
+    <link rel="canonical" href="http://mcarolinaa.github.io/posts/entendendo_raster_1/" />
 
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -156,88 +156,80 @@
     <div class="post container">
 
     <div class="post-header-section">
-        <h1>Operações com raster GDAL e python - 1</h1>
-        <small role="doc-subtitle">Manipulações básicas de raster usando GDAL e python</small>
+        <h1>Entendendo os dados de um raster - 1</h1>
+        <small role="doc-subtitle">Entendendo os dados de um raster</small>
         <p class="post-date">
-            October 26, 2021
+            March 10, 2022
         </p>
 
         <ul class="post-tags">
         
             <li class="post-tag"><a href="/tags/gis">gis</a></li>
         
-            <li class="post-tag"><a href="/tags/python">python</a></li>
+            <li class="post-tag"><a href="/tags/conceitos-fundamentais">conceitos fundamentais</a></li>
         
-            <li class="post-tag"><a href="/tags/gdal">gdal</a></li>
+            <li class="post-tag"><a href="/tags/python">python</a></li>
         
         </ul>
     </div>
 
     <div class="post-content">
         <p>
-            <h1 id="manipulações-básicas-de-arquivos-raster-usando-gdal-e-python">Manipulações básicas de arquivos raster usando GDAL e python</h1>
-<p>O <strong>GDAL</strong> é uma <em>translator library</em> para dados vetoriais e rasteriais, com
-modelos próprios para trabalhar esses dados.</p>
-<p>Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados
-no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor
-a estrutura dos dados no contexto de GIS.</p>
-<p>o GDAL tem API para diversas linguagens, incluindo o python.
-A API para python pode ser consultada aqui:</p>
-<p><a href="https://gdal.org/api/python.html">https://gdal.org/api/python.html</a></p>
-<p>Nesse post há rotinas para as seguintes ações:</p>
+            <h1 id="entendendo-os-dados-de-um-raster">Entendendo os dados de um raster</h1>
 <ul>
 <li>
-<p>Ler e plotar arquivo raster;</p>
+<p>Ler um raster</p>
 </li>
 <li>
-<p>Criar binary mask</p>
+<p>Entendendo a array dos dados</p>
+</li>
+<li>
+<p>Montando um raster</p>
 </li>
 </ul>
-<pre tabindex="0"><code>from osgeo import gdal
-import numpy as np
+<p><strong>Ler um raster</strong></p>
+<p>Operações com e entre rasters são bem comuns e importantes.</p>
+<p>No python, o uso do Gdal, numpy e pandas já permite a realização de muitas dessas
+operações.</p>
+<p>O código a seguir pega um raster (formato .tif), abre, pega informações sobre
+coordenadas e resolução e coloca as bandas (considerando a ordem já conhecida)
+em arrays, para ser usada em histogramas, scatterplots e outros.</p>
+<pre tabindex="0"><code>import numpy as np
+from osgeo import gdal
 import matplotlib.pyplot as plt
-import glob
-import subprocess
-</code></pre><h2 id="ler-a-plotar-arquivo-raster">Ler a plotar arquivo raster</h2>
-<pre tabindex="0"><code>ds = gdal.Open('path_to_raster') # abre somente 1
-gt = ds.GetGeoTransform() # object (upper left corner: .. x-coord, horizontal pixel res, y-coord, vertical pixel res)
-proj = ds.GetProjection()
+import seaborn as sn
 
-# access band to get data
-band = ds.GetRasterBand(1) # se for multibanda, especificar a desejada
-array = band.ReadAsArray()
+# Abre
+path_raster = 'path/do/raster.tif'
+raster = gdal.Open(path_raster)
 
-plt.figure()
-plt.imshow(array)
-</code></pre><h2 id="criar-uma-binary-mask">Criar uma binary mask</h2>
-<p>Maneira de visualizar/explorar os dados.</p>
-<pre tabindex="0"><code>binmask = np.where((array &gt;= np.mean(array)),1,0) # tudo que for &gt; média, entao =1
-plt.figure()
-plt.imshow(binmask)
+# Guarda algumas informações importantes
+gt = raster.GetGeoTransform()
+res = gt[1]
+xmin = gt[0]
+ymax = gt[3]
+xsize = raster.RasterXSize
+ysize = raster.RasterYSize
+xstart = xmin +res/2
+ystart = ymax - res/2
 
-# ajusta driver p/ exportar
-driver = gdal.GetDriverByName('GTiff')
-driver.Register()
-outds = driver.Create('path_to_binmask.tif',
-                      xsize = binmask.shape[1], # number of cols
-                      ysize = binmask.shape[0], # number of rows
-                      bands = 1,
-                      eType = gdal.GDT_Int16)
-outds.SetGeoTransform(gt)
-outds.SetProjection(proj)
-outband = outds.GetRasterBand(1)
+# Pega bandas e coloca em arrays flatten (p/ certas análises e visualizações)
+# para ficar com a array multidimensional, excluir o .flatten()
+blue = raster.GetRasterBand(1).ReadAsArray().flatten()
+green = raster.GetRasterBand(2).ReadAsArray().flatten()
+red = raster.GetRasterBand(3).ReadAsArray().flatten()
+redg = raster.GetRasterBand(4).ReadAsArray().flatten()
+nir = raster.GetRasterBand(5).ReadAsArray().flatten()
 
-# escreve em disco
-outband.WriteArray(binmask)
-outband.SetNoDataValue(np.nan)
-outband.FlushCache()
+# fecha raster
+raster = None
 
-# não esquecer de fechar o dataset
-outband = None
-outds = None
-</code></pre><p>Obs: Usei como fonte o canal <em>Making Sense Remotely</em>, que tem ótimos tutoriais
-de GIS para R e python.</p>
-
+# faz histograma de uma banda
+plt.figure(figsize=(9,7))
+sn.histplot(redg, color='red')
+plt.title('Red-Edge Band')
+plt.show()
+</code></pre>
         </p>
     </div>
 </div>

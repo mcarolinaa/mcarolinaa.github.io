@@ -224,8 +224,6 @@ origem relativo ao centro do planeta.</p>
 e com boa acurácia.</p>
 <p>Importante porque: além de ser um dos mais usados, é o datum no qual os dados
 de <strong>GPS</strong> são referenciados.</p>
-<p>The WGS 84 is an example of a geocentric datum. The center of the WGS 84 ellipsoid
-is generally considered to be about 2cm off the center of the earth’s mass.</p>
 <p>Entendendo que o <em>datum horizontal</em> nos auxilia a determinar uma localização na
 superfície terrestre, o <strong>datum vertical</strong> nos auxilia com as informações de
 elevação.</p>
@@ -234,6 +232,15 @@ os baseados em superfícies derivadas de marés <em>Tidal Datums</em>, e os tri-
 <em>3-D Datums</em>.</p>
 <p>Importante lembrar que ao analisarmos bancos de dados de maneira comparativa,
 eles devem estar referenciados no mesmo Datum.</p>
+<p><strong>NAVD88</strong> refere-se ao <em>North American Vertical Datum of 1988</em>, é o datum vertical
+atual usado nos EUA, que logo será substituído por uma versão mais nova, mais focada
+no uso de dados provenientes de GNSS.</p>
+<p>Como já citado anteriormente, os Datum têm como principal função oferecer a localização
+de certo ponto na superfície terrestre (por exemplo por meio de valores de lat/lon).
+Assim como os modelos elipsoide e geoide atuam na tentativa de &ldquo;descrever&rdquo; o formato
+da Terra, sendo que a contribuição de cada (elipsoide, superfície 2D) e geoide
+(valor Z) torna-se bem importante. A combinação disso pode ser entendidad como o que
+representa o <strong>geodetic datum</strong> ou apenas <strong>datum</strong>.</p>
 <p>Referências</p>
 <ul>
 <li>
@@ -241,6 +248,9 @@ eles devem estar referenciados no mesmo Datum.</p>
 </li>
 <li>
 <p><a href="https://epsg.io/">https://epsg.io/</a></p>
+</li>
+<li>
+<p><a href="https://vector.geospatial.science/textbook/section-five-geodetic-datums-combining-reference-ellipsoids-and-geoids">https://vector.geospatial.science/textbook/section-five-geodetic-datums-combining-reference-ellipsoids-and-geoids</a></p>
 </li>
 </ul>
 <blockquote>
@@ -258,7 +268,7 @@ material e guia (não oficial) de estudo para o <em>GISP Exam</em>, que pode ser
     
 
         </main><footer class="footer">
-    <span>&copy; 2021 Data thoughts</span>
+    <span>&copy; 2022 Data thoughts</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

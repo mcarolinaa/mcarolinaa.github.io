@@ -17,25 +17,25 @@
     
 
     
-    <title>Operações com raster GDAL e python - 1</title>
-    <meta name="description" content="Manipulações básicas de raster usando GDAL e python">
-    <meta name="keywords" content='gis, python, gdal'>
+    <title>Conceitos Fundamentais em SIG - 3</title>
+    <meta name="description" content="WGS 84, SRID integer e 4 distortions">
+    <meta name="keywords" content='gis, conceitos fundamentais'>
 
-    <meta property="og:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
+    <meta property="og:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_3/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Operações com raster GDAL e python - 1">
-    <meta property="og:description" content="Manipulações básicas de raster usando GDAL e python">
+    <meta property="og:title" content="Conceitos Fundamentais em SIG - 3">
+    <meta property="og:description" content="WGS 84, SRID integer e 4 distortions">
     <meta property="og:image" content="/images/via_lactea.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Operações com raster GDAL e python - 1">
-    <meta name="twitter:description" content="Manipulações básicas de raster usando GDAL e python">
-    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
-    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
+    <meta name="twitter:title" content="Conceitos Fundamentais em SIG - 3">
+    <meta name="twitter:description" content="WGS 84, SRID integer e 4 distortions">
+    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/conceitos_fund_3/">
+    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_3/">
     <meta name="twitter:image" content="/images/via_lactea.jpg">
 
     
-    <link rel="canonical" href="http://mcarolinaa.github.io/posts/rasters_gdal_1/" />
+    <link rel="canonical" href="http://mcarolinaa.github.io/posts/conceitos_fund_3/" />
 
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -156,87 +156,65 @@
     <div class="post container">
 
     <div class="post-header-section">
-        <h1>Operações com raster GDAL e python - 1</h1>
-        <small role="doc-subtitle">Manipulações básicas de raster usando GDAL e python</small>
+        <h1>Conceitos Fundamentais em SIG - 3</h1>
+        <small role="doc-subtitle">WGS 84, SRID integer e 4 distortions</small>
         <p class="post-date">
-            October 26, 2021
+            November 2, 2021
         </p>
 
         <ul class="post-tags">
         
             <li class="post-tag"><a href="/tags/gis">gis</a></li>
         
-            <li class="post-tag"><a href="/tags/python">python</a></li>
-        
-            <li class="post-tag"><a href="/tags/gdal">gdal</a></li>
+            <li class="post-tag"><a href="/tags/conceitos-fundamentais">conceitos fundamentais</a></li>
         
         </ul>
     </div>
 
     <div class="post-content">
         <p>
-            <h1 id="manipulações-básicas-de-arquivos-raster-usando-gdal-e-python">Manipulações básicas de arquivos raster usando GDAL e python</h1>
-<p>O <strong>GDAL</strong> é uma <em>translator library</em> para dados vetoriais e rasteriais, com
-modelos próprios para trabalhar esses dados.</p>
-<p>Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados
-no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor
-a estrutura dos dados no contexto de GIS.</p>
-<p>o GDAL tem API para diversas linguagens, incluindo o python.
-A API para python pode ser consultada aqui:</p>
-<p><a href="https://gdal.org/api/python.html">https://gdal.org/api/python.html</a></p>
-<p>Nesse post há rotinas para as seguintes ações:</p>
+            <h1 id="wgs-84-srid-integer-e-4-distortions">WGS 84, SRID integer e 4 distortions</h1>
 <ul>
 <li>
-<p>Ler e plotar arquivo raster;</p>
+<p>O que é o WGS 84</p>
 </li>
 <li>
-<p>Criar binary mask</p>
+<p>O que é SRID integer</p>
+</li>
+<li>
+<p>E o que são as 4 distorções (<em>distortions</em>)</p>
 </li>
 </ul>
-<pre tabindex="0"><code>from osgeo import gdal
-import numpy as np
-import matplotlib.pyplot as plt
-import glob
-import subprocess
-</code></pre><h2 id="ler-a-plotar-arquivo-raster">Ler a plotar arquivo raster</h2>
-<pre tabindex="0"><code>ds = gdal.Open('path_to_raster') # abre somente 1
-gt = ds.GetGeoTransform() # object (upper left corner: .. x-coord, horizontal pixel res, y-coord, vertical pixel res)
-proj = ds.GetProjection()
-
-# access band to get data
-band = ds.GetRasterBand(1) # se for multibanda, especificar a desejada
-array = band.ReadAsArray()
-
-plt.figure()
-plt.imshow(array)
-</code></pre><h2 id="criar-uma-binary-mask">Criar uma binary mask</h2>
-<p>Maneira de visualizar/explorar os dados.</p>
-<pre tabindex="0"><code>binmask = np.where((array &gt;= np.mean(array)),1,0) # tudo que for &gt; média, entao =1
-plt.figure()
-plt.imshow(binmask)
-
-# ajusta driver p/ exportar
-driver = gdal.GetDriverByName('GTiff')
-driver.Register()
-outds = driver.Create('path_to_binmask.tif',
-                      xsize = binmask.shape[1], # number of cols
-                      ysize = binmask.shape[0], # number of rows
-                      bands = 1,
-                      eType = gdal.GDT_Int16)
-outds.SetGeoTransform(gt)
-outds.SetProjection(proj)
-outband = outds.GetRasterBand(1)
-
-# escreve em disco
-outband.WriteArray(binmask)
-outband.SetNoDataValue(np.nan)
-outband.FlushCache()
-
-# não esquecer de fechar o dataset
-outband = None
-outds = None
-</code></pre><p>Obs: Usei como fonte o canal <em>Making Sense Remotely</em>, que tem ótimos tutoriais
-de GIS para R e python.</p>
+<p><strong>WGS 84</strong> refere-se ao <em>World Geodetic System</em>.
+Como já apontado nos tópicos
+anteriores, para identificarmos uma localização no planeta, precisamos inicialmente
+do datum, que irá &ldquo;descrever&rdquo; o formato do planeta, e um sistema de projeção,
+que irá transformar as medidas em uma superfície.</p>
+<p>O WGS 84 foi criado para ser um sistema de posicionamento global, usando
+o sistema de coordenadas geográficas (lat/lon) para localização.</p>
+<p>O WGS84, que é um datum, mas também pode atuar como o tipo de sistema de
+coordenada geográfica, é muito conhecido também por ser o usado pelo <strong>GPS</strong>.</p>
+<p>Por representar essas informações, o WGS 84 compreende os seguinte elementos:
+elipsoide, datum horizontal e vertical, e sistema de coordenadas.</p>
+<p>O WGS 84 é um sistema geodético, assim como os chamados NAD 27 e NAD 83 (voltados
+à América do Norte).</p>
+<p>O <strong>SRID</strong> é o chamado <em>Spatial Reference IDentifier</em>, ou identificador espacial
+de referência, e é basicamente um identificador para um conjunto de informações
+relacionadas a CRS e projeção.</p>
+<p>Não existe um único identificador, mas provavelmente o mais conhecido é o
+<strong>epsg</strong>.</p>
+<p>Um exemplo utilizando os 2 últimos conceitos é o de que o epsg 4326 refere-se
+ao <em>WGS 84 - WGS84 - World Geodetic System 1984, used in GPS</em>, conforme
+pode ser pesquisado aqui: <a href="https://epsg.io/?q=4326">https://epsg.io/?q=4326</a></p>
+<p>Referências</p>
+<ul>
+<li><a href="https://gisgeography.com/wgs84-world-geodetic-system/">https://gisgeography.com/wgs84-world-geodetic-system/</a></li>
+</ul>
+<blockquote>
+<p>Obs: Os tópicos nos posts teóricos, de conceitos, foram retirados de um ótimo
+material e guia (não oficial) de estudo para o <em>GISP Exam</em>, que pode ser encontrado aqui:</p>
+</blockquote>
+<p><a href="https://www.gisci.org/Portals/0/PDF's/GISP%20Unofficial%20Study%20Guide%202019%20v2.pdf?ver=hWEX0NspSVz4XcX0FFf3YA%3d%3d">https://www.gisci.org/Portals/0/PDF's/GISP%20Unofficial%20Study%20Guide%202019%20v2.pdf?ver=hWEX0NspSVz4XcX0FFf3YA%3d%3d</a></p>
 
         </p>
     </div>

@@ -6,7 +6,34 @@
     <description>Recent content in conceitos fundamentais on Data thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/conceitos-fundamentais/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/conceitos-fundamentais/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Entendendo os dados de um raster - 1</title>
+      <link>http://mcarolinaa.github.io/posts/entendendo_raster_1/</link>
+      <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/entendendo_raster_1/</guid>
+      <description>Entendendo os dados de um raster   Ler um raster
+  Entendendo a array dos dados
+  Montando um raster
+  Ler um raster
+Operações com e entre rasters são bem comuns e importantes.
+No python, o uso do Gdal, numpy e pandas já permite a realização de muitas dessas operações.
+O código a seguir pega um raster (formato .tif), abre, pega informações sobre coordenadas e resolução e coloca as bandas (considerando a ordem já conhecida) em arrays, para ser usada em histogramas, scatterplots e outros.</description>
+    </item>
+    
+    <item>
+      <title>Conceitos Fundamentais em SIG - 3</title>
+      <link>http://mcarolinaa.github.io/posts/conceitos_fund_3/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/conceitos_fund_3/</guid>
+      <description>WGS 84, SRID integer e 4 distortions   O que é o WGS 84
+  O que é SRID integer
+  E o que são as 4 distorções (distortions)
+  WGS 84 refere-se ao World Geodetic System. Como já apontado nos tópicos anteriores, para identificarmos uma localização no planeta, precisamos inicialmente do datum, que irá &amp;ldquo;descrever&amp;rdquo; o formato do planeta, e um sistema de projeção, que irá transformar as medidas em uma superfície.</description>
+    </item>
+    
     <item>
       <title>Conceitos Fundamentais em SIG - 2</title>
       <link>http://mcarolinaa.github.io/posts/conceitos_fund_2/</link>
