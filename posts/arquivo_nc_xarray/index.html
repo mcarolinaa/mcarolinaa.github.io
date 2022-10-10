@@ -17,25 +17,25 @@
     
 
     
-    <title>Entendendo os dados de um raster - 1</title>
-    <meta name="description" content="Entendendo os dados de um raster">
+    <title>Abre arquivo .nc e faz máscara/clip usando shapefile</title>
+    <meta name="description" content="Manipulação básica de arquivos .nc">
     <meta name="keywords" content='gis, conceitos fundamentais, python'>
 
-    <meta property="og:url" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
+    <meta property="og:url" content="http://mcarolinaa.github.io/posts/arquivo_nc_xarray/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Entendendo os dados de um raster - 1">
-    <meta property="og:description" content="Entendendo os dados de um raster">
+    <meta property="og:title" content="Abre arquivo .nc e faz máscara/clip usando shapefile">
+    <meta property="og:description" content="Manipulação básica de arquivos .nc">
     <meta property="og:image" content="/images/via_lactea.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Entendendo os dados de um raster - 1">
-    <meta name="twitter:description" content="Entendendo os dados de um raster">
-    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
-    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
+    <meta name="twitter:title" content="Abre arquivo .nc e faz máscara/clip usando shapefile">
+    <meta name="twitter:description" content="Manipulação básica de arquivos .nc">
+    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/arquivo_nc_xarray/">
+    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/arquivo_nc_xarray/">
     <meta name="twitter:image" content="/images/via_lactea.jpg">
 
     
-    <link rel="canonical" href="http://mcarolinaa.github.io/posts/entendendo_raster_1/" />
+    <link rel="canonical" href="http://mcarolinaa.github.io/posts/arquivo_nc_xarray/" />
 
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -156,10 +156,10 @@
     <div class="post container">
 
     <div class="post-header-section">
-        <h1>Entendendo os dados de um raster - 1</h1>
-        <small role="doc-subtitle">Entendendo os dados de um raster</small>
+        <h1>Abre arquivo .nc e faz máscara/clip usando shapefile</h1>
+        <small role="doc-subtitle">Manipulação básica de arquivos .nc</small>
         <p class="post-date">
-            March 10, 2022
+            October 10, 2022
         </p>
 
         <ul class="post-tags">
@@ -175,64 +175,98 @@
 
     <div class="post-content">
         <p>
-            <h1 id="características-básicas-de-um-arquivo-raster-e-como-entendê-las">Características básicas de um arquivo raster e como entendê-las</h1>
-<p>Passos para isso:</p>
+            <h1 id="manipulação-de-arquivo-nc-usando-shapefile">Manipulação de arquivo .nc usando shapefile</h1>
 <ul>
 <li>
-<p>Ler um raster</p>
+<p>Arquivo .nc</p>
 </li>
 <li>
-<p>Entendendo a array dos dados</p>
+<p>Libraries</p>
 </li>
 <li>
-<p>Montando um raster</p>
+<p>Abre arquivo .nc e cria máscara e clip usando arquivo .shp</p>
 </li>
 </ul>
-<p><strong>Ler um raster</strong></p>
-<p>Operações com e entre rasters são bem comuns e importantes nas análises espaciais.</p>
-<p>No python, o uso do GDAL, numpy e pandas já permitem a realização de muitas dessas
-operações.</p>
-<p>Mesmo sendo mais verboso, a vantagem aqui é compreender como a maior parte dos pacotes
-de GIS fornecem informações básicas, como resolução espacial, número de pixels e outros.</p>
-<p>O código a seguir pega um raster (formato .tif), abre, pega informações sobre
-coordenadas e resolução e coloca as bandas (considerando a ordem já conhecida)
-em arrays, para ser usada em histogramas, scatterplots e outros.</p>
+<p><strong>Arquivo .nc</strong></p>
+<p>Os arquivos .nc ou <em>NetCDF</em> (Network Common Data Form) files são estruturas usadas para armazenadas grandes quantidades
+de informação.</p>
+<p>O formato usado é o <em>array oriented</em>, e o tipo ou formato é o chamado <em>scientific binary data</em>,
+e considerado <em>machine-independent</em>.</p>
+<p>Por essas razões, esse é um tipo de arquivo muito comum de encontrarmos dados ambientais, como clima (e suas diversas variáveis),
+e que acaba sendo o formato disponibilizado por diversas instituições, como por exemplo
+dados climáticos disponinilizados pela <a href="https://data.giss.nasa.gov/gistemp/">NASA</a> para dados em grade.</p>
+<p><strong>Libraries</strong></p>
+<p>No python, há mais de uma maneira de trabalhar com arquivos .nc. O próprio GDAL
+permite isso.</p>
+<p>A library xarray é outra ótima opção. Foi feita justamente para trabalhar com
+multi-dimensional arrays, de maneira bem simplificada (considerando que são
+arquivos relativamente complexos, e que podem ter muitas dimensões de variáveis).</p>
+<p>A documentação é bem completa, e pode ser encontrada <a href="https://docs.xarray.dev/en/stable/index.html">aqui</a>.</p>
+<p>Uma parte bem interessante da página do xarray é a seção <em>How do I&hellip;</em>, (veja <a href="https://docs.xarray.dev/en/stable/howdoi.html">aqui</a> que já traz
+uma série de dúvidas (que acredito serem bem comuns) com os respectivos métodos.</p>
+<p><strong>Abre arquivo .nc e cria máscara e clip usando arquivo .shp</strong></p>
+<p>A seguir, passos para abrir um arquivo .nc, ajustar crs, abrir .shp, ajustar crs
+e usar o arquivo vetorial para selecionar e clipar parte do arquivo .nc.</p>
 <pre tabindex="0"><code>import numpy as np
-from osgeo import gdal
+import geopandas as gpd
 import matplotlib.pyplot as plt
-import seaborn as sn
+import rioxarray 
+import xarray as xr
+from shapely.geometry import mapping
 
-# Abre
-path_raster = 'path/do/raster.tif'
-raster = gdal.Open(path_raster)
 
-# Guarda algumas informações importantes
-gt = raster.GetGeoTransform() # equivalente ao Affine do rasterio
-res = gt[1] # resolução espacial
-xmin = gt[0] # inferior esquerdo
-ymax = gt[3] # superior direito
-xsize = raster.RasterXSize # núm de cols
-ysize = raster.RasterYSize # núm de linhas
-xstart = xmin +res/2
-ystart = ymax - res/2
+# path 
+p = 'path/to/directory'
 
-# Pega bandas e coloca em arrays flatten (p/ certas análises e visualizações)
-# para ficar com a array multidimensional, excluir o .flatten()
-blue = raster.GetRasterBand(1).ReadAsArray().flatten()
-green = raster.GetRasterBand(2).ReadAsArray().flatten()
-red = raster.GetRasterBand(3).ReadAsArray().flatten()
-redg = raster.GetRasterBand(4).ReadAsArray().flatten()
-nir = raster.GetRasterBand(5).ReadAsArray().flatten()
+# le o .nc
+rain = xr.open_dataset(p + 'prec_daily_UT_Brazil_v2.1_20100101_20151231.nc', decode_coords=&quot;all&quot;)
 
-# ao usar GDAL, sempre fechar raster
-raster = None
+# checar se há crs e caso não haja, informar
+rain.prec.rio.crs # não há
 
-# faz histograma de uma banda
-plt.figure(figsize=(9,7))
-sn.histplot(redg, color='red')
-plt.title('Red-Edge Band')
-plt.show()
-</code></pre>
+</code></pre><p>As principais características do arquivo .nc são vistas a seguir:</p>
+<p><img src="/posts/pics/infos_nc.png" alt="Informações do arquivo .nc"></p>
+<pre tabindex="0"><code># informa crs e dimensoes espaciais
+rain.rio.write_crs(
+    &quot;epsg:4326&quot;,inplace=True,
+).rio.set_spatial_dims(
+    x_dim=&quot;longitude&quot;, y_dim=&quot;latitude&quot;, inplace=True,
+).rio.write_coordinate_system(inplace=True)
+
+# checa visual de 1 dia
+rain.prec[0].plot();
+
+</code></pre><p><img src="/posts/pics/pais_1dia.png" alt="Um dia de dados do arquivo .nc"></p>
+<pre tabindex="0"><code># le shapefile p/ mask e clip no .nc
+mt = gpd.read_file(p + 'MT_UF_2021/MT_UF_2021.shp')
+
+# vem com crs diferente, deixar td no lat/long
+# mt.crs
+mt.to_crs('epsg:4326', inplace=True)
+
+# checa crs, devem ser iguais
+print(mt.crs)
+print(rain.rio.crs)
+
+# clipa o .nc usando o .shp
+# c/ o drop=False, apenas irá colocar Nan nas celulas que nao correspondem ao local .shp
+clipped =rain.rio.clip(mt.geometry.apply(mapping), mt.crs, drop=True)
+
+# checa visual
+clipped.prec[0].plot();
+</code></pre><p><img src="/posts/pics/mt_1dia.png" alt="Clipe do arquivo .nc"></p>
+<p>Fontes de dados:</p>
+<p>Foram usados dados de chuva em grade (Xavier et al. 2016) e arquivo shapefile do estado do
+Mato Grosso, disponibilizado pelo IBGE:</p>
+<ul>
+<li>
+<p>Xavier, A.C.; King, C.W.; Scanlon, B.R. 2016. Daily gridded meteorological variables in Brazil (1980–2013). International Journal of Climatology 36: 2644-2659.</p>
+</li>
+<li>
+<p><a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html?=&amp;t=acesso-ao-produto">Malha Municipal IBGE</a></p>
+</li>
+</ul>
+
         </p>
     </div>
 </div>
