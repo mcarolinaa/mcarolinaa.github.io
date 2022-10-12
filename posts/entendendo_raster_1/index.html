@@ -18,21 +18,21 @@
 
     
     <title>Entendendo os dados de um raster - 1</title>
-    <meta name="description" content="Entendendo os dados de um raster">
+    <meta name="description" content="Entendendo alguns dados básicos de um raster">
     <meta name="keywords" content='gis, conceitos fundamentais, python'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Entendendo os dados de um raster - 1">
-    <meta property="og:description" content="Entendendo os dados de um raster">
-    <meta property="og:image" content="/images/via_lactea.jpg">
+    <meta property="og:description" content="Entendendo alguns dados básicos de um raster">
+    <meta property="og:image" content="/images/plant_close.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Entendendo os dados de um raster - 1">
-    <meta name="twitter:description" content="Entendendo os dados de um raster">
+    <meta name="twitter:description" content="Entendendo alguns dados básicos de um raster">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
-    <meta name="twitter:image" content="/images/via_lactea.jpg">
+    <meta name="twitter:image" content="/images/plant_close.jpg">
 
     
     <link rel="canonical" href="http://mcarolinaa.github.io/posts/entendendo_raster_1/" />
@@ -58,7 +58,7 @@
         
         <div class="avatar">
             <a href="http://mcarolinaa.github.io/">
-                <img src="/images/via_lactea.jpg" alt="avatar" />
+                <img src="/images/plant_close.jpg" alt="avatar" />
             </a>
         </div>
         
@@ -157,7 +157,7 @@
 
     <div class="post-header-section">
         <h1>Entendendo os dados de um raster - 1</h1>
-        <small role="doc-subtitle">Entendendo os dados de um raster</small>
+        <small role="doc-subtitle">Entendendo alguns dados básicos de um raster</small>
         <p class="post-date">
             March 10, 2022
         </p>
@@ -182,19 +182,26 @@
 <p>Ler um raster</p>
 </li>
 <li>
-<p>Entendendo a array dos dados</p>
+<p>Entendendo os dados</p>
 </li>
 <li>
-<p>Montando um raster</p>
+<p>Visualiza</p>
 </li>
 </ul>
 <p><strong>Ler um raster</strong></p>
 <p>Operações com e entre rasters são bem comuns e importantes nas análises espaciais.</p>
-<p>No python, o uso do GDAL, numpy e pandas já permitem a realização de muitas dessas
+<p>No python, o uso do <strong>GDAL e numpy</strong> já permite a realização de muitas dessas
 operações.</p>
-<p>Mesmo sendo mais verboso, a vantagem aqui é compreender como a maior parte dos pacotes
-de GIS fornecem informações básicas, como resolução espacial, número de pixels e outros.</p>
-<p>O código a seguir pega um raster (formato .tif), abre, pega informações sobre
+<p>O uso do GDAL e entendimento de sua documentação é mais complexo e difícil, especialmente
+no início. Porém possui a vantagem de que acabamos compreendendo melhor o porque das coisas.
+Além disso, como a maior parte dos pacotes de análises espaciais são baseados do uso do GDAL
+(de maneira mais simplificada), conseguimos ter melhor entendimento sobre o que cada função
+realmente faz.</p>
+<p>Ao abrirmos um raster, nos deparamos com algums informações básicas e importantes
+para que possamos entender melhor o contexto daquela imagem.</p>
+<p>Algumas dessas informações referem-se às coordenadas de algum ponto inicial,
+resolução espacial, sistema de coordenadas geográficas, etc.</p>
+<p>O código a seguir pega um raster (em formato .tif), abre, pega informações sobre
 coordenadas e resolução e coloca as bandas (considerando a ordem já conhecida)
 em arrays, para ser usada em histogramas, scatterplots e outros.</p>
 <pre tabindex="0"><code>import numpy as np
@@ -203,36 +210,86 @@ import matplotlib.pyplot as plt
 import seaborn as sn
 
 # Abre
-path_raster = 'path/do/raster.tif'
-raster = gdal.Open(path_raster)
+p = 'directory/path/'
+raster = gdal.Open(p + 'raster_name.tif')
 
-# Guarda algumas informações importantes
+# Guardando algumas informações importantes:
 gt = raster.GetGeoTransform() # equivalente ao Affine do rasterio
-res = gt[1] # resolução espacial
-xmin = gt[0] # inferior esquerdo
-ymax = gt[3] # superior direito
+xmin = gt[0] # x coord do canto superior esquerdo, do pixel superior esquerdo
+pxw = gt[1] # resolução espacial (largura pixel) (w-e)
+ymax = gt[3] # y coord do canto superior esquerdo, do pixel superior esquerdo
+pxh = gt[5] # altura pixel (n-s, por isso valor negativo)
+# gt[2] e gt[4] são as rotações de linha e col (geralmente = 0)
+
 xsize = raster.RasterXSize # núm de cols
 ysize = raster.RasterYSize # núm de linhas
-xstart = xmin +res/2
-ystart = ymax - res/2
 
-# Pega bandas e coloca em arrays flatten (p/ certas análises e visualizações)
-# para ficar com a array multidimensional, excluir o .flatten()
-blue = raster.GetRasterBand(1).ReadAsArray().flatten()
-green = raster.GetRasterBand(2).ReadAsArray().flatten()
-red = raster.GetRasterBand(3).ReadAsArray().flatten()
-redg = raster.GetRasterBand(4).ReadAsArray().flatten()
-nir = raster.GetRasterBand(5).ReadAsArray().flatten()
+# Infos p/ caso precise trabalhar com tamanho desse raster (ou outro igual)
+# ex, refazer um raster similar
+xstart = xmin + pxw/2 # w-e
+ystart = ymax + pxh/2 # n-s
 
-# ao usar GDAL, sempre fechar raster
-raster = None
+</code></pre><p><strong>Entendendo os dados</strong></p>
+<p>Uma representação simples dessas informações pode ser entendida de acordo
+com a figura a seguir:</p>
+<p><img src="/posts/pics/dados_raster.png" alt="Informações do arquivo raster"></p>
+<p>Os dados do raster também podem ser visualizados com alguns pequenos ajustes
+nessa fase exploratória inicial.</p>
+<p>Mascarando os nodata values (aquilo que está dentro da array, mas não é de fato
+a imagem, como no esquema acima), e plotando para checar as bandas.</p>
+<p>Nesse caso, tenho um raster de 4 bandas.</p>
+<p><strong>Visualiza</strong></p>
+<pre tabindex="0"><code>nodata = raster.GetRasterBand(1).GetNoDataValue()
+data = raster.ReadAsArray()
+ds = None
 
-# faz histograma de uma banda
-plt.figure(figsize=(9,7))
-sn.histplot(redg, color='red')
-plt.title('Red-Edge Band')
+data = np.ma.masked_values(data, nodata)
+
+# Raster com 4 bandas (.shape[0])
+ys = data.shape[1]
+xs = data.shape[2]
+ulx, xres, _, uly, _, yres = gt
+extent = [ulx, ulx+xres*xs, uly, uly+yres*ys]
+
+fig, ax = plt.subplots(figsize=(5,6), constrained_layout=True)
+
+im = ax.imshow(data[0], extent=extent) # Blue band é a primeira
+cb = fig.colorbar(im, shrink=.5)
+ax.axes.xaxis.set_visible(False)
+ax.axes.yaxis.set_visible(False)
+cb.set_label('Blue band')
+
+</code></pre><p>Tenho a imagem de duas das bandas:</p>
+<p><img src="/posts/pics/blue_band.png" alt="Informações do arquivo raster"></p>
+<pre tabindex="0"><code>fig, ax = plt.subplots(figsize=(5,6), constrained_layout=True)
+
+im = ax.imshow(data[3], extent=extent) 
+cb = fig.colorbar(im, shrink=.5)
+ax.axes.xaxis.set_visible(False)
+ax.axes.yaxis.set_visible(False)
+cb.set_label('Near infrared band')
+</code></pre><p><img src="/posts/pics/nir_band.png" alt="Informações do arquivo raster"></p>
+<p>Outra forma interessante de se avaliar inicialmente os dados de um raster,
+é pelo uso de <strong>histogramas</strong>.</p>
+<p>Útil para checar o intervalo dos dados de reflectância, fazer um comparativo
+entre bandas e outros.</p>
+<pre tabindex="0"><code># Como já temos a máscara do nodata, e os dados já são array,
+# apenas coloca em formato flat
+blue = data[0].flatten()
+green = data[1].flatten()
+red = data[2].flatten()
+nir = data[3].flatten()
+
+# faz histograma de todas as bandas
+plt.figure(figsize=(4,3))
+sn.histplot(blue, color='blue')
+sn.histplot(red, color='red')
+sn.histplot(green, color='green')
+sn.histplot(nir, color='purple')
+plt.title('Blue, Green, Red and NIR bands')
 plt.show()
-</code></pre>
+</code></pre><p><img src="/posts/pics/hist_all.png" alt="Informações do arquivo raster"></p>
+
         </p>
     </div>
 </div>

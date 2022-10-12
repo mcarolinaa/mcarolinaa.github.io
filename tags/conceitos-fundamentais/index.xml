@@ -29,12 +29,12 @@ O formato usado é o array oriented, e o tipo ou formato é o chamado scientific
       <guid>http://mcarolinaa.github.io/posts/entendendo_raster_1/</guid>
       <description>Características básicas de um arquivo raster e como entendê-las Passos para isso:
   Ler um raster
-  Entendendo a array dos dados
-  Montando um raster
+  Entendendo os dados
+  Visualiza
   Ler um raster
 Operações com e entre rasters são bem comuns e importantes nas análises espaciais.
-No python, o uso do GDAL, numpy e pandas já permitem a realização de muitas dessas operações.
-Mesmo sendo mais verboso, a vantagem aqui é compreender como a maior parte dos pacotes de GIS fornecem informações básicas, como resolução espacial, número de pixels e outros.</description>
+No python, o uso do GDAL e numpy já permite a realização de muitas dessas operações.
+O uso do GDAL e entendimento de sua documentação é mais complexo e difícil, especialmente no início.</description>
     </item>
     
     <item>
