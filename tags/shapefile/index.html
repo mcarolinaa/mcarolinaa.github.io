@@ -17,25 +17,25 @@
     
 
     
-    <title>Operações com raster GDAL e python - 3</title>
+    <title>shapefile</title>
     <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
-    <meta name="keywords" content='gis, python, raster, GDAL'>
+    <meta name="keywords" content=''>
 
-    <meta property="og:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_3/">
+    <meta property="og:url" content="http://mcarolinaa.github.io/tags/shapefile/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Operações com raster GDAL e python - 3">
+    <meta property="og:title" content="shapefile">
     <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="og:image" content="/images/plant_close.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Operações com raster GDAL e python - 3">
+    <meta name="twitter:title" content="shapefile">
     <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
-    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/rasters_gdal_3/">
-    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_3/">
+    <meta property="twitter:domain" content="http://mcarolinaa.github.io/tags/shapefile/">
+    <meta property="twitter:url" content="http://mcarolinaa.github.io/tags/shapefile/">
     <meta name="twitter:image" content="/images/plant_close.jpg">
 
     
-    <link rel="canonical" href="http://mcarolinaa.github.io/posts/rasters_gdal_3/" />
+    <link rel="canonical" href="http://mcarolinaa.github.io/tags/shapefile/" />
 
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -153,119 +153,22 @@
     </nav>
 </header>
 <main id="content">
-    <div class="post container">
+    <div class="container list-posts">
 
-    <div class="post-header-section">
-        <h1>Operações com raster GDAL e python - 3</h1>
-        <small role="doc-subtitle"></small>
-        <p class="post-date">
-            October 10, 2021
-        </p>
-
-        <ul class="post-tags">
-        
-            <li class="post-tag"><a href="/tags/gis">gis</a></li>
-        
-            <li class="post-tag"><a href="/tags/python">python</a></li>
-        
-            <li class="post-tag"><a href="/tags/raster">raster</a></li>
-        
-            <li class="post-tag"><a href="/tags/gdal">GDAL</a></li>
-        
-        </ul>
-    </div>
-
-    <div class="post-content">
-        <p>
-            <h1 id="manipulações-básicas-de-arquivos-raster-usando-gdal-e-python">Manipulações básicas de arquivos raster usando GDAL e python</h1>
-<p> </p>
-<ul>
-<li>Dividir (ou <em>split</em>) o raster em &ldquo;pedaços&rdquo; iguais</li>
-</ul>
-<p> </p>
-<p>O <strong>GDAL</strong> é uma <em>translator library</em> para dados vetoriais e rasteriais, com
-modelos próprios para trabalhar esses tipos de dados.</p>
-<p>Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados
-no GDAL.
-Acredito que vale muito a pena saber usá-la até para entender melhor
-a estrutura dos dados no contexto de GIS.</p>
-<p>O GDAL tem API para diversas linguagens, incluindo o python.
-A API para python pode ser consultada <a href="https://gdal.org/api/python.html">aqui</a></p>
-<p>Uma operação interessante e comum é o corte de um raster de acordo com
-área desejada/pré definida.</p>
-<p>Em algumas ocasiões, pode ser que seja necessário dividir uma área em subáreas.
-Para delimitação de áreas experimentais, coleta de amostras,
-entre outros.</p>
-<p>Nesse caso, a operação a seguir pode ser bastante útil.</p>
-<h2 id="libraries">Libraries</h2>
-<pre tabindex="0"><code>from osgeo import gdal
-import numpy as np
-import matplotlib.pyplot as plt
-
-</code></pre><p> </p>
-<p>No exemplo, continuo usando o mesmo raster (NDVI) usado no texto de
-manipulação de rasters com GDAL - 1.</p>
-<p><img src="/posts/pics/ndvi.png" alt="Informações do arquivo raster"></p>
-<h2 id="abre-e-faz-split-do-raster">Abre e faz split do raster</h2>
-<pre tabindex="0"><code>ds = gdal.Open(p + file) 
-gt = ds.GetGeoTransform() 
-proj = ds.GetProject
-
-xmin = gt[0]
-ymax = gt[3]
-res = gt[1]
-
-xlen = res * ds.RasterXSize
-ylen = res * ds.RasterYSize
-
-div = 3 # split em 9 pedaços, igualmente espaçados
-
-xsize = xlen/div
-ysize = ylen/div
-
-xsteps = [xmin + xsize * i for i in range(div + 1)]
-ysteps = [ymax - ysize * i for i in range(div + 1)]
-
-for i in range(div):
-    for j in range(div):
-        xmin = xsteps[i]
-        xmax = xsteps[i+1]
-        ymax = ysteps[j]
-        ymin = ysteps[j+1]
-
-        print('xmin: '+str(xmin))
-        print('xmax: ' + str(xmax))
-        print('ymin: ' + str(ymin))
-        print('ymax: ' + str(ymax))
-        print('\n')
-
-        gdal.Warp('ndvi'+str(i)+str(j)+'.tif',
-                  ds,
-                  outputBounds = (xmin, ymin, xmax, ymax),
-                  dstNodata = -9999)
-        
-ds = None
-</code></pre><p> </p>
-<h2 id="visualiza">Visualiza</h2>
-<p>Para entender o que aconteceu, a imagem abaixo (vinda do QGIS) mostra
-algumas das partes do raster (todas as partes constituem a totalidade
-do raster original).</p>
-<p><img src="/posts/pics/ndvi_pieces.png" alt="Informações do arquivo raster"></p>
-<p>Obs: a escala de cor foi ajustada para cada parte do raster, por isso
-não &ldquo;conversam&rdquo; entre si.</p>
-<p> </p>
-<blockquote>
-<p>Obs: Usei como fonte o canal do youtube <em>Making Sense Remotely</em>,
-que tem ótimos tutoriais de GIS para R e python.</p>
-</blockquote>
-
-        </p>
-    </div>
-</div>
-
-
+    <h1 class="list-title">shapefile</h2>
 
     
+
+    <h2 class="posts-year">2022</h2><article class="post-title">
+    <a href="/posts/arquivo_nc_xarray/" class="post-link">Utilizando netCDF</a>
+    <div class="flex-break"></div>
+    <span class="post-date">October 10, 2022</span>
+</article>
+
+    
+
+</div>
+
 
         </main><footer class="footer">
     <span>&copy; 2022 Data thoughts</span>

@@ -18,18 +18,18 @@
 
     
     <title>Conceitos Fundamentais em SIG - 2</title>
-    <meta name="description" content="Map Projection, UTM, Horizontal and Vertical Datum">
+    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta name="keywords" content='gis, conceitos fundamentais'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_2/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Conceitos Fundamentais em SIG - 2">
-    <meta property="og:description" content="Map Projection, UTM, Horizontal and Vertical Datum">
+    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="og:image" content="/images/plant_close.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Conceitos Fundamentais em SIG - 2">
-    <meta name="twitter:description" content="Map Projection, UTM, Horizontal and Vertical Datum">
+    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/conceitos_fund_2/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_2/">
     <meta name="twitter:image" content="/images/plant_close.jpg">
@@ -157,7 +157,7 @@
 
     <div class="post-header-section">
         <h1>Conceitos Fundamentais em SIG - 2</h1>
-        <small role="doc-subtitle">Map Projection, UTM, Horizontal and Vertical Datum</small>
+        <small role="doc-subtitle"></small>
         <p class="post-date">
             October 31, 2021
         </p>
@@ -174,6 +174,7 @@
     <div class="post-content">
         <p>
             <h1 id="map-projection-utm-horizontal-and-vertical-datum-navd88-geodetic-datum">Map Projection, UTM, Horizontal and Vertical Datum, NAVD88, Geodetic Datum</h1>
+<p> </p>
 <ul>
 <li>
 <p>O que é Map Projection</p>
@@ -191,11 +192,14 @@
 <p>O que é Geodetic Datum</p>
 </li>
 </ul>
+<p> </p>
+<h2 id="map-projection">Map projection</h2>
 <p>Sendo o <em>Datum</em> uma ferramenta para que entendamos a localização das coordenadas
 de features num elipsoide, a <strong>map projection</strong> ou projeção do mapa, é o processo
 posterior para que possamos transferir essa localização para um mapa plano.</p>
 <p>Ou seja, é uma maneira de renderizarmos localizações de um superfície curva da Terra
 para uma superfície plana de um mapa.</p>
+<h2 id="utm">UTM</h2>
 <p>Nesse mesmo contexto, quando estamos analisando dados geoespaciais, é comum
 trabalharmos com o <strong>UTM</strong> (Universal Transversal Mercator), um sistema de grid
 de coordenadas planas para que possamos definir uma <em>map projection</em>.</p>
@@ -216,6 +220,7 @@ Possui 2 parâmetros, o raio ao Equador, e a distância do centro a um dos pólo
 <p>O modelo geoide é mais dinâmico, e considera as ondulações naturais do planeta.
 A superfície do planeta é de fato irregular, com elevações e depressões, que o modelo
 tenta considerar.</p>
+<h2 id="horizontal-e-vertical-datum">Horizontal e Vertical Datum</h2>
 <p>Considerando que elipsoide e geoide são duas maneiras de tentar descrever o formato
 do planeta, é aí que entram os Datuns, horizontais ou verticais.</p>
 <p>O <strong>datum horizontal</strong> usa o modelo elipsoide e associa seu centro a um ponto de
@@ -232,32 +237,33 @@ os baseados em superfícies derivadas de marés <em>Tidal Datums</em>, e os tri-
 <em>3-D Datums</em>.</p>
 <p>Importante lembrar que ao analisarmos bancos de dados de maneira comparativa,
 eles devem estar referenciados no mesmo Datum.</p>
+<h2 id="navd88">NAVD88</h2>
 <p><strong>NAVD88</strong> refere-se ao <em>North American Vertical Datum of 1988</em>, é o datum vertical
 atual usado nos EUA, que logo será substituído por uma versão mais nova, mais focada
 no uso de dados provenientes de GNSS.</p>
+<h2 id="geodetic-datum">Geodetic datum</h2>
 <p>Como já citado anteriormente, os Datum têm como principal função oferecer a localização
 de certo ponto na superfície terrestre (por exemplo por meio de valores de lat/lon).
 Assim como os modelos elipsoide e geoide atuam na tentativa de &ldquo;descrever&rdquo; o formato
 da Terra, sendo que a contribuição de cada (elipsoide, superfície 2D) e geoide
 (valor Z) torna-se bem importante. A combinação disso pode ser entendidad como o que
 representa o <strong>geodetic datum</strong> ou apenas <strong>datum</strong>.</p>
-<p>Referências</p>
+<p> </p>
+<p>Referências:</p>
 <ul>
 <li>
-<p><a href="https://giscourses.cfans.umn.edu/sites/giscourses.cfans.umn.edu/files/5480chapter3_projections_excerpt.pdf">https://giscourses.cfans.umn.edu/sites/giscourses.cfans.umn.edu/files/5480chapter3_projections_excerpt.pdf</a></p>
+<p><a href="https://epsg.io/">EPSG</a></p>
 </li>
 <li>
-<p><a href="https://epsg.io/">https://epsg.io/</a></p>
-</li>
-<li>
-<p><a href="https://vector.geospatial.science/textbook/section-five-geodetic-datums-combining-reference-ellipsoids-and-geoids">https://vector.geospatial.science/textbook/section-five-geodetic-datums-combining-reference-ellipsoids-and-geoids</a></p>
+<p><a href="https://vector.geospatial.science/textbook/chapter-two-navigating-our-world">LearnGIS</a></p>
 </li>
 </ul>
+<p> </p>
 <blockquote>
 <p>Obs: Os tópicos nos posts teóricos, de conceitos, foram retirados de um ótimo
-material e guia (não oficial) de estudo para o <em>GISP Exam</em>, que pode ser encontrado aqui:</p>
+material e guia (não oficial) de estudo para o <em>GISP Exam</em>,
+que pode ser encontrado <a href="https://www.gisci.org/Portals/0/PDF's/GISP%20Unofficial%20Study%20Guide%202019%20v2.pdf?ver=hWEX0NspSVz4XcX0FFf3YA%3d%3d">aqui</a></p>
 </blockquote>
-<p><a href="https://www.gisci.org/Portals/0/PDF's/GISP%20Unofficial%20Study%20Guide%202019%20v2.pdf?ver=hWEX0NspSVz4XcX0FFf3YA%3d%3d">https://www.gisci.org/Portals/0/PDF's/GISP%20Unofficial%20Study%20Guide%202019%20v2.pdf?ver=hWEX0NspSVz4XcX0FFf3YA%3d%3d</a></p>
 
         </p>
     </div>

@@ -18,18 +18,18 @@
 
     
     <title>Conceitos Fundamentais em SIG - 3</title>
-    <meta name="description" content="WGS 84, SRID integer e 4 distortions">
+    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta name="keywords" content='gis, conceitos fundamentais'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_3/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Conceitos Fundamentais em SIG - 3">
-    <meta property="og:description" content="WGS 84, SRID integer e 4 distortions">
+    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="og:image" content="/images/plant_close.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Conceitos Fundamentais em SIG - 3">
-    <meta name="twitter:description" content="WGS 84, SRID integer e 4 distortions">
+    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/conceitos_fund_3/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_3/">
     <meta name="twitter:image" content="/images/plant_close.jpg">
@@ -157,7 +157,7 @@
 
     <div class="post-header-section">
         <h1>Conceitos Fundamentais em SIG - 3</h1>
-        <small role="doc-subtitle">WGS 84, SRID integer e 4 distortions</small>
+        <small role="doc-subtitle"></small>
         <p class="post-date">
             November 2, 2021
         </p>
@@ -173,7 +173,8 @@
 
     <div class="post-content">
         <p>
-            <h1 id="wgs-84-srid-integer-e-4-distortions">WGS 84, SRID integer e 4 distortions</h1>
+            <h1 id="wgs-84-e-srid-integer">WGS 84 e SRID integer</h1>
+<p> </p>
 <ul>
 <li>
 <p>O que é o WGS 84</p>
@@ -181,10 +182,9 @@
 <li>
 <p>O que é SRID integer</p>
 </li>
-<li>
-<p>E o que são as 4 distorções (<em>distortions</em>)</p>
-</li>
 </ul>
+<p> </p>
+<h2 id="wgs-84">WGS 84</h2>
 <p><strong>WGS 84</strong> refere-se ao <em>World Geodetic System</em>.
 Como já apontado nos tópicos
 anteriores, para identificarmos uma localização no planeta, precisamos inicialmente
@@ -198,6 +198,8 @@ coordenada geográfica, é muito conhecido também por ser o usado pelo <strong>
 elipsoide, datum horizontal e vertical, e sistema de coordenadas.</p>
 <p>O WGS 84 é um sistema geodético, assim como os chamados NAD 27 e NAD 83 (voltados
 à América do Norte).</p>
+<p> </p>
+<h2 id="srid-integer">SRID integer</h2>
 <p>O <strong>SRID</strong> é o chamado <em>Spatial Reference IDentifier</em>, ou identificador espacial
 de referência, e é basicamente um identificador para um conjunto de informações
 relacionadas a CRS e projeção.</p>
@@ -205,16 +207,24 @@ relacionadas a CRS e projeção.</p>
 <strong>epsg</strong>.</p>
 <p>Um exemplo utilizando os 2 últimos conceitos é o de que o epsg 4326 refere-se
 ao <em>WGS 84 - WGS84 - World Geodetic System 1984, used in GPS</em>, conforme
-pode ser pesquisado aqui: <a href="https://epsg.io/?q=4326">https://epsg.io/?q=4326</a></p>
-<p>Referências</p>
+pode ser pesquisado <a href="https://epsg.io/?q=4326">aqui</a></p>
+<p>O epsg está bem presente no dia-dia de quem trabalha com produtos geoespaciais
+(utilizando ou criando).</p>
+<p>Por exemplo, trabalhar com imagens de satélite de empresa que fornece os
+produtos para seu local, e os mesmos são entregues no <strong>epsg 32721</strong>.
+Esse epsg refere-se ao Geodetic CRS WGS 84 / UTM zone 21S.
+Se você procurar na página do <a href="https://epsg.io/32721">epsg.io</a>, verá inclusive a representação
+da &ldquo;faixa&rdquo; do planeta a que ela se refere.</p>
+<p> </p>
+<p>Referências:</p>
 <ul>
-<li><a href="https://gisgeography.com/wgs84-world-geodetic-system/">https://gisgeography.com/wgs84-world-geodetic-system/</a></li>
+<li><a href="https://gisgeography.com/wgs84-world-geodetic-system">GIS Geography</a></li>
 </ul>
 <blockquote>
 <p>Obs: Os tópicos nos posts teóricos, de conceitos, foram retirados de um ótimo
-material e guia (não oficial) de estudo para o <em>GISP Exam</em>, que pode ser encontrado aqui:</p>
+material e guia (não oficial) de estudo para o <em>GISP Exam</em>,
+que pode ser encontrado <a href="https://www.gisci.org/Portals/0/PDF's/GISP%20Unofficial%20Study%20Guide%202019%20v2.pdf?ver=hWEX0NspSVz4XcX0FFf3YA%3d%3d">aqui</a></p>
 </blockquote>
-<p><a href="https://www.gisci.org/Portals/0/PDF's/GISP%20Unofficial%20Study%20Guide%202019%20v2.pdf?ver=hWEX0NspSVz4XcX0FFf3YA%3d%3d">https://www.gisci.org/Portals/0/PDF's/GISP%20Unofficial%20Study%20Guide%202019%20v2.pdf?ver=hWEX0NspSVz4XcX0FFf3YA%3d%3d</a></p>
 
         </p>
     </div>

@@ -18,18 +18,18 @@
 
     
     <title>Operações com raster GDAL e python - 2</title>
-    <meta name="description" content="Manipulações básicas de raster usando GDAL e python">
-    <meta name="keywords" content='gis, python, gdal'>
+    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="keywords" content='gis, python, raster, GDAL'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_2/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Operações com raster GDAL e python - 2">
-    <meta property="og:description" content="Manipulações básicas de raster usando GDAL e python">
+    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="og:image" content="/images/plant_close.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Operações com raster GDAL e python - 2">
-    <meta name="twitter:description" content="Manipulações básicas de raster usando GDAL e python">
+    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/rasters_gdal_2/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_2/">
     <meta name="twitter:image" content="/images/plant_close.jpg">
@@ -157,9 +157,9 @@
 
     <div class="post-header-section">
         <h1>Operações com raster GDAL e python - 2</h1>
-        <small role="doc-subtitle">Manipulações básicas de raster usando GDAL e python</small>
+        <small role="doc-subtitle"></small>
         <p class="post-date">
-            October 26, 2021
+            October 5, 2021
         </p>
 
         <ul class="post-tags">
@@ -168,7 +168,9 @@
         
             <li class="post-tag"><a href="/tags/python">python</a></li>
         
-            <li class="post-tag"><a href="/tags/gdal">gdal</a></li>
+            <li class="post-tag"><a href="/tags/raster">raster</a></li>
+        
+            <li class="post-tag"><a href="/tags/gdal">GDAL</a></li>
         
         </ul>
     </div>
@@ -176,71 +178,78 @@
     <div class="post-content">
         <p>
             <h1 id="manipulações-básicas-de-arquivos-raster-usando-gdal-e-python">Manipulações básicas de arquivos raster usando GDAL e python</h1>
-<p>O <strong>GDAL</strong> é uma <em>translator library</em> para dados vetoriais e rasteriais, com
-modelos próprios para trabalhar esses dados.</p>
-<p>Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados
-no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor
-a estrutura dos dados no contexto de GIS.</p>
-<p>o GDAL tem API para diversas linguagens, incluindo o python.
-A API para python pode ser consultada aqui:</p>
-<p><a href="https://gdal.org/api/python.html">https://gdal.org/api/python.html</a></p>
-<p>Nesse post há rotina para as seguintes ações:</p>
+<p> </p>
 <ul>
 <li>
-<p>Reprojetar;</p>
+<p>Reprojetar raster;</p>
 </li>
 <li>
-<p>Resample;</p>
+<p>Fazer resample de raster;</p>
 </li>
 <li>
 <p>Clipar raster</p>
 </li>
 </ul>
+<p> </p>
+<p>O <strong>GDAL</strong> é uma <em>translator library</em> para dados vetoriais e rasteriais, com
+modelos próprios para trabalhar esses tipos de dados.</p>
+<p>Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados
+no GDAL.
+Acredito que vale muito a pena saber usá-la até para entender melhor
+a estrutura dos dados no contexto de GIS.</p>
+<p>O GDAL tem API para diversas linguagens, incluindo o python.
+A API para python pode ser consultada <a href="https://gdal.org/api/python.html">aqui</a></p>
+<p> </p>
 <p><strong>Resampling</strong> é uma operação na qual pegamos os dados (valores) do raster, tiramos
-do seu grid original, e colocamos em um novo grid (diferentes números de linhas
-e colunas).</p>
-<p>A <strong>Reprojeção</strong> acaba sendo semelhante, pois conta com um resampling feito em um grid
-de diferente CRS do raster original.</p>
+do seu grid original, e colocamos em um novo grid
+(outro tamanho de pixel: diferentes números de linhas e colunas).</p>
+<p>A <strong>Reprojeção</strong> acaba sendo algo semelhante, pois conta com um resampling feito
+em um grid de diferente CRS do raster original.</p>
 <p>Já a operação conhecida como <strong>clip</strong> é apenas cortar o raster usando, em geral,
 um arquivo vetorial (como shape por exemplo) como referência.</p>
-<h2 id="reprojetar-fazer-resample-e-clipar-o-raster">Reprojetar, fazer resample e clipar o raster</h2>
+<p> </p>
+<h2 id="reprojetar">Reprojetar</h2>
 <pre tabindex="0"><code>from osgeo import gdal
 import numpy as np
-import matplotlib.pyplot as plt
-import glob
-import subprocess
-</code></pre><p>Aqui feito de uma vez só pela praticidade.</p>
-<p>Abre e faz reprojeção.</p>
-<pre tabindex="0"><code>ds = gdal.Open('path_to_raster')
-array = ds.GetRasterBand(1).ReadAsArray()
-plt.imshow(array)
-plt.colorbar() # add a color scale
+
+ds = gdal.Open('path_to_raster')
+# (apenas p/ checar:)
 print(ds.GetGeoTransform()) # upper left corner, spatial resolution
 print(ds.GetProjection()) # proj system
 
+# Usar o método gdal.Warp, bem versátil p/ várias dessas operações
 dsReprj = gdal.Warp('nameRasterOutput.tif',
                     ds,
                     dstSRS = 'EPSG:4326') # epsg p/ o qual quero mudar
-</code></pre><p>Faz resample.</p>
+</code></pre><p> </p>
+<h2 id="resample">Resample</h2>
+<p>Nesse caso, tenho um raster de resolução espacial = 3m, e quero
+fazer um resampling para que ele passe a ter resolução espacial = 10m.</p>
 <pre tabindex="0"><code>dsRes = gdal.Warp('ndviRes.tif',
                   ds,
-                  xRes = 150, # modificando numero de linhas e colunas
-                  yRes = 150,
+                  xRes = 10, # modificando numero de linhas e colunas
+                  yRes = 10,
                   resampleAlg = 'bilinear') # Metodo. default: nearest neighbour
 
-</code></pre><p>E clipa o raster usando um arquivo vetorial (ex: .shp) de referência.</p>
-<pre tabindex="0"><code>dsClip = gdal.Warp('ndviClip.tif',
-                   ds,
-                   cutlineDSName = 'path_to_vector_file',
+</code></pre><p> </p>
+<h2 id="clip">Clip</h2>
+<p>Esse é um tipo de atividade bastante comum quando trabalhamos com arquivos
+rasteriais e vetorais. Para arquivos rasteriais, é comum usarmos um
+arquivo tipo shapefile para delimitar e recortar nossa área de interesse
+em um raster (ex: imagem de satélite) maior.</p>
+<pre tabindex="0"><code>dsClip = gdal.Warp('ndviClip.tif', # arquivo que será criado
+                   ds, # o raster que foi aberto anteriormente
+                   cutlineDSName = 'path_to_vector_file', # meu shapefile de referencia
                    cropToCutline = True, # clip to the extent of the vector file
                    dstNodata = np.nan)
-array = dsClip.GetRasterBand(1).ReadAsArray()
-plt.imshow(array)
-plt.colorbar()
-</code></pre><p>Não esquecer de fechar os rasters.</p>
-<pre tabindex="0"><code>ds = dsClip = dsRes = dsReprj = None
-</code></pre><p>Obs: Usei como fonte o canal <em>Making Sense Remotely</em>, que tem ótimos tutoriais
-de GIS para R e python.</p>
+
+# fechar
+ds = dsClip = dsRes = dsReprj = None
+</code></pre><p> </p>
+<blockquote>
+<p>Obs: Usei como fonte o canal do youtube <em>Making Sense Remotely</em>,
+que tem ótimos tutoriais de GIS para R e python.</p>
+</blockquote>
 
         </p>
     </div>

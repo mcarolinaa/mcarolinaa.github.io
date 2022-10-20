@@ -18,18 +18,18 @@
 
     
     <title>Conceitos Fundamentais em SIG - 1</title>
-    <meta name="description" content="Conceitos Fundamentais: Georreferenciamento, Pontos de controle, CRS e ITRS">
+    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta name="keywords" content='gis, conceitos fundamentais'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_1/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Conceitos Fundamentais em SIG - 1">
-    <meta property="og:description" content="Conceitos Fundamentais: Georreferenciamento, Pontos de controle, CRS e ITRS">
+    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="og:image" content="/images/plant_close.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Conceitos Fundamentais em SIG - 1">
-    <meta name="twitter:description" content="Conceitos Fundamentais: Georreferenciamento, Pontos de controle, CRS e ITRS">
+    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/conceitos_fund_1/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/conceitos_fund_1/">
     <meta name="twitter:image" content="/images/plant_close.jpg">
@@ -157,7 +157,7 @@
 
     <div class="post-header-section">
         <h1>Conceitos Fundamentais em SIG - 1</h1>
-        <small role="doc-subtitle">Conceitos Fundamentais: Georreferenciamento, Pontos de controle, CRS e ITRS</small>
+        <small role="doc-subtitle"></small>
         <p class="post-date">
             October 29, 2021
         </p>
@@ -174,6 +174,7 @@
     <div class="post-content">
         <p>
             <h1 id="georreferenciamento-pontos-de-controle-crs-e-itrs">Georreferenciamento, Pontos de Controle, CRS e ITRS</h1>
+<p> </p>
 <ul>
 <li>
 <p>O que é georreferenciamento</p>
@@ -182,15 +183,14 @@
 <p>O que são pontos de controle</p>
 </li>
 <li>
-<p>Como ambos estão interligados</p>
-</li>
-<li>
 <p>Conceito de CRS ou SRS</p>
 </li>
 <li>
 <p>Conceito de ITRS</p>
 </li>
 </ul>
+<p> </p>
+<h2 id="georreferenciamento">Georreferenciamento</h2>
 <p><strong>Georreferenciamento</strong> se refere ao processo de associar uma imagem/mapa a um sistema
 de coordenadas, ou seja, associar uma imagem a determinadas localizações num certo
 espaço físico.</p>
@@ -201,18 +201,19 @@ relação à sua localização. Porém outros tipos de informações, como algun
 de dados, figuras, fotos podem não possuir informações referentes à localização
 geográfica. E é aí que o processo de georreferenciamento pode ajudar a trazer
 uma adequada associação com o espaço geográfico a esses materiais.</p>
-<p>Os <strong>pontos de controle</strong></p>
+<h2 id="pontos-de-controle">Pontos de controle</h2>
 <p>O processo de georreferenciamento costuma se dar com o uso de uma camada referência,
 a qual está no sistema de coordenadas já desejado, e em geral possui a maior resolução
 espacial, a camada na qual queremos fazer o processo, e também costuma-se fazer o uso
 dos pontos de controle.</p>
-<p>Os pontos de controle são localizações, bem conhecidas e adequadamente localizadas,
+<p>Os <strong>pontos de controle</strong> são localizações, bem conhecidas e adequadamente localizadas,
 e que vão servir como um tipo de conexão entre a camada referência para alinhamento
 da camada na qual se deseja fazer o georreferenciamento.</p>
 <p>Esses pontos serão usados para o processo de transformação na camada que se deseja
 trazer para o local correto. Já a conexão entre o ponto de controle da camada
 referência e o ponto correspondente na camada a ser georreferenciada, chama-se
 par de pontos de controle.</p>
+<h2 id="srs-crs">SRS, CRS</h2>
 <p>O chamado <strong>spatial reference system (SRS)</strong> ou <strong>coordinate reference system (CRS)</strong>,
 às vezes entendidos como coisas diferentes, são na verdade sinônimos.</p>
 <p>Uma informação só pode ser considerada geoespacial se estiver acompanhada de uma
@@ -240,16 +241,18 @@ global, localização, são alguns que devem ser considerados nessa escolha.</p>
 <p>Uma maneira muito comum de transmitirmos as informações de CRS, estando de acordo com
 a ISO 19111, é o uso do <em>epsg</em> (um tipo de sistema de sintetização e descrição dessas
 informações, mas não o único).</p>
+<h2 id="itrs">ITRS</h2>
 <p>O <strong>ITRS</strong> ou International Terrestrial Reference System é um sistema desenvolvido
 para ser de fato geocêntrico. Tem origem no centro de massa de todo o planeta,
 incluindo oceanos e atmosfera. Sua unidade é o metro.
 Possui um <em>frame</em> derivado, International Terrestrial
 Reference Frame (ITRF).</p>
+<p>Referências:</p>
 <blockquote>
 <p>Obs: Os tópicos nos posts teóricos, de conceitos, foram retirados de um ótimo
-material e guia (não oficial) de estudo para o <em>GISP Exam</em>, que pode ser encontrado aqui:</p>
+material e guia (não oficial) de estudo para o <em>GISP Exam</em>,
+que pode ser encontrado <a href="https://www.gisci.org/Portals/0/PDF's/GISP%20Unofficial%20Study%20Guide%202019%20v2.pdf?ver=hWEX0NspSVz4XcX0FFf3YA%3d%3d">aqui</a></p>
 </blockquote>
-<p><a href="https://www.gisci.org/Portals/0/PDF's/GISP%20Unofficial%20Study%20Guide%202019%20v2.pdf?ver=hWEX0NspSVz4XcX0FFf3YA%3d%3d">https://www.gisci.org/Portals/0/PDF's/GISP%20Unofficial%20Study%20Guide%202019%20v2.pdf?ver=hWEX0NspSVz4XcX0FFf3YA%3d%3d</a></p>
 
         </p>
     </div>

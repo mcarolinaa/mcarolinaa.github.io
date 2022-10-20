@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xarray on Data thoughts</title>
+    <link>http://mcarolinaa.github.io/tags/xarray/</link>
+    <description>Recent content in xarray on Data thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/xarray/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Utilizando netCDF</title>
+      <link>http://mcarolinaa.github.io/posts/arquivo_nc_xarray/</link>
+      <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/arquivo_nc_xarray/</guid>
+      <description>Operações básicas de arquivos tipo .nc: abrir e clip usando shapefile    Um pouco sobre netCDF
+  Libraries usadas
+  Abre arquivo .nc e clipa usando arquivo shapefile
+   Um pouco sobre netCDF netCDF (Network Common Data Form) na verdade refere-se a um conjunto de libraries e tipos de dados, que permitem o uso e manipulação de arquivos do tipo array-oriented, normalmente contendo dados científicos, e multidimensionais.</description>
+    </item>
+    
+  </channel>
+</rss>

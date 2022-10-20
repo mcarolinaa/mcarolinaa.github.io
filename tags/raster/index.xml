@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>raster on Data thoughts</title>
+    <link>http://mcarolinaa.github.io/tags/raster/</link>
+    <description>Recent content in raster on Data thoughts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/raster/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Entendendo os dados de um raster (1)</title>
+      <link>http://mcarolinaa.github.io/posts/entendendo_raster_1/</link>
+      <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/entendendo_raster_1/</guid>
+      <description>Características básicas de um arquivo raster e como entendê-las    Ler um raster
+  Esquema para entender algumas das informações
+  Visualização
+   Ler um raster Operações com e entre rasters são bem comuns e importantes nas análises espaciais.
+No python, o uso do GDAL e numpy já permite a realização de muitas dessas operações.
+O uso do GDAL (Geospatial Data Abstraction Library) e entendimento de sua documentação é mais complexo e difícil (quando comparado a outras libraries como rasterio, que faz um ótimo trabalho usando o modelo de dados do GDAL, de maneira mais simplificada), especialmente no início.</description>
+    </item>
+    
+    <item>
+      <title>Operações com raster GDAL e python - 3</title>
+      <link>http://mcarolinaa.github.io/posts/rasters_gdal_3/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_3/</guid>
+      <description>Manipulações básicas de arquivos raster usando GDAL e python   Dividir (ou split) o raster em &amp;ldquo;pedaços&amp;rdquo; iguais   O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+    </item>
+    
+    <item>
+      <title>Operações com raster GDAL e python - 2</title>
+      <link>http://mcarolinaa.github.io/posts/rasters_gdal_2/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_2/</guid>
+      <description>Manipulações básicas de arquivos raster usando GDAL e python    Reprojetar raster;
+  Fazer resample de raster;
+  Clipar raster
+   O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+    </item>
+    
+    <item>
+      <title>Operações com raster GDAL e python - 1</title>
+      <link>http://mcarolinaa.github.io/posts/rasters_gdal_1/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_1/</guid>
+      <description>Manipulações básicas de arquivos raster usando GDAL e python    Lê e plota arquivo raster usando GDAL
+  cria binary mask e exporta arquivo
+   O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+    </item>
+    
+  </channel>
+</rss>

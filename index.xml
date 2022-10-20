@@ -8,33 +8,29 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Abre arquivo .nc e faz máscara/clip usando shapefile</title>
+      <title>Utilizando netCDF</title>
       <link>http://mcarolinaa.github.io/posts/arquivo_nc_xarray/</link>
       <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>http://mcarolinaa.github.io/posts/arquivo_nc_xarray/</guid>
-      <description>Manipulação de arquivo .nc usando shapefile   Arquivo .nc
-  Libraries
-  Abre arquivo .nc e cria máscara e clip usando arquivo .shp
-  Arquivo .nc
-Os arquivos .nc ou NetCDF (Network Common Data Form) files são estruturas usadas para armazenadas grandes quantidades de informação.
-O formato usado é o array oriented, e o tipo ou formato é o chamado scientific binary data, e considerado machine-independent.</description>
+      <description>Operações básicas de arquivos tipo .nc: abrir e clip usando shapefile    Um pouco sobre netCDF
+  Libraries usadas
+  Abre arquivo .nc e clipa usando arquivo shapefile
+   Um pouco sobre netCDF netCDF (Network Common Data Form) na verdade refere-se a um conjunto de libraries e tipos de dados, que permitem o uso e manipulação de arquivos do tipo array-oriented, normalmente contendo dados científicos, e multidimensionais.</description>
     </item>
     
     <item>
-      <title>Entendendo os dados de um raster - 1</title>
+      <title>Entendendo os dados de um raster (1)</title>
       <link>http://mcarolinaa.github.io/posts/entendendo_raster_1/</link>
       <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>http://mcarolinaa.github.io/posts/entendendo_raster_1/</guid>
-      <description>Características básicas de um arquivo raster e como entendê-las Passos para isso:
-  Ler um raster
-  Entendendo os dados
-  Visualiza
-  Ler um raster
-Operações com e entre rasters são bem comuns e importantes nas análises espaciais.
+      <description>Características básicas de um arquivo raster e como entendê-las    Ler um raster
+  Esquema para entender algumas das informações
+  Visualização
+   Ler um raster Operações com e entre rasters são bem comuns e importantes nas análises espaciais.
 No python, o uso do GDAL e numpy já permite a realização de muitas dessas operações.
-O uso do GDAL e entendimento de sua documentação é mais complexo e difícil, especialmente no início.</description>
+O uso do GDAL (Geospatial Data Abstraction Library) e entendimento de sua documentação é mais complexo e difícil (quando comparado a outras libraries como rasterio, que faz um ótimo trabalho usando o modelo de dados do GDAL, de maneira mais simplificada), especialmente no início.</description>
     </item>
     
     <item>
@@ -43,10 +39,10 @@ O uso do GDAL e entendimento de sua documentação é mais complexo e difícil, 
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>http://mcarolinaa.github.io/posts/conceitos_fund_3/</guid>
-      <description>WGS 84, SRID integer e 4 distortions   O que é o WGS 84
+      <description>WGS 84 e SRID integer    O que é o WGS 84
   O que é SRID integer
-  E o que são as 4 distorções (distortions)
-  WGS 84 refere-se ao World Geodetic System. Como já apontado nos tópicos anteriores, para identificarmos uma localização no planeta, precisamos inicialmente do datum, que irá &amp;ldquo;descrever&amp;rdquo; o formato do planeta, e um sistema de projeção, que irá transformar as medidas em uma superfície.</description>
+   WGS 84 WGS 84 refere-se ao World Geodetic System. Como já apontado nos tópicos anteriores, para identificarmos uma localização no planeta, precisamos inicialmente do datum, que irá &amp;ldquo;descrever&amp;rdquo; o formato do planeta, e um sistema de projeção, que irá transformar as medidas em uma superfície.
+O WGS 84 foi criado para ser um sistema de posicionamento global, usando o sistema de coordenadas geográficas (lat/lon) para localização.</description>
     </item>
     
     <item>
@@ -55,12 +51,12 @@ O uso do GDAL e entendimento de sua documentação é mais complexo e difícil, 
       <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>http://mcarolinaa.github.io/posts/conceitos_fund_2/</guid>
-      <description>Map Projection, UTM, Horizontal and Vertical Datum, NAVD88, Geodetic Datum   O que é Map Projection
+      <description>Map Projection, UTM, Horizontal and Vertical Datum, NAVD88, Geodetic Datum    O que é Map Projection
   O que é UTM
   O que são Horizontal e Vertical Datum
   O que é o NAVD88
   O que é Geodetic Datum
-  Sendo o Datum uma ferramenta para que entendamos a localização das coordenadas de features num elipsoide, a map projection ou projeção do mapa, é o processo posterior para que possamos transferir essa localização para um mapa plano.</description>
+   Map projection Sendo o Datum uma ferramenta para que entendamos a localização das coordenadas de features num elipsoide, a map projection ou projeção do mapa, é o processo posterior para que possamos transferir essa localização para um mapa plano.</description>
     </item>
     
     <item>
@@ -69,12 +65,11 @@ O uso do GDAL e entendimento de sua documentação é mais complexo e difícil, 
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>http://mcarolinaa.github.io/posts/conceitos_fund_1/</guid>
-      <description>Georreferenciamento, Pontos de Controle, CRS e ITRS   O que é georreferenciamento
+      <description>Georreferenciamento, Pontos de Controle, CRS e ITRS    O que é georreferenciamento
   O que são pontos de controle
-  Como ambos estão interligados
   Conceito de CRS ou SRS
   Conceito de ITRS
-  Georreferenciamento se refere ao processo de associar uma imagem/mapa a um sistema de coordenadas, ou seja, associar uma imagem a determinadas localizações num certo espaço físico.
+   Georreferenciamento Georreferenciamento se refere ao processo de associar uma imagem/mapa a um sistema de coordenadas, ou seja, associar uma imagem a determinadas localizações num certo espaço físico.
 Esse processo pode ser feito com qualquer objeto no qual se possa associar a uma localização geográfica.</description>
     </item>
     
@@ -148,39 +143,6 @@ o GDAL tem API para diversas linguagens, incluindo o python. A API para python p
     </item>
     
     <item>
-      <title>Operações com raster GDAL e python - 1</title>
-      <link>http://mcarolinaa.github.io/posts/rasters_gdal_1/</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_1/</guid>
-      <description>Manipulações básicas de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
-o GDAL tem API para diversas linguagens, incluindo o python.</description>
-    </item>
-    
-    <item>
-      <title>Operações com raster GDAL e python - 2</title>
-      <link>http://mcarolinaa.github.io/posts/rasters_gdal_2/</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_2/</guid>
-      <description>Manipulações básicas de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
-o GDAL tem API para diversas linguagens, incluindo o python.</description>
-    </item>
-    
-    <item>
-      <title>Operações com raster GDAL e python - 3</title>
-      <link>http://mcarolinaa.github.io/posts/rasters_gdal_3/</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_3/</guid>
-      <description>Manipulações básicas de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
-o GDAL tem API para diversas linguagens, incluindo o python.</description>
-    </item>
-    
-    <item>
       <title>Operações com raster GDAL e python - 4</title>
       <link>http://mcarolinaa.github.io/posts/rasters_gdal_4/</link>
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
@@ -201,6 +163,41 @@ o GDAL tem API para diversas linguagens, incluindo o python.</description>
 Duas maneiras são abordadas aqui: por meio do conda e do pip.
 Conda e pip, apesar de aqui estarem sendo usados como exemplos para o mesmo resultado final, não são ferramentas iguais.
 Para entender um pouco melhor o que cada um deles representa, alguns materiais como esse https://www.</description>
+    </item>
+    
+    <item>
+      <title>Operações com raster GDAL e python - 3</title>
+      <link>http://mcarolinaa.github.io/posts/rasters_gdal_3/</link>
+      <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_3/</guid>
+      <description>Manipulações básicas de arquivos raster usando GDAL e python   Dividir (ou split) o raster em &amp;ldquo;pedaços&amp;rdquo; iguais   O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+    </item>
+    
+    <item>
+      <title>Operações com raster GDAL e python - 2</title>
+      <link>http://mcarolinaa.github.io/posts/rasters_gdal_2/</link>
+      <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_2/</guid>
+      <description>Manipulações básicas de arquivos raster usando GDAL e python    Reprojetar raster;
+  Fazer resample de raster;
+  Clipar raster
+   O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+    </item>
+    
+    <item>
+      <title>Operações com raster GDAL e python - 1</title>
+      <link>http://mcarolinaa.github.io/posts/rasters_gdal_1/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/rasters_gdal_1/</guid>
+      <description>Manipulações básicas de arquivos raster usando GDAL e python    Lê e plota arquivo raster usando GDAL
+  cria binary mask e exporta arquivo
+   O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
     </item>
     
     <item>

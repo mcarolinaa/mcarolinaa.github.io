@@ -17,19 +17,19 @@
     
 
     
-    <title>Abre arquivo .nc e faz máscara/clip usando shapefile</title>
-    <meta name="description" content="Manipulação básica de arquivos .nc">
-    <meta name="keywords" content='gis, conceitos fundamentais, python'>
+    <title>Utilizando netCDF</title>
+    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="keywords" content='gis, NetCDF, python, xarray, shapefile'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/arquivo_nc_xarray/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Abre arquivo .nc e faz máscara/clip usando shapefile">
-    <meta property="og:description" content="Manipulação básica de arquivos .nc">
+    <meta property="og:title" content="Utilizando netCDF">
+    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="og:image" content="/images/plant_close.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Abre arquivo .nc e faz máscara/clip usando shapefile">
-    <meta name="twitter:description" content="Manipulação básica de arquivos .nc">
+    <meta name="twitter:title" content="Utilizando netCDF">
+    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/arquivo_nc_xarray/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/arquivo_nc_xarray/">
     <meta name="twitter:image" content="/images/plant_close.jpg">
@@ -156,8 +156,8 @@
     <div class="post container">
 
     <div class="post-header-section">
-        <h1>Abre arquivo .nc e faz máscara/clip usando shapefile</h1>
-        <small role="doc-subtitle">Manipulação básica de arquivos .nc</small>
+        <h1>Utilizando netCDF</h1>
+        <small role="doc-subtitle"></small>
         <p class="post-date">
             October 10, 2022
         </p>
@@ -166,45 +166,67 @@
         
             <li class="post-tag"><a href="/tags/gis">gis</a></li>
         
-            <li class="post-tag"><a href="/tags/conceitos-fundamentais">conceitos fundamentais</a></li>
+            <li class="post-tag"><a href="/tags/netcdf">NetCDF</a></li>
         
             <li class="post-tag"><a href="/tags/python">python</a></li>
+        
+            <li class="post-tag"><a href="/tags/xarray">xarray</a></li>
+        
+            <li class="post-tag"><a href="/tags/shapefile">shapefile</a></li>
         
         </ul>
     </div>
 
     <div class="post-content">
         <p>
-            <h1 id="manipulação-de-arquivo-nc-usando-shapefile">Manipulação de arquivo .nc usando shapefile</h1>
+            <h1 id="operações-básicas-de-arquivos-tipo-nc-abrir-e-clip-usando-shapefile">Operações básicas de arquivos tipo .nc: abrir e clip usando shapefile</h1>
+<p> </p>
 <ul>
 <li>
-<p>Arquivo .nc</p>
+<p>Um pouco sobre netCDF</p>
 </li>
 <li>
-<p>Libraries</p>
+<p>Libraries usadas</p>
 </li>
 <li>
-<p>Abre arquivo .nc e cria máscara e clip usando arquivo .shp</p>
+<p>Abre arquivo .nc e clipa usando arquivo shapefile</p>
 </li>
 </ul>
-<p><strong>Arquivo .nc</strong></p>
-<p>Os arquivos .nc ou <em>NetCDF</em> (Network Common Data Form) files são estruturas usadas para armazenadas grandes quantidades
-de informação.</p>
-<p>O formato usado é o <em>array oriented</em>, e o tipo ou formato é o chamado <em>scientific binary data</em>,
-e considerado <em>machine-independent</em>.</p>
-<p>Por essas razões, esse é um tipo de arquivo muito comum de encontrarmos dados ambientais, como clima (e suas diversas variáveis),
-e que acaba sendo o formato disponibilizado por diversas instituições, como por exemplo
-dados climáticos disponinilizados pela <a href="https://data.giss.nasa.gov/gistemp/">NASA</a> para dados em grade.</p>
-<p><strong>Libraries</strong></p>
-<p>No python, há mais de uma maneira de trabalhar com arquivos .nc. O próprio GDAL
-permite isso.</p>
-<p>A library xarray é outra ótima opção. Foi feita justamente para trabalhar com
-multi-dimensional arrays, de maneira bem simplificada (considerando que são
-arquivos relativamente complexos, e que podem ter muitas dimensões de variáveis).</p>
+<p> </p>
+<h2 id="um-pouco-sobre-netcdf">Um pouco sobre netCDF</h2>
+<p>netCDF (Network Common Data Form) na verdade refere-se a um conjunto de libraries
+e tipos de dados, que permitem o uso e manipulação de arquivos do tipo
+<em>array-oriented</em>, normalmente contendo dados científicos, e multidimensionais.</p>
+<blockquote>
+<p>Unidata’s Network Common Data Form
+(netCDF) is a set of software libraries and machine-independent data formats that support
+the creation, access, and sharing of array-oriented scientific data. It is also a community
+standard for sharing scientific data.</p>
+<p>fonte: <a href="https://www.unidata.ucar.edu/software/netcdf/">unidata</a> Data Services and Tools for Geoscience.</p>
+</blockquote>
+<p>Representam estruturar (arquivos extensão .nc) usados para armazenar grandes
+quantidades de informação em formato multidimensional,
+e que podem ser observados de acordo com a dimensão <em>tempo</em>.</p>
+<p>Por essas razões, esse é um tipo de arquivo comum de ser encontrado armazenando
+informações ambientais, como clima (e suas diversas variáveis).</p>
+<p>Diversas instituições adotam esse formato para disponibilizar esse tipo de dado
+aos usuários, como por exemplo os dados climáticos em grade disponinilizados pela
+<a href="https://data.giss.nasa.gov/gistemp/">NASA</a>.</p>
+<p> </p>
+<h2 id="libraries">Libraries</h2>
+<p>Diversas linguagens de programação conversam com esse tipo de arquivo e libraries.</p>
+<p>No python por exemplo, há mais de uma maneira de trabalhar com arquivos .nc.
+O próprio <strong>GDAL</strong> permite isso, ver <a href="https://gdal.org/drivers/raster/netcdf.html">aqui</a>.</p>
+<p>A library <strong>xarray</strong> é outra ótima opção. A library foi feita justamente para
+trabalhar com arrays multi-dimensionais, de maneira bem simplificada
+(considerando que são arquivos relativamente complexos, e que podem ter
+muitas dimensões de variáveis).</p>
 <p>A documentação é bem completa, e pode ser encontrada <a href="https://docs.xarray.dev/en/stable/index.html">aqui</a>.</p>
-<p>Uma parte bem interessante da página do xarray é a seção <em>How do I&hellip;</em>, (veja <a href="https://docs.xarray.dev/en/stable/howdoi.html">aqui</a> que já traz
-uma série de dúvidas (que acredito serem bem comuns) com os respectivos métodos.</p>
-<p><strong>Abre arquivo .nc e cria máscara e clip usando arquivo .shp</strong></p>
+<p>Uma parte bem interessante da página do xarray é a seção <em>How do I&hellip;</em>,
+(veja <a href="https://docs.xarray.dev/en/stable/howdoi.html">aqui</a> que já traz uma série de dúvidas (que acredito serem bem comuns)
+com os respectivos métodos para resolvê-las.</p>
+<p> </p>
+<h2 id="abre-arquivo-nc-e-checa-informações">Abre arquivo .nc e checa informações</h2>
 <p>A seguir, passos para abrir um arquivo .nc, ajustar crs, abrir .shp, ajustar crs
 e usar o arquivo vetorial para selecionar e clipar parte do arquivo .nc.</p>
 <pre tabindex="0"><code>import numpy as np
@@ -224,8 +246,19 @@ rain = xr.open_dataset(p + 'prec_daily_UT_Brazil_v2.1_20100101_20151231.nc', dec
 # checar se há crs e caso não haja, informar
 rain.prec.rio.crs # não há
 
-</code></pre><p>As principais características do arquivo .nc são vistas a seguir:</p>
+</code></pre><p> </p>
+<p>As principais características do arquivo .nc podem ser vistas a seguir:</p>
 <p><img src="/posts/pics/infos_nc.png" alt="Informações do arquivo .nc"></p>
+<p> </p>
+<p>Veja acima a menção às <strong>dimensões: tempo, latitude e longitude</strong>.</p>
+<p>Nesse caso, tenho dados em grade, para determinado limite geográfico,
+com certa duração.</p>
+<p><strong>Data variables</strong> me indica qual é a variável do .nc, nesse caso
+tenho precipitação (chuva).</p>
+<p>E os metadados do arquivo, referentes à sua origem, na seção de
+<strong>Attributes</strong>.</p>
+<p> </p>
+<h2 id="clipa-arquivo-nc-usando-arquivo-shapefile">Clipa arquivo .nc usando arquivo shapefile</h2>
 <pre tabindex="0"><code># informa crs e dimensoes espaciais
 rain.rio.write_crs(
     &quot;epsg:4326&quot;,inplace=True,
@@ -237,7 +270,8 @@ rain.rio.write_crs(
 rain.prec[0].plot();
 
 </code></pre><p><img src="/posts/pics/pais_1dia.png" alt="Um dia de dados do arquivo .nc"></p>
-<pre tabindex="0"><code># le shapefile p/ mask e clip no .nc
+<p> </p>
+<pre tabindex="0"><code># le shapefile p/ clip no .nc
 mt = gpd.read_file(p + 'MT_UF_2021/MT_UF_2021.shp')
 
 # vem com crs diferente, deixar td no lat/long
@@ -255,7 +289,11 @@ clipped =rain.rio.clip(mt.geometry.apply(mapping), mt.crs, drop=True)
 # checa visual
 clipped.prec[0].plot();
 </code></pre><p><img src="/posts/pics/mt_1dia.png" alt="Clipe do arquivo .nc"></p>
-<p>Fontes de dados:</p>
+<p> </p>
+<p>E assim podemos trabalhar com o arquivo .nc delimitado para uma região de interesse,
+nesse caso, dados de precipitação para o estado do Mato Grosso.</p>
+<p> </p>
+<p>Referências:</p>
 <p>Foram usados dados de chuva em grade (Xavier et al. 2016) e arquivo shapefile do estado do
 Mato Grosso, disponibilizado pelo IBGE:</p>
 <ul>

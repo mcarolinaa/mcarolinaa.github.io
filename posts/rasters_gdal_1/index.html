@@ -18,18 +18,18 @@
 
     
     <title>Operações com raster GDAL e python - 1</title>
-    <meta name="description" content="Manipulações básicas de raster usando GDAL e python">
-    <meta name="keywords" content='gis, python, gdal'>
+    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="keywords" content='gis, python, raster, GDAL'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Operações com raster GDAL e python - 1">
-    <meta property="og:description" content="Manipulações básicas de raster usando GDAL e python">
+    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="og:image" content="/images/plant_close.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Operações com raster GDAL e python - 1">
-    <meta name="twitter:description" content="Manipulações básicas de raster usando GDAL e python">
+    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
     <meta name="twitter:image" content="/images/plant_close.jpg">
@@ -157,9 +157,9 @@
 
     <div class="post-header-section">
         <h1>Operações com raster GDAL e python - 1</h1>
-        <small role="doc-subtitle">Manipulações básicas de raster usando GDAL e python</small>
+        <small role="doc-subtitle"></small>
         <p class="post-date">
-            October 26, 2021
+            October 1, 2021
         </p>
 
         <ul class="post-tags">
@@ -168,7 +168,9 @@
         
             <li class="post-tag"><a href="/tags/python">python</a></li>
         
-            <li class="post-tag"><a href="/tags/gdal">gdal</a></li>
+            <li class="post-tag"><a href="/tags/raster">raster</a></li>
+        
+            <li class="post-tag"><a href="/tags/gdal">GDAL</a></li>
         
         </ul>
     </div>
@@ -176,46 +178,82 @@
     <div class="post-content">
         <p>
             <h1 id="manipulações-básicas-de-arquivos-raster-usando-gdal-e-python">Manipulações básicas de arquivos raster usando GDAL e python</h1>
-<p>O <strong>GDAL</strong> é uma <em>translator library</em> para dados vetoriais e rasteriais, com
-modelos próprios para trabalhar esses dados.</p>
-<p>Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados
-no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor
-a estrutura dos dados no contexto de GIS.</p>
-<p>o GDAL tem API para diversas linguagens, incluindo o python.
-A API para python pode ser consultada aqui:</p>
-<p><a href="https://gdal.org/api/python.html">https://gdal.org/api/python.html</a></p>
-<p>Nesse post há rotinas para as seguintes ações:</p>
+<p> </p>
 <ul>
 <li>
-<p>Ler e plotar arquivo raster;</p>
+<p>Lê e plota arquivo raster usando GDAL</p>
 </li>
 <li>
-<p>Criar binary mask</p>
+<p>cria binary mask e exporta arquivo</p>
 </li>
 </ul>
+<p> </p>
+<p>O <strong>GDAL</strong> é uma <em>translator library</em> para dados vetoriais e rasteriais, com
+modelos próprios para trabalhar esses tipos de dados.</p>
+<p>Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados
+no GDAL.
+Acredito que vale muito a pena saber usá-la até para entender melhor
+a estrutura dos dados no contexto de GIS.</p>
+<p>O GDAL tem API para diversas linguagens, incluindo o python.
+A API para python pode ser consultada <a href="https://gdal.org/api/python.html">aqui</a></p>
+<p> </p>
+<h2 id="lê-e-plota-arquivo-raster-usando-gdal">Lê e plota arquivo raster usando GDAL</h2>
 <pre tabindex="0"><code>from osgeo import gdal
 import numpy as np
 import matplotlib.pyplot as plt
-import glob
-import subprocess
-</code></pre><h2 id="ler-a-plotar-arquivo-raster">Ler a plotar arquivo raster</h2>
-<pre tabindex="0"><code>ds = gdal.Open('path_to_raster') # abre somente 1
-gt = ds.GetGeoTransform() # object (upper left corner: .. x-coord, horizontal pixel res, y-coord, vertical pixel res)
+
+ds = gdal.Open(p + file) # abre somente 1 arquivo raster
+gt = ds.GetGeoTransform() # object 
 proj = ds.GetProjection()
 
-# access band to get data
-band = ds.GetRasterBand(1) # se for multibanda, especificar a desejada
-array = band.ReadAsArray()
+# para evitar os dados no data de aparecerem na visualizacao
+# e atrapalhar o entendimento do conteúdo
+nodata = ds.GetRasterBand(1).GetNoDataValue()
+data = ds.ReadAsArray()
+# importante sempre fechar o arquivo
+ds = None
 
-plt.figure()
-plt.imshow(array)
-</code></pre><h2 id="criar-uma-binary-mask">Criar uma binary mask</h2>
-<p>Maneira de visualizar/explorar os dados.</p>
-<pre tabindex="0"><code>binmask = np.where((array &gt;= np.mean(array)),1,0) # tudo que for &gt; média, entao =1
-plt.figure()
-plt.imshow(binmask)
+# aplica máscara e checa dimensões e número de bandas
+data = np.ma.masked_values(data, nodata)
+print(data.shape)
+</code></pre><p> </p>
+<pre tabindex="0"><code>fig, ax = plt.subplots(figsize=(5,6), constrained_layout=True)
 
-# ajusta driver p/ exportar
+im = ax.imshow(data, extent=extent) 
+cb = fig.colorbar(im, shrink=.5)
+ax.axes.xaxis.set_visible(False)
+ax.axes.yaxis.set_visible(False)
+cb.set_label('NDVI')
+</code></pre><p><img src="/posts/pics/ndvi.png" alt="Informações do arquivo raster"></p>
+<p>Acima pode-se observar a distribuição de NDVI em uma área de produção
+de cultura agrícola em certo período de intenso desenvolvimento
+(altos valores de NDVI).</p>
+<p> </p>
+<h2 id="criar-uma-binary-mask">Criar uma binary mask</h2>
+<p>Para esse exercício, suponha que quero ver a distribuição do NDVI
+apenas onde o mesmo encontra-se acima do valor médio na ocasião.</p>
+<p>É uma maneira de explorar, entender os dados que temos em mãos.</p>
+<pre tabindex="0"><code>import matplotlib.colors
+
+# cria a máscara com condição
+binmask = np.where((data &gt;= np.mean(data)),1,0) # tudo que for &gt; média, entao =1
+# cores p/ quando atender/não atender a condição
+cmap = matplotlib.colors.ListedColormap(['red', 'green'])
+
+# plota
+fig, ax = plt.subplots(figsize=(5,6), constrained_layout=True)
+
+im = ax.imshow(binmask, extent=extent, cmap=cmap) 
+ax.axes.xaxis.set_visible(False)
+ax.axes.yaxis.set_visible(False)
+cb.set_label('NDVI &gt; média')
+
+</code></pre><p>Nesse caso, tudo que estava acima do valor médio de NDVI da imagem,
+agora aparece na cor verde, e abaixo, na cor vermelha.</p>
+<p><img src="/posts/pics/ndvi_mask.png" alt="Informações do arquivo raster"></p>
+<p> </p>
+<h2 id="exporta-em-disco">Exporta em disco</h2>
+<pre tabindex="0"><code># ajusta driver p/ exportar
 driver = gdal.GetDriverByName('GTiff')
 driver.Register()
 outds = driver.Create('path_to_binmask.tif',
@@ -235,8 +273,11 @@ outband.FlushCache()
 # não esquecer de fechar o dataset
 outband = None
 outds = None
-</code></pre><p>Obs: Usei como fonte o canal <em>Making Sense Remotely</em>, que tem ótimos tutoriais
-de GIS para R e python.</p>
+</code></pre><p> </p>
+<blockquote>
+<p>Obs: Usei como fonte o canal do youtube <em>Making Sense Remotely</em>,
+que tem ótimos tutoriais de GIS para R e python.</p>
+</blockquote>
 
         </p>
     </div>

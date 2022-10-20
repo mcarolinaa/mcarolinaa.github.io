@@ -8,15 +8,6 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>conceitos fundamentais</title>
-      <link>http://mcarolinaa.github.io/tags/conceitos-fundamentais/</link>
-      <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://mcarolinaa.github.io/tags/conceitos-fundamentais/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>gis</title>
       <link>http://mcarolinaa.github.io/tags/gis/</link>
       <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
@@ -26,11 +17,65 @@
     </item>
     
     <item>
+      <title>NetCDF</title>
+      <link>http://mcarolinaa.github.io/tags/netcdf/</link>
+      <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/tags/netcdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>python</title>
       <link>http://mcarolinaa.github.io/tags/python/</link>
       <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>http://mcarolinaa.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shapefile</title>
+      <link>http://mcarolinaa.github.io/tags/shapefile/</link>
+      <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/tags/shapefile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xarray</title>
+      <link>http://mcarolinaa.github.io/tags/xarray/</link>
+      <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/tags/xarray/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GDAL</title>
+      <link>http://mcarolinaa.github.io/tags/gdal/</link>
+      <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/tags/gdal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raster</title>
+      <link>http://mcarolinaa.github.io/tags/raster/</link>
+      <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/tags/raster/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conceitos fundamentais</title>
+      <link>http://mcarolinaa.github.io/tags/conceitos-fundamentais/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/tags/conceitos-fundamentais/</guid>
       <description></description>
     </item>
     
@@ -49,15 +94,6 @@
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>http://mcarolinaa.github.io/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gdal</title>
-      <link>http://mcarolinaa.github.io/tags/gdal/</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://mcarolinaa.github.io/tags/gdal/</guid>
       <description></description>
     </item>
     
