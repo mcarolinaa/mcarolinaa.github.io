@@ -18,18 +18,18 @@
 
     
     <title>Operações com raster GDAL e python - 4</title>
-    <meta name="description" content="Manipulações básicas de raster usando GDAL e python">
-    <meta name="keywords" content='gis, python, gdal'>
+    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="keywords" content='gis, python, raster, GDAL'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_4/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Operações com raster GDAL e python - 4">
-    <meta property="og:description" content="Manipulações básicas de raster usando GDAL e python">
+    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="og:image" content="/images/plant_close.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Operações com raster GDAL e python - 4">
-    <meta name="twitter:description" content="Manipulações básicas de raster usando GDAL e python">
+    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/rasters_gdal_4/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_4/">
     <meta name="twitter:image" content="/images/plant_close.jpg">
@@ -157,9 +157,9 @@
 
     <div class="post-header-section">
         <h1>Operações com raster GDAL e python - 4</h1>
-        <small role="doc-subtitle">Manipulações básicas de raster usando GDAL e python</small>
+        <small role="doc-subtitle"></small>
         <p class="post-date">
-            October 26, 2021
+            October 12, 2021
         </p>
 
         <ul class="post-tags">
@@ -168,7 +168,9 @@
         
             <li class="post-tag"><a href="/tags/python">python</a></li>
         
-            <li class="post-tag"><a href="/tags/gdal">gdal</a></li>
+            <li class="post-tag"><a href="/tags/raster">raster</a></li>
+        
+            <li class="post-tag"><a href="/tags/gdal">GDAL</a></li>
         
         </ul>
     </div>
@@ -176,50 +178,77 @@
     <div class="post-content">
         <p>
             <h1 id="manipulações-básicas-de-arquivos-raster-usando-gdal-e-python">Manipulações básicas de arquivos raster usando GDAL e python</h1>
-<p>O <strong>GDAL</strong> é uma <em>translator library</em> para dados vetoriais e rasteriais, com
-modelos próprios para trabalhar esses dados.</p>
-<p>Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados
-no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor
-a estrutura dos dados no contexto de GIS.</p>
-<p>o GDAL tem API para diversas linguagens, incluindo o python.
-A API para python pode ser consultada aqui:</p>
-<p><a href="https://gdal.org/api/python.html">https://gdal.org/api/python.html</a></p>
-<p>Nesse post há rotina para a seguinte ação:</p>
+<p> </p>
 <ul>
-<li><strong>Merge</strong> rasters</li>
+<li>Merge (ou &lsquo;juntar&rsquo;) os pedaços de um raster</li>
 </ul>
+<p> </p>
+<p>O <strong>GDAL</strong> é uma <em>translator library</em> para dados vetoriais e rasteriais, com
+modelos próprios para trabalhar esses tipos de dados.</p>
+<p>Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados
+no GDAL.
+Acredito que vale muito a pena saber usá-la até para entender melhor
+a estrutura dos dados no contexto de GIS.</p>
+<p>O GDAL tem API para diversas linguagens, incluindo o python.
+A API para python pode ser consultada <a href="https://gdal.org/api/python.html">aqui</a></p>
+<p>Conforme foi feito anteriormente (Manipulação de rasters usando GDAL
+e python - 3), em que um raster foi dividido em partes, agora será
+feito o caminho inverso, portanto, &lsquo;juntando&rsquo; novamente os pedaços
+do raster.</p>
+<h2 id="libraries">Libraries</h2>
 <pre tabindex="0"><code>from osgeo import gdal
 import numpy as np
 import matplotlib.pyplot as plt
 import glob
 import subprocess
-</code></pre><p>Primeiro, lendo a lista de rasters num diretório</p>
+</code></pre><p> </p>
+<p>No exemplo, continuo usando o mesmo raster (NDVI), que foi didivido
+na manipulação de rasters com GDAL - 3.</p>
+<p><img src="/posts/pics/ndvi_pieces.png" alt="Informações do arquivo raster"></p>
+<p>(Obs: Apenas algumas partes do raster total são mostradas na Figura acima,
+para fins de entendimento que o arquivo foi dividido em partes (nesse caso, 9).</p>
+<p> </p>
+<h2 id="abre-as-partes-e-faz-merge-dos-rasters">Abre as partes e faz merge dos rasters</h2>
 <pre tabindex="0"><code># apontar para a lista de rasters que quer o merge
 ndviList = glob.glob('ndvi[0-9][0-9].tif') # ex: rasters de ndvi
 print(ndviList)
-</code></pre><p>A seguir, 2 maneiras de fazer o processo.</p>
-<ol>
-<li>Usar subprocess</li>
-</ol>
-<pre tabindex="0"><code># Primeira maneira, é como se fosse usado por meio do terminal
-cmd = 'gdal_merge.py -ps 150 -150 -o mergedNDVI1.tif'
+</code></pre><p> </p>
+<p>A seguir, 2 maneiras de fazer o processo.</p>
+<h3 id="1-usar-subprocess">1. Usar subprocess</h3>
+<p>É praticamente a mesma coisa que faríamos ao usar o GDAL pelo terminal.</p>
+<p>Nesse caso, importante checar a documentação para ficar bem claro quais são
+e como devem ser chamados os argumentos.</p>
+<pre tabindex="0"><code># Jeito 1: Usando subprocess
+# (tipo usando o terminal)
+
+cmd = 'gdal_merge.py -ps 3 -3 -o mergedNDVI1.tif'
 subprocess.call(cmd.split()+ndviList)
-</code></pre><ol start="2">
-<li>Criar um <em>digital raster</em> e transformá-lo em GeoTiff
-(essa maneira é melhor para arquivos maiores)</li>
-</ol>
-<pre tabindex="0"><code># O virtual raster é mais fácil de ser processado
-vrt = gdal.BuildVRT('path_to_merged_raster',
+</code></pre><p> </p>
+<h3 id="2-criar-um-virtual-raster-e-transformá-lo-em-geotiff">2. Criar um <em>virtual raster</em> e transformá-lo em GeoTiff</h3>
+<p>(essa maneira é melhor para arquivos maiores)</p>
+<pre tabindex="0"><code># Jeito 2: Cria um virtual raster, e transforma em GeoTiff
+# (melhor p/ arquivos maiores)
+
+# O virtual raster é mais fácil de ser processado
+vrt = gdal.BuildVRT('mergedNDVI2.vrt',
                     ndviList)
 # isso acima é um xml, que indica ao GDAL onde os arquivos estão
 # e a seguir, cria um GeoTiff a partir disso
 gdal.Translate('mergedNDVI2.tif',
                vrt,
-               xRes = 150,
-               yRes = -150)
-vrt = None
-</code></pre><p>Obs: Usei como fonte o canal <em>Making Sense Remotely</em>, que tem ótimos tutoriais
-de GIS para R e python.</p>
+               xRes = 3,
+               yRes = -3)
+vrt = None # nao esquece de fechar
+</code></pre><p> </p>
+<p>Em ambas as situações, tenho como resultado final exatamente o mesmo
+produto, o raster original, utilizado para todas as manipulações
+feitas nos últimos posts.</p>
+<p><img src="/posts/pics/merged_ndvi.png" alt="Informações do arquivo raster"></p>
+<p> </p>
+<blockquote>
+<p>Obs: Usei como fonte o canal do youtube <em>Making Sense Remotely</em>,
+que tem ótimos tutoriais de GIS para R e python.</p>
+</blockquote>
 
         </p>
     </div>
