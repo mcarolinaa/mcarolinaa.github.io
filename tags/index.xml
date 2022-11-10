@@ -134,15 +134,6 @@
     </item>
     
     <item>
-      <title>nearest neighbor</title>
-      <link>http://mcarolinaa.github.io/tags/nearest-neighbor/</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://mcarolinaa.github.io/tags/nearest-neighbor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>s3</title>
       <link>http://mcarolinaa.github.io/tags/s3/</link>
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
@@ -157,6 +148,15 @@
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>http://mcarolinaa.github.io/tags/environments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nearest neighbor</title>
+      <link>http://mcarolinaa.github.io/tags/nearest-neighbor/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/tags/nearest-neighbor/</guid>
       <description></description>
     </item>
     

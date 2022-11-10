@@ -59,17 +59,6 @@ Boto3 é um grande aliado nisso para quem usará python para pegar/analisar os d
     </item>
     
     <item>
-      <title>Interpolação com GDAL e python - 1</title>
-      <link>http://mcarolinaa.github.io/posts/interpolation_gdal_1/</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_1/</guid>
-      <description>Manipulações de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
-o GDAL tem API para diversas linguagens, incluindo o python. A API para python pode ser consultada aqui:</description>
-    </item>
-    
-    <item>
       <title>Interpolação com GDAL e python - 2</title>
       <link>http://mcarolinaa.github.io/posts/interpolation_gdal_2/</link>
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
@@ -112,6 +101,18 @@ o GDAL tem API para diversas linguagens, incluindo o python. A API para python p
 Duas maneiras são abordadas aqui: por meio do conda e do pip.
 Conda e pip, apesar de aqui estarem sendo usados como exemplos para o mesmo resultado final, não são ferramentas iguais.
 Para entender um pouco melhor o que cada um deles representa, alguns materiais como esse https://www.</description>
+    </item>
+    
+    <item>
+      <title>Interpolação de dados vetoriais usando Nearest Neighbour</title>
+      <link>http://mcarolinaa.github.io/posts/interpolation_gdal_1/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_1/</guid>
+      <description>Veja aqui um exemplo de como interpolar dados vetoriais, trazendo-os para o formato raster usando o método Nearest neighbour, por meio do uso do python e GDAL.
+ Apenas lembrando que:
+O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
+Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
     </item>
     
     <item>

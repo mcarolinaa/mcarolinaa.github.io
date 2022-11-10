@@ -17,19 +17,19 @@
     
 
     
-    <title>Interpolação com GDAL e python - 1</title>
-    <meta name="description" content="Manipulações básicas de raster usando GDAL e python">
-    <meta name="keywords" content='gis, python, gdal, Interpolação, nearest neighbor'>
+    <title>Interpolação de dados vetoriais usando Nearest Neighbour</title>
+    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="keywords" content='gis, python, GDAL, Interpolação, nearest neighbor'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/interpolation_gdal_1/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Interpolação com GDAL e python - 1">
-    <meta property="og:description" content="Manipulações básicas de raster usando GDAL e python">
+    <meta property="og:title" content="Interpolação de dados vetoriais usando Nearest Neighbour">
+    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="og:image" content="/images/plant_close.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Interpolação com GDAL e python - 1">
-    <meta name="twitter:description" content="Manipulações básicas de raster usando GDAL e python">
+    <meta name="twitter:title" content="Interpolação de dados vetoriais usando Nearest Neighbour">
+    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/interpolation_gdal_1/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/interpolation_gdal_1/">
     <meta name="twitter:image" content="/images/plant_close.jpg">
@@ -156,10 +156,10 @@
     <div class="post container">
 
     <div class="post-header-section">
-        <h1>Interpolação com GDAL e python - 1</h1>
-        <small role="doc-subtitle">Manipulações básicas de raster usando GDAL e python</small>
+        <h1>Interpolação de dados vetoriais usando Nearest Neighbour</h1>
+        <small role="doc-subtitle"></small>
         <p class="post-date">
-            October 26, 2021
+            October 20, 2021
         </p>
 
         <ul class="post-tags">
@@ -168,7 +168,7 @@
         
             <li class="post-tag"><a href="/tags/python">python</a></li>
         
-            <li class="post-tag"><a href="/tags/gdal">gdal</a></li>
+            <li class="post-tag"><a href="/tags/gdal">GDAL</a></li>
         
             <li class="post-tag"><a href="/tags/interpola%C3%A7%C3%A3o">Interpolação</a></li>
         
@@ -179,20 +179,83 @@
 
     <div class="post-content">
         <p>
-            <h1 id="manipulações-de-arquivos-raster-usando-gdal-e-python">Manipulações de arquivos raster usando GDAL e python</h1>
+            <p>Veja aqui um exemplo de como interpolar dados vetoriais, trazendo-os para
+o formato raster usando o método <strong>Nearest neighbour</strong>, por meio do uso
+do python e GDAL.</p>
+<p> </p>
+<p>Apenas lembrando que:</p>
 <p>O <strong>GDAL</strong> é uma <em>translator library</em> para dados vetoriais e rasteriais, com
-modelos próprios para trabalhar esses dados.</p>
+modelos próprios para trabalhar esses tipos de dados.</p>
 <p>Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados
-no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor
+no GDAL.
+Acredito que vale muito a pena saber usá-la até para entender melhor
 a estrutura dos dados no contexto de GIS.</p>
-<p>o GDAL tem API para diversas linguagens, incluindo o python.
-A API para python pode ser consultada aqui:</p>
-<p><a href="https://gdal.org/api/python.html">https://gdal.org/api/python.html</a></p>
+<p>O GDAL tem API para diversas linguagens, incluindo o python.
+A API para python pode ser consultada <a href="https://gdal.org/api/python.html">aqui</a></p>
+<h2 id="porque-interpolamos-dados">Porque interpolamos dados?</h2>
+<p>É uma atividade relativamente comum no dia-dia da ciência de dados.
+Muito comum se estivermos tratando de dados climáticos, obtidos de estações
+e geração de mapas para o usuário.</p>
+<p>Como podemos entender <strong>interpolação</strong> e como ela difere de outros processos,
+como por exemplo, a <strong>extrapolação</strong>?</p>
+<p>Fazendo uma rápida busca pela internet, encontramos muitos resultados que
+buscam de alguma maneira <strong>diferenciar</strong> esses termos na tentativa
+de definir o que de fato é interpolação.</p>
+<blockquote>
+<p>Extrapolation is a way to make guesses about the future or about some
+hypothetical situation based on data that you already know.
+You’re basically taking your “best guess”.
+For example, let’s say your pay increases average $200 per year.
+You can extrapolate and say that in 10 years, your pay should be about
+$2,000 higher than today.</p>
+</blockquote>
+<blockquote>
+<p>Interpolation allows you to estimate within a data set;
+it’s a tool to go beyond the data. It comes with a high degree of uncertainty.
+For example, let’s say you measure how many customers you get every day
+for a week: 200, 370, 120, 310, 150, 70, 90.
+According to that number, you should get just under 10 customers per hour
+(1,310 customers/ 168 hours in a week).
+Let’s say you staff your business 24-7 to deal with those hourly customers.
+You’re probably going to get zero customers at night and on the weekends,
+therefore wasting resources.
+(Note: a better way to figure out peak times is the Poisson Distribution).</p>
+</blockquote>
+<p>(Definições retiradas dessa página <a href="https://www.statisticshowto.com/calculus-definitions/extrapolation-interpolation/">aqui</a></p>
+<p>Há materiais mais técnicos que podem oferecer definições e conceitos mais
+elaborados e completos, mas dá para entender que o processo de interpolação
+é algo muito corriqueiro e <strong>necessário</strong> quando lidamos com dados
+<strong>geoespacializados</strong> (Precisamos &ldquo;distribuir&rdquo; a informação ao longo
+da superfície para entender o que acontece!).</p>
+<p>Especialmente quando temos algumas amostras, obtidas de coletas de campo,
+ou registro de sensores, etc. Não entrando no mérito de ser ou não adequado
+interpolar certa variável (por exemplo, devido à intensa variabilidade espacial
+que certos atributos de solo têm), o fato é que frequentemente precisamos recorrer a esse processo
+para gerar uma possível melhor compreensão sobre certa questão, ou até mesmo
+<strong>fornecer um produto</strong>.</p>
+<p> </p>
+<h2 id="há-muitos-métodos-de-interpolação">Há muitos métodos de interpolação</h2>
+<p>O estudo de alguns desses métodos, e o entendimento de sua apliucação
+e adequação para cada caso, é fundamental.</p>
+<p>O método <strong>nearest neighbour</strong> por exemplo, é até não considerado como
+interpolação por alguns autores. Isso porque o método não faz nenhum
+cálculo, ele simplesmente <strong>pega o valor mais próximo</strong> como ele é para preencher
+determinada posição.</p>
+<p>É extremamente <strong>simples</strong>, não promove também nenhum tipo de suavização
+(exatamente porque não faz nenhum cálculo).</p>
+<p>Suponha que a partir de alguns pontos extraídos aleatoriamente de uma
+imagem de NDVI quero fazer uma interpolação, e avaliar os resultados
+entre os diferentes métodos.</p>
+<p>Os pontos extraídos (100 no total) de maneira aleatória estão dispostos
+da seguinte maneira:</p>
+<p><img src="/posts/pics/sample_ndvi.png" alt="Pontos amostrados"></p>
+<p>É claro que com essa distribuição heterogênea não teremos uma boa qualidade
+do produto final, independente do método. Mas seguindo com o objetivo de
+exemplificar as metodologias e compará-las.</p>
+<h2 id="libraries">Libraries</h2>
 <pre tabindex="0"><code>from osgeo import gdal
 from osgeo import ogr
-</code></pre><p>Nesse post há rotina para a seguinte ação:</p>
-<p><strong>Interpolação</strong> de dados vetoriais para raster usando o método de
-<strong>Nearest neighbour</strong>.</p>
+</code></pre><p> </p>
 <pre tabindex="0"><code># Nearest neighbor
 # atribui o valor do ponto mais próximo na elipse de busca
 # janela de busca em gridding algorithms
@@ -201,38 +264,40 @@ from osgeo import ogr
 # (para maior detalhamento, checar página do GDAL)
 
 # Arquivo vetorial que será o input da interpolação
-pts = ogr.Open('path_to_shp_file', 0)
+pts = ogr.Open(p + 'sampled_ndvi.shp', 0)
 layer = pts.GetLayer()
 
 for field in layer.schema:
     print(field.name) # checar
 
 pts = layer = None
-
-# algoritmo nn
+</code></pre><p>Nessa etapa, podemos checar o nome da coluna de atributos,
+que deverá ser usada na etapa seguinte.</p>
+<pre tabindex="0"><code># algoritmo nn
 nn = gdal.Grid('path_to_raster_interpolado',
-               'path_to_shp_file',
-               zfield = 'rvalue_1', # checa o nome em seu arquivo vetorial
+               p + 'sampled_ndvi.shp',
+               zfield = 'VALUE', # checa o nome em seu arquivo vetorial
                algorithm = 'nearest')
 
 nn = None # não esquecer de fechar
-</code></pre><p>Ao checar o raster, verá que provavelmente está distante da realidade:
-os boundaries provavelmente não estão bons.</p>
+</code></pre><p>Ao checar o raster, verá que provavelmente está distante da realidade,
+os limites da interpolação seguem os pontos, e provavelmente não
+correspondem ao raster original.</p>
+<p><img src="/posts/pics/nn_nobounds.png" alt="NN"></p>
 <p>Eles foram baseados apenas nos pontos do .shp. Para corrigir,
 use o argumento outputBound e width e height para atingir uma resolução adequada.</p>
 <p>Aqui, checo um raster modelo, e acesso objeto Transform para checar e utilizar
 novamente.</p>
 <pre tabindex="0"><code># Mas antes, importante: Todos os inputs devem ter a mesma projeção!
-# Aqui, meu .shp tem uma proj (epsg 4326), e o raster que uso de modelo tem outra
-# (epsg 7321)
-# deixá-los na mesma:
+# Caso eu tivesse, por exemplo, o vetor em epsg 4326 e precisasse
+# mudar para o epsg do raster:
 ds = gdal.Open('path_to_model_raster')
 dsReprj = gdal.Warp('path_to_reproj_raster',
                     ds,
                     dstSRS = 'EPSG:4326')
 ds = dsReprj = None
 
-# continuando, o mesmo raciocínio, depois de acertar projeções e ver boundaries ok
+# Caso estejam na msma projeção, apenas continuar:
 pts = ogr.Open('path_to_shp_file', 0)
 layer = pts.GetLayer()
 
@@ -266,8 +331,10 @@ nn = gdal.Grid('path_to_raster_interpolado_2',
                height = ysize)
 
 nn = None
-</code></pre><p>Obs: Usei como fonte o canal <em>Making Sense Remotely</em>, que tem ótimos tutoriais
-de GIS para R e python.</p>
+</code></pre><blockquote>
+<p>Obs: Usei como fonte o canal <em>Making Sense Remotely</em>, que tem ótimos
+tutoriais de GIS para R e python.</p>
+</blockquote>
 
         </p>
     </div>
