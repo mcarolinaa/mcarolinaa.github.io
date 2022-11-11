@@ -201,6 +201,7 @@ como por exemplo, a <strong>extrapolação</strong>?</p>
 <p>Fazendo uma rápida busca pela internet, encontramos muitos resultados que
 buscam de alguma maneira <strong>diferenciar</strong> esses termos na tentativa
 de definir o que de fato é interpolação.</p>
+<p> </p>
 <blockquote>
 <p>Extrapolation is a way to make guesses about the future or about some
 hypothetical situation based on data that you already know.
@@ -222,6 +223,7 @@ therefore wasting resources.
 (Note: a better way to figure out peak times is the Poisson Distribution).</p>
 </blockquote>
 <p>(Definições retiradas dessa página <a href="https://www.statisticshowto.com/calculus-definitions/extrapolation-interpolation/">aqui</a></p>
+<p> </p>
 <p>Há materiais mais técnicos que podem oferecer definições e conceitos mais
 elaborados e completos, mas dá para entender que o processo de interpolação
 é algo muito corriqueiro e <strong>necessário</strong> quando lidamos com dados
@@ -271,7 +273,8 @@ for field in layer.schema:
     print(field.name) # checar
 
 pts = layer = None
-</code></pre><p>Nessa etapa, podemos checar o nome da coluna de atributos,
+</code></pre><p> </p>
+<p>Nessa etapa, podemos checar o nome da coluna de atributos,
 que deverá ser usada na etapa seguinte.</p>
 <pre tabindex="0"><code># algoritmo nn
 nn = gdal.Grid('path_to_raster_interpolado',
@@ -280,14 +283,16 @@ nn = gdal.Grid('path_to_raster_interpolado',
                algorithm = 'nearest')
 
 nn = None # não esquecer de fechar
-</code></pre><p>Ao checar o raster, verá que provavelmente está distante da realidade,
-os limites da interpolação seguem os pontos, e provavelmente não
-correspondem ao raster original.</p>
+</code></pre><p> </p>
+<p>Ao checar o raster, verá que provavelmente está distante da realidade,
+os limites da interpolação seguem os pontos, alguns pontos quase que
+não são cobertos pelo arquivo final.</p>
 <p><img src="/posts/pics/nn_nobounds.png" alt="NN"></p>
-<p>Eles foram baseados apenas nos pontos do .shp. Para corrigir,
-use o argumento outputBound e width e height para atingir uma resolução adequada.</p>
-<p>Aqui, checo um raster modelo, e acesso objeto Transform para checar e utilizar
-novamente.</p>
+<p>Você pode fazer um ajuste, para que o arquivo final após interpolação
+esteja de acordo com o limites (boundaries) do seu raster original
+(atenção, ainda não corresponderá exatamente ao raster original!)</p>
+<p>Aqui, checo um raster modelo (o raster do qual extraí os pontos de maneira
+aleatória), e acesso objeto Transform para utilizar novamente.</p>
 <pre tabindex="0"><code># Mas antes, importante: Todos os inputs devem ter a mesma projeção!
 # Caso eu tivesse, por exemplo, o vetor em epsg 4326 e precisasse
 # mudar para o epsg do raster:
@@ -307,11 +312,11 @@ for field in layer.schema:
 ndvi = gdal.Open('path_to_reproj_raster')
 gt = ndvi.GetGeoTransform()
 
-ulx = gt[0] # upper left corner
+ulx = gt[0] # canto superior esquerdo
 uly = gt[3]
-res = gt[1]
+res = gt[1] # resol. espacial
 
-xsize = ndvi.RasterXSize
+xsize = ndvi.RasterXSize 
 ysize = ndvi.RasterYSize
 
 # (para calcular os boundaries do raster)
@@ -331,9 +336,16 @@ nn = gdal.Grid('path_to_raster_interpolado_2',
                height = ysize)
 
 nn = None
-</code></pre><blockquote>
-<p>Obs: Usei como fonte o canal <em>Making Sense Remotely</em>, que tem ótimos
-tutoriais de GIS para R e python.</p>
+</code></pre><p> </p>
+<p>E agora observamos que os limites &ldquo;aumentaram&rdquo; um pouco,
+de acordo com os boundaries do raster original. Nenhum ponto
+encontra-se fora dos limites.</p>
+<p><img src="/posts/pics/nn_bounds.png" alt="NN"></p>
+<p> </p>
+<blockquote>
+<p>Obs: Usei como fonte para o código o canal <em>Making Sense Remotely</em>,
+que tem ótimos tutoriais de GIS para R e python.
+Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p>
 </blockquote>
 
         </p>

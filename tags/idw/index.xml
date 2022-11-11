@@ -6,11 +6,11 @@
     <description>Recent content in idw on Data thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/idw/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/idw/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Interpolação com GDAL e python - 3</title>
+      <title>Interpolação de dados vetoriais usando IDW</title>
       <link>http://mcarolinaa.github.io/posts/interpolation_gdal_3/</link>
-      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
       
       <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_3/</guid>
       <description>Manipulações de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
