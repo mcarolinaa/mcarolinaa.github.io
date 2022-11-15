@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Data thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Presentation and my trajectory</title>
+      <link>http://mcarolinaa.github.io/posts/presentation/</link>
+      <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://mcarolinaa.github.io/posts/presentation/</guid>
+      <description>Presentation and How I became a Data Scientist  Hello!
+ My name is Maria Carolina. I currently work as a data scientist, and I started working in this area 2.5 years ago.
+  My background is in the area of agricultural sciences, I am an agronomist. Right after graduation, I wanted to work with research, and I went up to the doctorate. I continued in the academic and research path for a few more years, working in undergraduate teaching in agronomy, and in a post-doctorate.</description>
+    </item>
+    
     <item>
       <title>Utilizando netCDF</title>
       <link>http://mcarolinaa.github.io/posts/arquivo_nc_xarray/</link>
@@ -198,19 +209,6 @@ Uma grande diversidade de pacotes e libraries em diversas linguagens são basead
   cria binary mask e exporta arquivo
    O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
 Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
-    </item>
-    
-    <item>
-      <title>Emoji Support</title>
-      <link>http://mcarolinaa.github.io/posts/emoji-support/</link>
-      <pubDate>Thu, 01 Oct 2020 17:55:28 +0800</pubDate>
-      
-      <guid>http://mcarolinaa.github.io/posts/emoji-support/</guid>
-      <description>Emoji can be enabled in a Hugo project in a number of ways.
-The emojify function can be called directly in templates or Inline Shortcodes.
-To enable emoji globally, set enableEmoji to true in your site configuration and then you can type emoji shorthand codes directly in content files.
-These begin and end with a colon and include the code of an emoji:
-Gone camping! {?:}tent: Be back soon. That is so funny!</description>
     </item>
     
   </channel>

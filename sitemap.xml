@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://mcarolinaa.github.io/posts/presentation/</loc>
+    <lastmod>2022-11-14T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://mcarolinaa.github.io/posts/arquivo_nc_xarray/</loc>
     <lastmod>2022-10-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -50,11 +53,20 @@
     <loc>http://mcarolinaa.github.io/posts/rasters_gdal_1/</loc>
     <lastmod>2021-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://mcarolinaa.github.io/posts/emoji-support/</loc>
-    <lastmod>2020-10-01T17:55:28+08:00</lastmod>
+    <loc>http://mcarolinaa.github.io/tags/data-science/</loc>
+    <lastmod>2022-11-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://mcarolinaa.github.io/</loc>
-    <lastmod>2022-10-10T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://mcarolinaa.github.io/tags/jobs/</loc>
+    <lastmod>2022-11-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://mcarolinaa.github.io/posts/</loc>
+    <lastmod>2022-11-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://mcarolinaa.github.io/tags/</loc>
+    <lastmod>2022-11-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://mcarolinaa.github.io/tags/gis/</loc>
     <lastmod>2022-10-10T00:00:00+00:00</lastmod>
@@ -62,16 +74,10 @@
     <loc>http://mcarolinaa.github.io/tags/netcdf/</loc>
     <lastmod>2022-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://mcarolinaa.github.io/posts/</loc>
-    <lastmod>2022-10-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://mcarolinaa.github.io/tags/python/</loc>
     <lastmod>2022-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://mcarolinaa.github.io/tags/shapefile/</loc>
-    <lastmod>2022-10-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://mcarolinaa.github.io/tags/</loc>
     <lastmod>2022-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://mcarolinaa.github.io/tags/xarray/</loc>
@@ -112,9 +118,6 @@
   </url><url>
     <loc>http://mcarolinaa.github.io/tags/nearest-neighbor/</loc>
     <lastmod>2021-10-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://mcarolinaa.github.io/tags/emoji/</loc>
-    <lastmod>2020-10-01T17:55:28+08:00</lastmod>
   </url><url>
     <loc>http://mcarolinaa.github.io/projects/bludhaven/</loc>
   </url><url>
