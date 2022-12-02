@@ -216,6 +216,7 @@ exemplificar as metodologias e compará-las.</p>
 <pre tabindex="0"><code>from osgeo import gdal
 from osgeo import ogr
 </code></pre><p> </p>
+<h2 id="dados-vetoriais-e-ajustes">Dados vetoriais e ajustes</h2>
 <pre tabindex="0"><code># IDW (inverse distance to a power)
 # determina valores desconhecidos usando uma média ponderada de valores a partir
 # de pontos conhecidos,
@@ -265,7 +266,8 @@ lry = uly - ysize * res # lower right y
 ndvi = None
 pts = layer = None
 </code></pre><p>Até agora apenas preparamos os dados necessários,
-que serão usados na implementação do algoritmo de fato, a seguir:</p>
+que serão usados na implementação do algoritmo de fato, a seguir.</p>
+<h2 id="algoritmo-idw">Algoritmo IDW</h2>
 <pre tabindex="0"><code># da mesma maneira que feito p/ o algoritmo Nearest Neighbour
 # agora apenas mudando o algoritmo e seus parâmetros
 idw = gdal.Grid(p + 'ndvi_idw',

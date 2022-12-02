@@ -159,7 +159,7 @@
         <h1>Interpolação de dados vetoriais usando Moving Average</h1>
         <small role="doc-subtitle"></small>
         <p class="post-date">
-            October 21, 2021
+            October 23, 2021
         </p>
 
         <ul class="post-tags">
@@ -179,46 +179,108 @@
 
     <div class="post-content">
         <p>
-            <h1 id="manipulações-de-arquivos-raster-usando-gdal-e-python">Manipulações de arquivos raster usando GDAL e python</h1>
+            <p>Veja aqui um exemplo de como interpolar dados vetoriais, trazendo-os para
+o formato raster usando o método <strong>Inverse Distance Weighting</strong>,
+mais conhecido como <strong>IDW</strong>, por meio do uso do python e GDAL.</p>
+<p> </p>
+<p>Apenas lembrando que:</p>
 <p>O <strong>GDAL</strong> é uma <em>translator library</em> para dados vetoriais e rasteriais, com
-modelos próprios para trabalhar esses dados.</p>
+modelos próprios para trabalhar esses tipos de dados.</p>
 <p>Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados
-no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor
+no GDAL.
+Acredito que vale muito a pena saber usá-la até para entender melhor
 a estrutura dos dados no contexto de GIS.</p>
-<p>o GDAL tem API para diversas linguagens, incluindo o python.
-A API para python pode ser consultada aqui:</p>
-<p><a href="https://gdal.org/api/python.html">https://gdal.org/api/python.html</a></p>
+<p>O GDAL tem API para diversas linguagens, incluindo o python.
+A API para python pode ser consultada <a href="https://gdal.org/api/python.html">aqui</a></p>
+<p> </p>
+<h2 id="moving-average-é-um-dos-métodos-mais-rápidos-de-processamento">Moving Average é um dos métodos mais rápidos de processamento</h2>
+<p>Além disso, é um método bastante <strong>simples</strong> de se entender.</p>
+<p>A base conceitual, de que <strong>pontos mais próximos são mais semelhantes</strong> do que os
+mais distantes entre si, se mantém.</p>
+<p>Nesse método, trabalhamos com uma <strong>janela de busca de valores</strong>, e com base nesses
+valores é que um <strong>valor médio</strong> será calculado e associado ao ponto desejado.</p>
+<p>O GDAL, por meio do gdal.Grid, tem diversos parâmetros que podem ser usados
+nesse algoritmo, sendo que eles têm o poder de <strong>detalhar e definir a janela</strong> de
+busca de valores (radius1, radius2, angle, max_points&hellip;).</p>
+<p> </p>
+<p>Continuo usando os mesmos pontos extraídos (100 no total), de maneira aleatória
+de uma imagem de NDVI, e usado nos exemplos anteriores de interpolação.</p>
+<p>Os pontos estão dispostos da seguinte maneira:</p>
+<p><img src="/posts/pics/sample_ndvi.png" alt="Pontos amostrados"></p>
+<p>É claro que com essa distribuição heterogênea não teremos uma boa qualidade
+do produto final, independente do método. Mas seguindo com o objetivo de
+exemplificar as metodologias e compará-las.</p>
+<h2 id="libraries">Libraries</h2>
 <pre tabindex="0"><code>from osgeo import gdal
 from osgeo import ogr
-</code></pre><p>Nesse post há rotina para a seguinte ação:</p>
-<p><strong>Interpolação</strong> de dados vetoriais para raster usando o métodos de
-<strong>moving average</strong></p>
+</code></pre><p> </p>
+<h2 id="dados-vetoriais-e-ajustes">Dados vetoriais e ajustes</h2>
 <pre tabindex="0"><code># Moving average
-# algoritmo diferente, mudar os parametros referentes à elipse de busca
+# algoritmo c/ parametros referentes à elipse de busca
 # (a janela de busca é uma elipse)
 # faz média dos pontos dentro da elipse de busca
 
 # Arquivo vetorial que será o input da interpolação
-pts = ogr.Open('path_to_shp_file', 0)
+p = '/Users/mariacsandrea/Dropbox/Mac/Documents/personal_page/notebooks_scripts/'
+pts = ogr.Open(p + 'sampled_ndvi.shp', 0)
 layer = pts.GetLayer()
 
 for field in layer.schema:
-    print(field.name) # checar field name
+    print(field.name) # checar
+</code></pre><p>Lembrando de checar o nome da coluna de atributos do arquivo vetorial.</p>
+<p>Outro passo importante é ter as informações sobre o raster que será criado,
+e nesse caso, eu venho retirando informações do raster original de NDVI
+do qual retirei as amostras aleatórias.</p>
+<pre tabindex="0"><code># Importante: Todos os inputs devem ter a mesma projeção!
+# Caso eu tivesse, por exemplo, o vetor em epsg 4326 e precisasse
+# mudar para o epsg do raster:
+# ds = gdal.Open('path_to_model_raster')
+# dsReprj = gdal.Warp('path_to_reproj_raster',
+#                     ds,
+#                     dstSRS = 'EPSG:4326')
+# ds = dsReprj = None
+# Além disso, uso informações do raster original (de onde tirei os pontos amostrais)
+# para criar o arquivo interpolado
 
+# Continuando, após de acertar projeções 
+ndvi = gdal.Open(p + 'mergedNDVI2.tif')
+gt = ndvi.GetGeoTransform()
+
+ulx = gt[0] # upper left corner
+uly = gt[3]
+res = gt[1]
+
+xsize = ndvi.RasterXSize
+ysize = ndvi.RasterYSize
+
+# (para calcular os boundaries do raster)
+lrx = ulx + xsize * res # lower right x
+lry = uly - ysize * res # lower right y
+
+ndvi = None
 pts = layer = None
-
-# da mesma maneira que feito p/ o algoritmo nn
+</code></pre><h2 id="algoritmo-moving-average">Algoritmo Moving Average</h2>
+<pre tabindex="0"><code># da mesma maneira que feito p/ o algoritmo nn, idw
 # exporta, checa o raster e vê se os parâmetros estão aceitáveis
 # e refaz se necessário
-ma = gdal.Grid('path_to_raster_interpolado',
-               'path_to_shp_file',
-               zfield = 'rvalue_1',
+ma = gdal.Grid(p + 'ndvi_moving_avg',
+               p + 'sampled_ndvi.shp',
+               zfield = 'VALUE',
                algorithm = 'average:radius1=500:radius2=800:angle=20',
                outputBounds = [ulx, uly, lrx, lry],
                width = xsize,
                height = ysize)
 ma = None
-</code></pre><blockquote>
+</code></pre><p> </p>
+<p>E agora podemos ver o resultado da interpolação, lembrando que para chegar
+nos limites exatos do formato do raster original deverá ser feita
+a operação de <em>clip</em>, utilizando um shape.</p>
+<p>Nota-se que o resultado requer ajustes, e a escolha dos parâmetros
+que definem a janela (elipse) de busca devem ser avaliados com mais
+atenção.</p>
+<p><img src="/posts/pics/moving_avg_ndvi.png" alt="Moving"></p>
+<p> </p>
+<blockquote>
 <p>Obs: Usei como fonte para o código o canal <em>Making Sense Remotely</em>,
 que tem ótimos tutoriais de GIS para R e python.
 Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p>

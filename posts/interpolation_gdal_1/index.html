@@ -258,6 +258,7 @@ exemplificar as metodologias e compará-las.</p>
 <pre tabindex="0"><code>from osgeo import gdal
 from osgeo import ogr
 </code></pre><p> </p>
+<h2 id="dados-vetoriais-e-ajustes">Dados vetoriais e ajustes</h2>
 <pre tabindex="0"><code># Nearest neighbor
 # atribui o valor do ponto mais próximo na elipse de busca
 # janela de busca em gridding algorithms
@@ -276,6 +277,7 @@ pts = layer = None
 </code></pre><p> </p>
 <p>Nessa etapa, podemos checar o nome da coluna de atributos,
 que deverá ser usada na etapa seguinte.</p>
+<h2 id="algoritmo-nn">Algoritmo NN</h2>
 <pre tabindex="0"><code># algoritmo nn
 nn = gdal.Grid('path_to_raster_interpolado',
                p + 'sampled_ndvi.shp',

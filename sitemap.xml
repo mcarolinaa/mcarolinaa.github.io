@@ -32,11 +32,11 @@
     <loc>http://mcarolinaa.github.io/posts/interpolation_gdal_4/</loc>
     <lastmod>2021-10-23T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://mcarolinaa.github.io/posts/interpolation_gdal_2/</loc>
+    <lastmod>2021-10-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://mcarolinaa.github.io/posts/interpolation_gdal_3/</loc>
     <lastmod>2021-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://mcarolinaa.github.io/posts/interpolation_gdal_2/</loc>
-    <lastmod>2021-10-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://mcarolinaa.github.io/posts/interpolation_gdal_1/</loc>
     <lastmod>2021-10-20T00:00:00+00:00</lastmod>
@@ -110,11 +110,11 @@
     <loc>http://mcarolinaa.github.io/tags/linear/</loc>
     <lastmod>2021-10-23T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://mcarolinaa.github.io/tags/moving-average/</loc>
+    <lastmod>2021-10-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://mcarolinaa.github.io/tags/idw/</loc>
     <lastmod>2021-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://mcarolinaa.github.io/tags/moving-average/</loc>
-    <lastmod>2021-10-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://mcarolinaa.github.io/tags/nearest-neighbor/</loc>
     <lastmod>2021-10-20T00:00:00+00:00</lastmod>
