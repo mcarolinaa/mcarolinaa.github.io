@@ -1,0 +1,51 @@
+baseURL = 'http://mcarolinaa.github.io/'
+languageCode = 'en-us'
+title = 'Everyday GIS'
+theme = 'gokarna'
+enableEmoji = true
+enableRobotsTXT = true
+
+[params]
+  footer = "Everyday GIS"
+  description = "day-to-day GIS tasks in the context of agriculture and land governance"
+  avatarURL = "/images/mata-cavalo.jpg"
+  avatarSize = "size-m"
+
+  [menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "github"
+    pre = "<span data-feather='github'></span>"
+    url = "https://github.com/mcarolinaa"
+    weight = 5
+
+  [[menu.main]]
+    identifier = "buymeacoffee"
+    pre = "<span data-feather='coffee'></span>"
+    url = "https://www.buymeacoffee.com/xxxxxx"
+    weight = 6
+
+  [[menu.main]]
+    identifier = "rss"
+    pre = "<span data-feather='rss'></span>"
+    url = "/index.xml"
+    weight = 7
