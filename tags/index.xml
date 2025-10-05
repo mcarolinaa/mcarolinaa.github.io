@@ -1,182 +1,159 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Data thoughts</title>
+    <title>Tags on Everyday GIS</title>
     <link>http://mcarolinaa.github.io/tags/</link>
-    <description>Recent content in Tags on Data thoughts</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Tags on Everyday GIS</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://mcarolinaa.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>data science</title>
-      <link>http://mcarolinaa.github.io/tags/data-science/</link>
-      <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://mcarolinaa.github.io/tags/data-science/</guid>
+      <title>Elevation</title>
+      <link>http://mcarolinaa.github.io/tags/elevation/</link>
+      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/tags/elevation/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>jobs</title>
-      <link>http://mcarolinaa.github.io/tags/jobs/</link>
-      <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://mcarolinaa.github.io/tags/jobs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gis</title>
+      <title>Gis</title>
       <link>http://mcarolinaa.github.io/tags/gis/</link>
-      <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
-      
+      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://mcarolinaa.github.io/tags/gis/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Qgis</title>
+      <link>http://mcarolinaa.github.io/tags/qgis/</link>
+      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/tags/qgis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shapefile</title>
+      <link>http://mcarolinaa.github.io/tags/shapefile/</link>
+      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/tags/shapefile/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Science</title>
+      <link>http://mcarolinaa.github.io/tags/data-science/</link>
+      <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/tags/data-science/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jobs</title>
+      <link>http://mcarolinaa.github.io/tags/jobs/</link>
+      <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/tags/jobs/</guid>
+      <description></description>
+    </item>
     <item>
       <title>NetCDF</title>
       <link>http://mcarolinaa.github.io/tags/netcdf/</link>
       <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/netcdf/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python</title>
+      <title>Python</title>
       <link>http://mcarolinaa.github.io/tags/python/</link>
       <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>shapefile</title>
-      <link>http://mcarolinaa.github.io/tags/shapefile/</link>
-      <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://mcarolinaa.github.io/tags/shapefile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>xarray</title>
+      <title>Xarray</title>
       <link>http://mcarolinaa.github.io/tags/xarray/</link>
       <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/xarray/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>GDAL</title>
       <link>http://mcarolinaa.github.io/tags/gdal/</link>
       <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/gdal/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>raster</title>
+      <title>Raster</title>
       <link>http://mcarolinaa.github.io/tags/raster/</link>
       <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/raster/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>conceitos fundamentais</title>
+      <title>Conceitos Fundamentais</title>
       <link>http://mcarolinaa.github.io/tags/conceitos-fundamentais/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/conceitos-fundamentais/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>athena</title>
+      <title>Athena</title>
       <link>http://mcarolinaa.github.io/tags/athena/</link>
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/athena/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>aws</title>
+      <title>Aws</title>
       <link>http://mcarolinaa.github.io/tags/aws/</link>
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/aws/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>s3</title>
+      <title>S3</title>
       <link>http://mcarolinaa.github.io/tags/s3/</link>
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/s3/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>environments</title>
+      <title>Environments</title>
       <link>http://mcarolinaa.github.io/tags/environments/</link>
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/environments/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Interpolação</title>
       <link>http://mcarolinaa.github.io/tags/interpola%C3%A7%C3%A3o/</link>
       <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/interpola%C3%A7%C3%A3o/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>linear</title>
+      <title>Linear</title>
       <link>http://mcarolinaa.github.io/tags/linear/</link>
       <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/linear/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>moving average</title>
+      <title>Moving Average</title>
       <link>http://mcarolinaa.github.io/tags/moving-average/</link>
       <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/moving-average/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>idw</title>
+      <title>Idw</title>
       <link>http://mcarolinaa.github.io/tags/idw/</link>
       <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/idw/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nearest neighbor</title>
+      <title>Nearest Neighbor</title>
       <link>http://mcarolinaa.github.io/tags/nearest-neighbor/</link>
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/tags/nearest-neighbor/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

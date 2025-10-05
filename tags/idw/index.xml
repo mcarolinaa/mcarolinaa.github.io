@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>idw on Data thoughts</title>
+    <title>Idw on Everyday GIS</title>
     <link>http://mcarolinaa.github.io/tags/idw/</link>
-    <description>Recent content in idw on Data thoughts</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Idw on Everyday GIS</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/idw/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://mcarolinaa.github.io/tags/idw/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Interpolação de dados vetoriais usando IDW</title>
       <link>http://mcarolinaa.github.io/posts/interpolation_gdal_3/</link>
       <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_3/</guid>
-      <description>Veja aqui um exemplo de como interpolar dados vetoriais, trazendo-os para o formato raster usando o método Inverse Distance Weighting, mais conhecido como IDW, por meio do uso do python e GDAL.
- Apenas lembrando que:
-O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+      <description>&lt;p&gt;Veja aqui um exemplo de como interpolar dados vetoriais, trazendo-os para&#xA;o formato raster usando o método &lt;strong&gt;Inverse Distance Weighting&lt;/strong&gt;,&#xA;mais conhecido como &lt;strong&gt;IDW&lt;/strong&gt;, por meio do uso do python e GDAL.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Apenas lembrando que:&lt;/p&gt;&#xA;&lt;p&gt;O &lt;strong&gt;GDAL&lt;/strong&gt; é uma &lt;em&gt;translator library&lt;/em&gt; para dados vetoriais e rasteriais, com&#xA;modelos próprios para trabalhar esses tipos de dados.&lt;/p&gt;&#xA;&lt;p&gt;Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados&#xA;no GDAL.&#xA;Acredito que vale muito a pena saber usá-la até para entender melhor&#xA;a estrutura dos dados no contexto de GIS.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>SRTM, DEM, what are those?</title>
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta name="keywords" content='gis, qgis, elevation'>
+
+    <meta property="og:url" content="http://mcarolinaa.github.io/posts/srtm_dem_data/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SRTM, DEM, what are those?">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SRTM, DEM, what are those?">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/srtm_dem_data/">
+    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/srtm_dem_data/">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
+
+    
+    <link rel="canonical" href="http://mcarolinaa.github.io/posts/srtm_dem_data/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/svg-injector.min.js"></script>
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://mcarolinaa.github.io/">
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/projects/"> Projects </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/mcarolinaa"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.buymeacoffee.com/xxxxxx"><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/index.xml"><span data-feather='rss'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/projects/"> Projects </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/mcarolinaa"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.buymeacoffee.com/xxxxxx"><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/index.xml"><span data-feather='rss'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>SRTM, DEM, what are those?</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            September 25, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/gis">gis</a></li>
+        
+            <li class="post-tag"><a href="/tags/qgis">qgis</a></li>
+        
+            <li class="post-tag"><a href="/tags/elevation">elevation</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="srtm-dem-and-others-what-do-they-even-mean-and-whats-the-difference">SRTM, DEM, and Others&hellip; What Do They Even Mean, and What&rsquo;s the Difference?</h1>
+<p> </p>
+<p>Maybe when you first had to start dealing with <strong>altitude data</strong>, you heard these terms thrown around and wondered what they meant or if they were the same thing.</p>
+<p>First off, it&rsquo;s good to know that we can describe the Earth&rsquo;s terrain—its shape and structure—using something called <strong>geomorphometric data</strong>. A classic example of this is the <strong>contour maps</strong> we can create for a specific area.</p>
+<p>This kind of information is super important for things like agriculture. You can get an exact understanding of the land&rsquo;s relief, which helps you plan the best way to manage the soil, combat erosion, and take other conservation steps.</p>
+<p>In this context, you’ve probably run into <strong>DEM</strong> (short for: Digital Elevation Model) and <strong>SRTM</strong> (Shuttle Radar Topography Mission), and maybe you&rsquo;re confused about what each one means (I know I was!).</p>
+<h3 id="what-is-srtm">What is SRTM?</h3>
+<p><strong>SRTM</strong> was a mission back in the 2000s that aimed to get high-resolution elevation data for basically the whole planet. The goal was to become a complete, global source for this type of data.</p>
+<p>It&rsquo;s provided by the <strong>USGS (United States Geological Survey)</strong>. Here in Brazil, we can find this data compiled in the <strong>Topodata project</strong> from <strong>INPE</strong>, which brings together geomorphometric data for Brazil with some enhancements and corrections.</p>
+<p>The Topodata initiative makes grabbing this kind of data much easier. You can get more info here: <a href="https://www.google.com/search?q=http://www.webmapit.com.br/inpe/topodata/">TOPODATA - Banco de Dados Geomorfométricos do Brasil</a></p>
+<p><img src="/posts/pics/tela_topodata.png" alt="Topodata">
+ </p>
+<h3 id="what-is-dem">What is DEM?</h3>
+<p>The <strong>Digital Elevation Model (DEM)</strong> is a model that represents the surface using $x$, $y$, and $z$—with $z$ representing the altitude.</p>
+<p>Since a DEM is a <em>type</em> of representation, it can come from various data sources, like <strong>LiDAR, SRTM</strong>, and others.</p>
+<p>And that&rsquo;s where the link between SRTM and DEM comes in: the <strong>DEM is like the final product</strong>, and while it <em>can</em> come from SRTM data, it doesn&rsquo;t have to. <strong>SRTM is a type of data</strong>, while <strong>DEM is a model</strong> developed using that kind of data (but it can use other sources too).</p>
+<h3 id="how-to-get-srtm-data">How to Get SRTM Data</h3>
+<p>After landing on the Topodata page, you can head straight for the geomorphometric data. Just go to <strong>Acesso (Access)</strong> &ndash;&gt; <strong>GOOGLE – TOPODATA</strong>.</p>
+<p><img src="/posts/pics/tela_google_topodata.png" alt="Topodata">
+ </p>
+<p>There, you&rsquo;ll see the entire Brazilian territory divided into grids. You can search for your region(s) of interest. When you click a grid, you’ll see the available data types on the left side of the screen. The first on the list is altitude, so you can download that data in a .zip file.</p>
+<h3 id="if-srtm-is-a-data-source-for-a-dem-are-there-newer-sources">If SRTM is a data source for a DEM, are there newer sources?</h3>
+<p>Yep. I talked about SRTM first because it was a popular source for a long time (and I think it still is today!). But yes, we have newer sources now.</p>
+<p>Some of them include:</p>
+<ul>
+<li>
+<p><strong>Coopernicus DEM</strong>
+This data represents the Earth&rsquo;s surface and comes in three scenarios: EEA-10, GLO-30, and GLO-90. The numbers are the spatial resolutions (the 10-meter one is only for Europe and has limited access). The mission that provided this data was <strong>TanDEM-X</strong> between 2011 and 2015, and the data became available in 2019. It’s set to be maintained until 2026.</p>
+</li>
+<li>
+<p><strong>ALOS World 3D - 30m</strong>
+This is Japanese data from the <strong>ALOS satellite</strong> mission (2006-2011). The data has the same spatial resolution as the previous one, at 30 meters.</p>
+</li>
+<li>
+<p><strong>National Sources (Brazil): ANADEM (ANA/UFRGS)</strong>
+<strong>ANADEM</strong> also has a 30-meter resolution and was developed using the Copernicus DEM GLO-30. What&rsquo;s cool here is that it includes an interesting removal of the bias caused by vegetation. This model covers all of South America and is also available for free via Google Earth Engine. It was developed through a partnership between UFRGS and ANA. Find more details here: <a href="https://www.ufrgs.br/hge/anadem-modelo-digital-de-terreno-mdt/">https://www.ufrgs.br/hge/anadem-modelo-digital-de-terreno-mdt/</a></p>
+</li>
+</ul>
+<p>Of course, these aren&rsquo;t the only choices—there&rsquo;s way more you can use. You can find more info in places like this: <a href="https://opentopography.org/">https://opentopography.org/</a></p>
+<p>Currently, the <strong>ANADEM</strong> data is probably the best bet for Brazil, but remember, everything depends on what you need to use it for!</p>
+
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2025 Everyday GIS</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

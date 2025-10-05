@@ -18,21 +18,21 @@
 
     
     <title>Entendendo os dados de um raster (1)</title>
-    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta name="keywords" content='gis, raster, GDAL, python'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Entendendo os dados de um raster (1)">
-    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
-    <meta property="og:image" content="/images/plant_close.jpg">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Entendendo os dados de um raster (1)">
-    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/entendendo_raster_1/">
-    <meta name="twitter:image" content="/images/plant_close.jpg">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
 
     
     <link rel="canonical" href="http://mcarolinaa.github.io/posts/entendendo_raster_1/" />
@@ -58,13 +58,13 @@
         
         <div class="avatar">
             <a href="http://mcarolinaa.github.io/">
-                <img src="/images/plant_close.jpg" alt="avatar" />
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="http://mcarolinaa.github.io/">Data thoughts</a>
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
         </div>
 
         <div class="nav-links">
@@ -220,8 +220,8 @@ import matplotlib.pyplot as plt
 import seaborn as sn
 
 # Abre
-p = '/directory/path/'
-raster = gdal.Open(p + 'raster_name.tif')
+p = &#39;/directory/path/&#39;
+raster = gdal.Open(p + &#39;raster_name.tif&#39;)
 
 # Guardando algumas informações importantes:
 gt = raster.GetGeoTransform() # equivalente ao Affine do rasterio
@@ -238,7 +238,6 @@ ysize = raster.RasterYSize # núm de linhas
 # ex, refazer um raster similar
 xstart = xmin + pxw/2 # w-e
 ystart = ymax + pxh/2 # n-s
-
 </code></pre><p> </p>
 <h2 id="esquema-para-entender-algumas-das-informações">Esquema para entender algumas das informações</h2>
 <p>Inicialmente achei um pouco estranho todas essas informações, e com
@@ -280,8 +279,7 @@ im = ax.imshow(data[0], extent=extent) # Blue band é a primeira
 cb = fig.colorbar(im, shrink=.5)
 ax.axes.xaxis.set_visible(False)
 ax.axes.yaxis.set_visible(False)
-cb.set_label('Blue band')
-
+cb.set_label(&#39;Blue band&#39;)
 </code></pre><p>Consigo visualizar as imagens de duas das bandas:</p>
 <pre tabindex="0"><code>fig, ax = plt.subplots(figsize=(5,6), constrained_layout=True)
 
@@ -289,7 +287,7 @@ im = ax.imshow(data[3], extent=extent)
 cb = fig.colorbar(im, shrink=.5)
 ax.axes.xaxis.set_visible(False)
 ax.axes.yaxis.set_visible(False)
-cb.set_label('Near infrared band')
+cb.set_label(&#39;Near infrared band&#39;)
 </code></pre><p><img src="/posts/pics/blue_band.png" alt="Informações do arquivo raster"></p>
 <p><img src="/posts/pics/nir_band.png" alt="Informações do arquivo raster"></p>
 <p>Outra forma interessante de se avaliar inicialmente os dados de um raster,
@@ -305,11 +303,11 @@ nir = data[3].flatten()
 
 # faz histograma de todas as bandas
 plt.figure(figsize=(4,3))
-sn.histplot(blue, color='blue')
-sn.histplot(red, color='red')
-sn.histplot(green, color='green')
-sn.histplot(nir, color='purple')
-plt.title('Blue, Green, Red and NIR bands')
+sn.histplot(blue, color=&#39;blue&#39;)
+sn.histplot(red, color=&#39;red&#39;)
+sn.histplot(green, color=&#39;green&#39;)
+sn.histplot(nir, color=&#39;purple&#39;)
+plt.title(&#39;Blue, Green, Red and NIR bands&#39;)
 plt.show()
 </code></pre><p><img src="/posts/pics/hist_all.png" alt="Informações do arquivo raster"></p>
 <p>Dessa maneira, podemos começar a entender um pouquinho melhor sobre essa library
@@ -334,7 +332,7 @@ universal tão poderosa, o GDAL, e sobre nossos dados.</p>
     
 
         </main><footer class="footer">
-    <span>&copy; 2022 Data thoughts</span>
+    <span>&copy; 2025 Everyday GIS</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

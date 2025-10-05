@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jobs on Data thoughts</title>
+    <title>Jobs on Everyday GIS</title>
     <link>http://mcarolinaa.github.io/tags/jobs/</link>
-    <description>Recent content in jobs on Data thoughts</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Jobs on Everyday GIS</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/jobs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://mcarolinaa.github.io/tags/jobs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Presentation and my trajectory</title>
       <link>http://mcarolinaa.github.io/posts/presentation/</link>
       <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/presentation/</guid>
-      <description>Presentation and How I became a Data Scientist  Hello!
- My name is Maria Carolina. I currently work as a data scientist, and I started working in this area 2.5 years ago.
-  My background is in the area of agricultural sciences, I am an agronomist. Right after graduation, I wanted to work with research, and I went up to the doctorate. I continued in the academic and research path for a few more years, working in undergraduate teaching in agronomy, and in a post-doctorate.</description>
+      <description>&lt;h1 id=&#34;presentation-and-how-i-became-a-data-scientist&#34;&gt;Presentation and How I became a Data Scientist&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Hello!&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;My name is Maria Carolina. I &lt;strong&gt;currently work as a data scientist&lt;/strong&gt;,&#xA;and I started working in this area 2.5 years ago.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://mcarolinaa.github.io/posts/pics/mountains.jpg&#34; alt=&#34;Foto de Marlon Martinez - Pexels&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;My background is in the area of &lt;strong&gt;agricultural sciences&lt;/strong&gt;, I am an agronomist.&#xA;Right after graduation, I wanted to work with research, and I went up to the&#xA;doctorate.&#xA;I continued in the academic and research path for a few more years, working&#xA;in undergraduate teaching in agronomy, and in a post-doctorate.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

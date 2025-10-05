@@ -25,14 +25,14 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Acessar arquivos S3 via python">
     <meta property="og:description" content="Acessar arquivos armazenados no AWS S3 via python">
-    <meta property="og:image" content="/images/plant_close.jpg">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Acessar arquivos S3 via python">
     <meta name="twitter:description" content="Acessar arquivos armazenados no AWS S3 via python">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/acessar_s3/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/acessar_s3/">
-    <meta name="twitter:image" content="/images/plant_close.jpg">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
 
     
     <link rel="canonical" href="http://mcarolinaa.github.io/posts/acessar_s3/" />
@@ -58,13 +58,13 @@
         
         <div class="avatar">
             <a href="http://mcarolinaa.github.io/">
-                <img src="/images/plant_close.jpg" alt="avatar" />
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="http://mcarolinaa.github.io/">Data thoughts</a>
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
         </div>
 
         <div class="nav-links">
@@ -189,14 +189,14 @@ import matplotlib.pyplot as plt
 import boto3
 import io
 </code></pre><h2 id="1-acessar-bucket-do-s3-por-meio-do-boto3-client">1. Acessar bucket do S3 por meio do boto3 client</h2>
-<pre tabindex="0"><code>session = boto3.Session(profile_name='default')
-s3_client = session.client('s3')
-s3_bucket_name = 'nome_do_bucket'
-s3 = boto3.resource('s3')
+<pre tabindex="0"><code>session = boto3.Session(profile_name=&#39;default&#39;)
+s3_client = session.client(&#39;s3&#39;)
+s3_bucket_name = &#39;nome_do_bucket&#39;
+s3 = boto3.resource(&#39;s3&#39;)
 my_bucket = s3.Bucket(s3_bucket_name)
 </code></pre><h2 id="21-listar-todos-os-arquivos-sem-filtros">2.1 Listar todos os arquivos, sem filtros</h2>
 <pre tabindex="0"><code>bucket_list = []
-for file in my_bucket.objects.filter(Prefix='path_do_bucket_e_arquivos'):
+for file in my_bucket.objects.filter(Prefix=&#39;path_do_bucket_e_arquivos&#39;):
     file_name = file.key
     bucket_list.append(file.key)  # lista arquivos com nomes e paths
 </code></pre><p>Em outro cenário, no qual tenho diferentes tipos de arquivos
@@ -204,27 +204,27 @@ e gostaria de separá-los:</p>
 <h2 id="22-listar-arquivos-e-filtrar-tenho-csv-e-tif">2.2 Listar arquivos e filtrar (Tenho .csv e .tif)</h2>
 <pre tabindex="0"><code>bucket_csv = []
 bucket_tif = []
-for file in my_bucket.objects.filter(Prefix='path_do_bucket_e_arquivos'):
+for file in my_bucket.objects.filter(Prefix=&#39;path_do_bucket_e_arquivos&#39;):
     file_name = file.key
-    if file_name.split(&quot;/&quot;)[-1].endswith(&quot;.csv&quot;):
+    if file_name.split(&#34;/&#34;)[-1].endswith(&#34;.csv&#34;):
         bucket_csv.append(file.key)  # listar com nomes de arquivos e paths
     else:
         bucket_tif.append(file.key)
 </code></pre><h3 id="csv">.csv</h3>
-<h3 id="221-lê-os-arquivos-do-s3----lista-de-data-frames">2.2.1. Lê os arquivos do s3 &ndash;&gt; lista de data frames</h3>
+<h3 id="221-lê-os-arquivos-do-s3--lista-de-data-frames">2.2.1. Lê os arquivos do s3 &ndash;&gt; lista de data frames</h3>
 <pre tabindex="0"><code>list_dfs = []
 for file in bucket_csv:
     obj = s3.Object(s3_bucket_name, file)
-    data = obj.get()['Body'].read()
+    data = obj.get()[&#39;Body&#39;].read()
     list_dfs.append(pd.read_csv(io.BytesIO(data)))
 </code></pre><h3 id="tif">.tif</h3>
 <p>Nesse caso, tenho apenas 1 raster, vou apenas abrir e plotar</p>
 <h3 id="222-usando-vsis3_streaming-file-system-handler">2.2.2 usando vsis3_streaming/ (file system handler)</h3>
-<pre tabindex="0"><code>ds = gdal.Open(str('/vsis3_streaming/' + s3_bucket_name + '/' + bucket_tif[0]))
+<pre tabindex="0"><code>ds = gdal.Open(str(&#39;/vsis3_streaming/&#39; + s3_bucket_name + &#39;/&#39; + bucket_tif[0]))
 array = ds.GetRasterBand(1).ReadAsArray()
 plt.imshow(array)
 plt.colorbar() # add a color scale
-plt.title('Título do raster')
+plt.title(&#39;Título do raster&#39;)
 ds = None
 </code></pre>
         </p>
@@ -236,7 +236,7 @@ ds = None
     
 
         </main><footer class="footer">
-    <span>&copy; 2022 Data thoughts</span>
+    <span>&copy; 2025 Everyday GIS</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>s3 on Data thoughts</title>
+    <title>S3 on Everyday GIS</title>
     <link>http://mcarolinaa.github.io/tags/s3/</link>
-    <description>Recent content in s3 on Data thoughts</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in S3 on Everyday GIS</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://mcarolinaa.github.io/tags/s3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Acessar arquivos S3 via python</title>
       <link>http://mcarolinaa.github.io/posts/acessar_s3/</link>
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/acessar_s3/</guid>
-      <description>Acessando arquivos no Amazon S3 Objetivo: Acessar arquivos contidos no serviço de armazenamento da Amazon Web Services via python.
-Sobre o serviço:
-https://aws.amazon.com/pt/s3/
-A rotina abaixo contempla uma situação de identificar e avaliar alguns arquivos que você possa ter no S3.
-Considera-se que as credenciais de acesso já estejam corretamente setadas na sua máquina.
-from osgeo import gdal import numpy as np import pandas as pd import matplotlib.pyplot as plt import boto3 import io 1.</description>
+      <description>&lt;h1 id=&#34;acessando-arquivos-no-amazon-s3&#34;&gt;Acessando arquivos no Amazon S3&lt;/h1&gt;&#xA;&lt;p&gt;Objetivo: Acessar arquivos contidos no serviço de armazenamento da Amazon&#xA;Web Services via python.&lt;/p&gt;&#xA;&lt;p&gt;Sobre o serviço:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/pt/s3/&#34;&gt;https://aws.amazon.com/pt/s3/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;A rotina abaixo contempla uma situação de identificar e avaliar alguns arquivos&#xA;que você possa ter no S3.&lt;/p&gt;&#xA;&lt;p&gt;Considera-se que as credenciais de acesso já estejam corretamente setadas&#xA;na sua máquina.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;from osgeo import gdal&#xA;import numpy as np&#xA;import pandas as pd&#xA;import matplotlib.pyplot as plt&#xA;import boto3&#xA;import io&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;1-acessar-bucket-do-s3-por-meio-do-boto3-client&#34;&gt;1. Acessar bucket do S3 por meio do boto3 client&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;session = boto3.Session(profile_name=&amp;#39;default&amp;#39;)&#xA;s3_client = session.client(&amp;#39;s3&amp;#39;)&#xA;s3_bucket_name = &amp;#39;nome_do_bucket&amp;#39;&#xA;s3 = boto3.resource(&amp;#39;s3&amp;#39;)&#xA;my_bucket = s3.Bucket(s3_bucket_name)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;21-listar-todos-os-arquivos-sem-filtros&#34;&gt;2.1 Listar todos os arquivos, sem filtros&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;bucket_list = []&#xA;for file in my_bucket.objects.filter(Prefix=&amp;#39;path_do_bucket_e_arquivos&amp;#39;):&#xA;    file_name = file.key&#xA;    bucket_list.append(file.key)  # lista arquivos com nomes e paths&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Em outro cenário, no qual tenho diferentes tipos de arquivos&#xA;e gostaria de separá-los:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

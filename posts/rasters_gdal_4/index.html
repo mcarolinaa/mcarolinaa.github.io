@@ -18,21 +18,21 @@
 
     
     <title>Operações com raster GDAL e python - 4</title>
-    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta name="keywords" content='gis, python, raster, GDAL'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_4/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Operações com raster GDAL e python - 4">
-    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
-    <meta property="og:image" content="/images/plant_close.jpg">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Operações com raster GDAL e python - 4">
-    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/rasters_gdal_4/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_4/">
-    <meta name="twitter:image" content="/images/plant_close.jpg">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
 
     
     <link rel="canonical" href="http://mcarolinaa.github.io/posts/rasters_gdal_4/" />
@@ -58,13 +58,13 @@
         
         <div class="avatar">
             <a href="http://mcarolinaa.github.io/">
-                <img src="/images/plant_close.jpg" alt="avatar" />
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="http://mcarolinaa.github.io/">Data thoughts</a>
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
         </div>
 
         <div class="nav-links">
@@ -210,7 +210,7 @@ para fins de entendimento que o arquivo foi dividido em partes (nesse caso, 9).<
 <p> </p>
 <h2 id="abre-as-partes-e-faz-merge-dos-rasters">Abre as partes e faz merge dos rasters</h2>
 <pre tabindex="0"><code># apontar para a lista de rasters que quer o merge
-ndviList = glob.glob('ndvi[0-9][0-9].tif') # ex: rasters de ndvi
+ndviList = glob.glob(&#39;ndvi[0-9][0-9].tif&#39;) # ex: rasters de ndvi
 print(ndviList)
 </code></pre><p> </p>
 <p>A seguir, 2 maneiras de fazer o processo.</p>
@@ -221,7 +221,7 @@ e como devem ser chamados os argumentos.</p>
 <pre tabindex="0"><code># Jeito 1: Usando subprocess
 # (tipo usando o terminal)
 
-cmd = 'gdal_merge.py -ps 3 -3 -o mergedNDVI1.tif'
+cmd = &#39;gdal_merge.py -ps 3 -3 -o mergedNDVI1.tif&#39;
 subprocess.call(cmd.split()+ndviList)
 </code></pre><p> </p>
 <h3 id="2-criar-um-virtual-raster-e-transformá-lo-em-geotiff">2. Criar um <em>virtual raster</em> e transformá-lo em GeoTiff</h3>
@@ -230,11 +230,11 @@ subprocess.call(cmd.split()+ndviList)
 # (melhor p/ arquivos maiores)
 
 # O virtual raster é mais fácil de ser processado
-vrt = gdal.BuildVRT('mergedNDVI2.vrt',
+vrt = gdal.BuildVRT(&#39;mergedNDVI2.vrt&#39;,
                     ndviList)
 # isso acima é um xml, que indica ao GDAL onde os arquivos estão
 # e a seguir, cria um GeoTiff a partir disso
-gdal.Translate('mergedNDVI2.tif',
+gdal.Translate(&#39;mergedNDVI2.tif&#39;,
                vrt,
                xRes = 3,
                yRes = -3)
@@ -248,8 +248,7 @@ feitas nos últimos posts.</p>
 <blockquote>
 <p>Obs: Usei como fonte para o código o canal <em>Making Sense Remotely</em>,
 que tem ótimos tutoriais de GIS para R e python.
-Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p>
-</blockquote>
+Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p></blockquote>
 
         </p>
     </div>
@@ -260,7 +259,7 @@ Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>
     
 
         </main><footer class="footer">
-    <span>&copy; 2022 Data thoughts</span>
+    <span>&copy; 2025 Everyday GIS</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

@@ -18,21 +18,21 @@
 
     
     <title>Operações com raster GDAL e python - 1</title>
-    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta name="keywords" content='gis, python, raster, GDAL'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Operações com raster GDAL e python - 1">
-    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
-    <meta property="og:image" content="/images/plant_close.jpg">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Operações com raster GDAL e python - 1">
-    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_1/">
-    <meta name="twitter:image" content="/images/plant_close.jpg">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
 
     
     <link rel="canonical" href="http://mcarolinaa.github.io/posts/rasters_gdal_1/" />
@@ -58,13 +58,13 @@
         
         <div class="avatar">
             <a href="http://mcarolinaa.github.io/">
-                <img src="/images/plant_close.jpg" alt="avatar" />
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="http://mcarolinaa.github.io/">Data thoughts</a>
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
         </div>
 
         <div class="nav-links">
@@ -223,7 +223,7 @@ im = ax.imshow(data, extent=extent)
 cb = fig.colorbar(im, shrink=.5)
 ax.axes.xaxis.set_visible(False)
 ax.axes.yaxis.set_visible(False)
-cb.set_label('NDVI')
+cb.set_label(&#39;NDVI&#39;)
 </code></pre><p><img src="/posts/pics/ndvi.png" alt="Informações do arquivo raster"></p>
 <p>Acima pode-se observar a distribuição de NDVI em uma área de produção
 de cultura agrícola em certo período de intenso desenvolvimento
@@ -238,7 +238,7 @@ apenas onde o mesmo encontra-se acima do valor médio na ocasião.</p>
 # cria a máscara com condição
 binmask = np.where((data &gt;= np.mean(data)),1,0) # tudo que for &gt; média, entao =1
 # cores p/ quando atender/não atender a condição
-cmap = matplotlib.colors.ListedColormap(['red', 'green'])
+cmap = matplotlib.colors.ListedColormap([&#39;red&#39;, &#39;green&#39;])
 
 # plota
 fig, ax = plt.subplots(figsize=(5,6), constrained_layout=True)
@@ -246,17 +246,16 @@ fig, ax = plt.subplots(figsize=(5,6), constrained_layout=True)
 im = ax.imshow(binmask, extent=extent, cmap=cmap) 
 ax.axes.xaxis.set_visible(False)
 ax.axes.yaxis.set_visible(False)
-cb.set_label('NDVI &gt; média')
-
+cb.set_label(&#39;NDVI &gt; média&#39;)
 </code></pre><p>Nesse caso, tudo que estava acima do valor médio de NDVI da imagem,
 agora aparece na cor verde, e abaixo, na cor vermelha.</p>
 <p><img src="/posts/pics/ndvi_mask.png" alt="Informações do arquivo raster"></p>
 <p> </p>
 <h2 id="exporta-em-disco">Exporta em disco</h2>
 <pre tabindex="0"><code># ajusta driver p/ exportar
-driver = gdal.GetDriverByName('GTiff')
+driver = gdal.GetDriverByName(&#39;GTiff&#39;)
 driver.Register()
-outds = driver.Create('path_to_binmask.tif',
+outds = driver.Create(&#39;path_to_binmask.tif&#39;,
                       xsize = binmask.shape[1], # number of cols
                       ysize = binmask.shape[0], # number of rows
                       bands = 1,
@@ -277,8 +276,7 @@ outds = None
 <blockquote>
 <p>Obs: Usei como fonte para o código o canal <em>Making Sense Remotely</em>,
 que tem ótimos tutoriais de GIS para R e python.
-Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p>
-</blockquote>
+Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p></blockquote>
 
         </p>
     </div>
@@ -289,7 +287,7 @@ Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>
     
 
         </main><footer class="footer">
-    <span>&copy; 2022 Data thoughts</span>
+    <span>&copy; 2025 Everyday GIS</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

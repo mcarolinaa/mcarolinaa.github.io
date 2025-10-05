@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>How to make a contour map</title>
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta name="keywords" content='gis, qgis, shapefile, elevation'>
+
+    <meta property="og:url" content="http://mcarolinaa.github.io/posts/contour_map/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="How to make a contour map">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to make a contour map">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/contour_map/">
+    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/contour_map/">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
+
+    
+    <link rel="canonical" href="http://mcarolinaa.github.io/posts/contour_map/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/svg-injector.min.js"></script>
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://mcarolinaa.github.io/">
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/projects/"> Projects </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/mcarolinaa"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.buymeacoffee.com/xxxxxx"><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/index.xml"><span data-feather='rss'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/projects/"> Projects </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/mcarolinaa"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.buymeacoffee.com/xxxxxx"><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/index.xml"><span data-feather='rss'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>How to make a contour map</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            October 4, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/gis">gis</a></li>
+        
+            <li class="post-tag"><a href="/tags/qgis">qgis</a></li>
+        
+            <li class="post-tag"><a href="/tags/shapefile">shapefile</a></li>
+        
+            <li class="post-tag"><a href="/tags/elevation">elevation</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="how-to-make-a-contour-map">How to Make a Contour Map</h1>
+<p> </p>
+<p>Now that the difference between <strong>DEM</strong> and <strong>SRTM</strong> (and other data sources) is clearer, the goal of this guide is to create a contour map using SRTM data we got through Topodata.</p>
+<p> </p>
+<h3 id="what-is-a-contour-map">What is a Contour Map?</h3>
+<p>This type of map uses <strong>lines</strong> (called <strong>contour lines</strong>) that connect points of the <strong>same altitude</strong> on the Earth&rsquo;s surface. Using this kind of map, we can get a much better feel for a region&rsquo;s terrain, allowing for topographic studies, planning for agriculture, and other area-specific analyses.</p>
+<p>A key thing for interpreting these maps is this: <strong>the closer the lines are, the steeper the slope is</strong>. The further apart the lines are, the gentler the slope is in that area.</p>
+<p> </p>
+<h3 id="making-a-contour-map-using-srtm-data">Making a Contour Map Using SRTM Data</h3>
+<p>In the previous post, I showed you how to get the SRTM data and download the file for your area of interest. Now we&rsquo;ll use that data to develop the contour map.</p>
+<ol>
+<li>Go to the Topodata page &ndash;&gt; <strong>Acesso (Access)</strong> &ndash;&gt; <strong>Google Topodata</strong></li>
+<li>Choose your grid area and download the <strong>.zip file</strong> for altitude.</li>
+</ol>
+<p><img src="/posts/pics/srtm_raw.png" alt="Topodata">
+ </p>
+<h3 id="add-and-style-your-data-in-qgis">Add and Style Your Data in QGIS</h3>
+<p>For a more interesting visualization, you can tweak the styling. Change it to <strong>&ldquo;Singleband pseudocolor&rdquo;</strong> and pick a color palette you like. Other things to pay attention to are the method you use to classify the values and the number of classes—keep that in mind for correct interpretation.</p>
+<p><img src="/posts/pics/srtm_pseudcolor.png" alt="Topodata">
+ </p>
+<h3 id="change-the-projection">Change the Projection</h3>
+<p>The data you downloaded is originally in <strong>WGS84 – EPGS:4326</strong>, which means it uses geographic coordinates (lat, lon).</p>
+<p>For calculations and analysis, it&rsquo;s important that we change this to <strong>UTM</strong>. If you haven&rsquo;t already told QGIS the original CRS, do that before you make the switch.</p>
+<p>One way to do this is: <strong>Raster</strong> &ndash;&gt; <strong>Projections</strong> &ndash;&gt; <strong>Warp (Reproject)</strong>.</p>
+<p><img src="/posts/pics/srtm_reproj.png" alt="Topodata">
+ </p>
+<p>There are other ways to reproject, like <strong>Export</strong> &ndash;&gt; <strong>Save as</strong> &ndash;&gt; and then adjusting the new CRS settings for the file. I usually go with this option.</p>
+<p>In the box that pops up, fill in the info. Remember to specify the original CRS and the one you want to transform it to, and save it as a <strong>.tif file</strong>.</p>
+<p>In my case, since I picked a grid containing the city of Cuiabá and nearby areas, I know the corresponding EPSG is <strong>31981 (UTM zone 21S)</strong>.</p>
+<p><strong>Optional:</strong> If you don&rsquo;t want to make the map for the entire SRTM area you downloaded, and you have a smaller region of interest, you can <strong>clip</strong> the file after you&rsquo;ve reprojected it.</p>
+<p> </p>
+<h3 id="extracting-contour-lines-from-the-srtm-file">Extracting Contour Lines from the SRTM File</h3>
+<p>Now we&rsquo;ll finally get down to the actual contour lines!</p>
+<p><strong>Raster</strong> &ndash;&gt; <strong>Extraction</strong> &ndash;&gt; <strong>Contour</strong></p>
+<p>Fill in the requested information, keep the line interval at <strong>10 meters</strong>, and save it as a <strong>vector file</strong> this time. You&rsquo;ll notice that, by default, the attribute of interest will come out as <strong>ELEV</strong>.</p>
+<p><img src="/posts/pics/tool_contour.png" alt="Topodata">
+ </p>
+<p>Since I didn&rsquo;t clip the file, I have contour lines for the whole original raster area. I added a basemap here to make sure of the location and give some context for interpretation.</p>
+<p><img src="/posts/pics/contour_result.png" alt="Topodata">
+ </p>
+<p>You can also change the styling of the lines now to make your results easier to interpret and view.</p>
+<p>Now, if you open the <strong>attribute table</strong>, it’s clearer that each curve ID corresponds to an <strong>ELEV</strong> value, which is the altitude of the spot where that line is positioned.</p>
+<p><img src="/posts/pics/contour_atrib.png" alt="Topodata">
+ </p>
+<p>Very close to Cuiabá, we have the Chapada dos Guimarães. If we zoom into that region after outlining the contour lines, the whole &ldquo;closely packed lines = steeper slope&rdquo; idea becomes super obvious: you can see the altitude increases significantly over a relatively short distance here. I also added labels in the symbology settings under <strong>Labels</strong>.</p>
+<p><img src="/posts/pics/contour_chapada.png" alt="Topodata"></p>
+
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2025 Everyday GIS</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

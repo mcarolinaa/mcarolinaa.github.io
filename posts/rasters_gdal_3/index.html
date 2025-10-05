@@ -18,21 +18,21 @@
 
     
     <title>Operações com raster GDAL e python - 3</title>
-    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta name="keywords" content='gis, python, raster, GDAL'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_3/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Operações com raster GDAL e python - 3">
-    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
-    <meta property="og:image" content="/images/plant_close.jpg">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Operações com raster GDAL e python - 3">
-    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/rasters_gdal_3/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_3/">
-    <meta name="twitter:image" content="/images/plant_close.jpg">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
 
     
     <link rel="canonical" href="http://mcarolinaa.github.io/posts/rasters_gdal_3/" />
@@ -58,13 +58,13 @@
         
         <div class="avatar">
             <a href="http://mcarolinaa.github.io/">
-                <img src="/images/plant_close.jpg" alt="avatar" />
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="http://mcarolinaa.github.io/">Data thoughts</a>
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
         </div>
 
         <div class="nav-links">
@@ -201,7 +201,6 @@ entre outros.</p>
 <pre tabindex="0"><code>from osgeo import gdal
 import numpy as np
 import matplotlib.pyplot as plt
-
 </code></pre><p> </p>
 <p>No exemplo, continuo usando o mesmo raster (NDVI) usado no texto de
 manipulação de rasters com GDAL - 1.</p>
@@ -233,13 +232,13 @@ for i in range(div):
         ymax = ysteps[j]
         ymin = ysteps[j+1]
 
-        print('xmin: '+str(xmin))
-        print('xmax: ' + str(xmax))
-        print('ymin: ' + str(ymin))
-        print('ymax: ' + str(ymax))
-        print('\n')
+        print(&#39;xmin: &#39;+str(xmin))
+        print(&#39;xmax: &#39; + str(xmax))
+        print(&#39;ymin: &#39; + str(ymin))
+        print(&#39;ymax: &#39; + str(ymax))
+        print(&#39;\n&#39;)
 
-        gdal.Warp('ndvi'+str(i)+str(j)+'.tif',
+        gdal.Warp(&#39;ndvi&#39;+str(i)+str(j)+&#39;.tif&#39;,
                   ds,
                   outputBounds = (xmin, ymin, xmax, ymax),
                   dstNodata = -9999)
@@ -257,8 +256,7 @@ não &ldquo;conversam&rdquo; entre si.</p>
 <blockquote>
 <p>Obs: Usei como fonte para o código o canal <em>Making Sense Remotely</em>,
 que tem ótimos tutoriais de GIS para R e python.
-Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p>
-</blockquote>
+Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p></blockquote>
 
         </p>
     </div>
@@ -269,7 +267,7 @@ Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>
     
 
         </main><footer class="footer">
-    <span>&copy; 2022 Data thoughts</span>
+    <span>&copy; 2025 Everyday GIS</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

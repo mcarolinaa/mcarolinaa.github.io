@@ -18,21 +18,21 @@
 
     
     <title>Utilizando netCDF</title>
-    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta name="keywords" content='gis, NetCDF, python, xarray, shapefile'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/arquivo_nc_xarray/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Utilizando netCDF">
-    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
-    <meta property="og:image" content="/images/plant_close.jpg">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Utilizando netCDF">
-    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/arquivo_nc_xarray/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/arquivo_nc_xarray/">
-    <meta name="twitter:image" content="/images/plant_close.jpg">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
 
     
     <link rel="canonical" href="http://mcarolinaa.github.io/posts/arquivo_nc_xarray/" />
@@ -58,13 +58,13 @@
         
         <div class="avatar">
             <a href="http://mcarolinaa.github.io/">
-                <img src="/images/plant_close.jpg" alt="avatar" />
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="http://mcarolinaa.github.io/">Data thoughts</a>
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
         </div>
 
         <div class="nav-links">
@@ -202,8 +202,7 @@ e tipos de dados, que permitem o uso e manipulação de arquivos do tipo
 (netCDF) is a set of software libraries and machine-independent data formats that support
 the creation, access, and sharing of array-oriented scientific data. It is also a community
 standard for sharing scientific data.</p>
-<p>fonte: <a href="https://www.unidata.ucar.edu/software/netcdf/">unidata</a> Data Services and Tools for Geoscience.</p>
-</blockquote>
+<p>fonte: <a href="https://www.unidata.ucar.edu/software/netcdf/">unidata</a> Data Services and Tools for Geoscience.</p></blockquote>
 <p>Representam estruturar (arquivos extensão .nc) usados para armazenar grandes
 quantidades de informação em formato multidimensional,
 e que podem ser observados de acordo com a dimensão <em>tempo</em>.</p>
@@ -238,14 +237,13 @@ from shapely.geometry import mapping
 
 
 # path 
-p = 'path/to/directory'
+p = &#39;path/to/directory&#39;
 
 # le o .nc
-rain = xr.open_dataset(p + 'prec_daily_UT_Brazil_v2.1_20100101_20151231.nc', decode_coords=&quot;all&quot;)
+rain = xr.open_dataset(p + &#39;prec_daily_UT_Brazil_v2.1_20100101_20151231.nc&#39;, decode_coords=&#34;all&#34;)
 
 # checar se há crs e caso não haja, informar
 rain.prec.rio.crs # não há
-
 </code></pre><p> </p>
 <p>As principais características do arquivo .nc podem ser vistas a seguir:</p>
 <p><img src="/posts/pics/infos_nc.png" alt="Informações do arquivo .nc"></p>
@@ -261,22 +259,21 @@ tenho precipitação (chuva).</p>
 <h2 id="clipa-arquivo-nc-usando-arquivo-shapefile">Clipa arquivo .nc usando arquivo shapefile</h2>
 <pre tabindex="0"><code># informa crs e dimensoes espaciais
 rain.rio.write_crs(
-    &quot;epsg:4326&quot;,inplace=True,
+    &#34;epsg:4326&#34;,inplace=True,
 ).rio.set_spatial_dims(
-    x_dim=&quot;longitude&quot;, y_dim=&quot;latitude&quot;, inplace=True,
+    x_dim=&#34;longitude&#34;, y_dim=&#34;latitude&#34;, inplace=True,
 ).rio.write_coordinate_system(inplace=True)
 
 # checa visual de 1 dia
 rain.prec[0].plot();
-
 </code></pre><p><img src="/posts/pics/pais_1dia.png" alt="Um dia de dados do arquivo .nc"></p>
 <p> </p>
 <pre tabindex="0"><code># le shapefile p/ clip no .nc
-mt = gpd.read_file(p + 'MT_UF_2021/MT_UF_2021.shp')
+mt = gpd.read_file(p + &#39;MT_UF_2021/MT_UF_2021.shp&#39;)
 
 # vem com crs diferente, deixar td no lat/long
 # mt.crs
-mt.to_crs('epsg:4326', inplace=True)
+mt.to_crs(&#39;epsg:4326&#39;, inplace=True)
 
 # checa crs, devem ser iguais
 print(mt.crs)
@@ -314,7 +311,7 @@ Mato Grosso, disponibilizado pelo IBGE:</p>
     
 
         </main><footer class="footer">
-    <span>&copy; 2022 Data thoughts</span>
+    <span>&copy; 2025 Everyday GIS</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

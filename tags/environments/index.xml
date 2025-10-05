@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>environments on Data thoughts</title>
+    <title>Environments on Everyday GIS</title>
     <link>http://mcarolinaa.github.io/tags/environments/</link>
-    <description>Recent content in environments on Data thoughts</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Environments on Everyday GIS</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/environments/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://mcarolinaa.github.io/tags/environments/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Environments python</title>
       <link>http://mcarolinaa.github.io/posts/criar_envs/</link>
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/criar_envs/</guid>
-      <description>Criar e manejar environments python Objetivo: reunir e resumir principais comandos e passos utilizandos na criação e principais operações de um novo environment usando pyhton.
-Duas maneiras são abordadas aqui: por meio do conda e do pip.
-Conda e pip, apesar de aqui estarem sendo usados como exemplos para o mesmo resultado final, não são ferramentas iguais.
-Para entender um pouco melhor o que cada um deles representa, alguns materiais como esse https://www.</description>
+      <description>&lt;h1 id=&#34;criar-e-manejar-environments-python&#34;&gt;Criar e manejar environments python&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Objetivo:&lt;/strong&gt; reunir e resumir principais comandos e passos utilizandos na&#xA;criação e principais operações de um novo environment usando pyhton.&lt;/p&gt;&#xA;&lt;p&gt;Duas maneiras são abordadas aqui: por meio do &lt;strong&gt;conda e do pip&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Conda e pip, apesar de aqui estarem sendo usados como exemplos para o mesmo&#xA;resultado final, não são ferramentas iguais.&lt;/p&gt;&#xA;&lt;p&gt;Para entender um pouco melhor o que cada um deles representa, alguns materiais&#xA;como esse &lt;a href=&#34;https://www.anaconda.com/blog/understanding-conda-and-pip&#34;&gt;https://www.anaconda.com/blog/understanding-conda-and-pip&lt;/a&gt;&#xA;podem ajudar.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

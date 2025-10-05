@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elevation on Everyday GIS</title>
+    <link>http://mcarolinaa.github.io/tags/elevation/</link>
+    <description>Recent content in Elevation on Everyday GIS</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://mcarolinaa.github.io/tags/elevation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to make a contour map</title>
+      <link>http://mcarolinaa.github.io/posts/contour_map/</link>
+      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/posts/contour_map/</guid>
+      <description>&lt;h1 id=&#34;how-to-make-a-contour-map&#34;&gt;How to Make a Contour Map&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Now that the difference between &lt;strong&gt;DEM&lt;/strong&gt; and &lt;strong&gt;SRTM&lt;/strong&gt; (and other data sources) is clearer, the goal of this guide is to create a contour map using SRTM data we got through Topodata.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-a-contour-map&#34;&gt;What is a Contour Map?&lt;/h3&gt;&#xA;&lt;p&gt;This type of map uses &lt;strong&gt;lines&lt;/strong&gt; (called &lt;strong&gt;contour lines&lt;/strong&gt;) that connect points of the &lt;strong&gt;same altitude&lt;/strong&gt; on the Earth&amp;rsquo;s surface. Using this kind of map, we can get a much better feel for a region&amp;rsquo;s terrain, allowing for topographic studies, planning for agriculture, and other area-specific analyses.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SRTM, DEM, what are those?</title>
+      <link>http://mcarolinaa.github.io/posts/srtm_dem_data/</link>
+      <pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/posts/srtm_dem_data/</guid>
+      <description>&lt;h1 id=&#34;srtm-dem-and-others-what-do-they-even-mean-and-whats-the-difference&#34;&gt;SRTM, DEM, and Others&amp;hellip; What Do They Even Mean, and What&amp;rsquo;s the Difference?&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Maybe when you first had to start dealing with &lt;strong&gt;altitude data&lt;/strong&gt;, you heard these terms thrown around and wondered what they meant or if they were the same thing.&lt;/p&gt;&#xA;&lt;p&gt;First off, it&amp;rsquo;s good to know that we can describe the Earth&amp;rsquo;s terrain—its shape and structure—using something called &lt;strong&gt;geomorphometric data&lt;/strong&gt;. A classic example of this is the &lt;strong&gt;contour maps&lt;/strong&gt; we can create for a specific area.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

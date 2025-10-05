@@ -18,21 +18,21 @@
 
     
     <title>Interpolação de dados vetoriais usando Moving Average</title>
-    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta name="keywords" content='gis, python, GDAL, Interpolação, moving average'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/interpolation_gdal_2/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Interpolação de dados vetoriais usando Moving Average">
-    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
-    <meta property="og:image" content="/images/plant_close.jpg">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Interpolação de dados vetoriais usando Moving Average">
-    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/interpolation_gdal_2/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/interpolation_gdal_2/">
-    <meta name="twitter:image" content="/images/plant_close.jpg">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
 
     
     <link rel="canonical" href="http://mcarolinaa.github.io/posts/interpolation_gdal_2/" />
@@ -58,13 +58,13 @@
         
         <div class="avatar">
             <a href="http://mcarolinaa.github.io/">
-                <img src="/images/plant_close.jpg" alt="avatar" />
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="http://mcarolinaa.github.io/">Data thoughts</a>
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
         </div>
 
         <div class="nav-links">
@@ -221,8 +221,8 @@ from osgeo import ogr
 # faz média dos pontos dentro da elipse de busca
 
 # Arquivo vetorial que será o input da interpolação
-p = '/Users/mariacsandrea/Dropbox/Mac/Documents/personal_page/notebooks_scripts/'
-pts = ogr.Open(p + 'sampled_ndvi.shp', 0)
+p = &#39;/Users/mariacsandrea/Dropbox/Mac/Documents/personal_page/notebooks_scripts/&#39;
+pts = ogr.Open(p + &#39;sampled_ndvi.shp&#39;, 0)
 layer = pts.GetLayer()
 
 for field in layer.schema:
@@ -234,16 +234,16 @@ do qual retirei as amostras aleatórias.</p>
 <pre tabindex="0"><code># Importante: Todos os inputs devem ter a mesma projeção!
 # Caso eu tivesse, por exemplo, o vetor em epsg 4326 e precisasse
 # mudar para o epsg do raster:
-# ds = gdal.Open('path_to_model_raster')
-# dsReprj = gdal.Warp('path_to_reproj_raster',
+# ds = gdal.Open(&#39;path_to_model_raster&#39;)
+# dsReprj = gdal.Warp(&#39;path_to_reproj_raster&#39;,
 #                     ds,
-#                     dstSRS = 'EPSG:4326')
+#                     dstSRS = &#39;EPSG:4326&#39;)
 # ds = dsReprj = None
 # Além disso, uso informações do raster original (de onde tirei os pontos amostrais)
 # para criar o arquivo interpolado
 
 # Continuando, após de acertar projeções 
-ndvi = gdal.Open(p + 'mergedNDVI2.tif')
+ndvi = gdal.Open(p + &#39;mergedNDVI2.tif&#39;)
 gt = ndvi.GetGeoTransform()
 
 ulx = gt[0] # upper left corner
@@ -263,10 +263,10 @@ pts = layer = None
 <pre tabindex="0"><code># da mesma maneira que feito p/ o algoritmo nn, idw
 # exporta, checa o raster e vê se os parâmetros estão aceitáveis
 # e refaz se necessário
-ma = gdal.Grid(p + 'ndvi_moving_avg',
-               p + 'sampled_ndvi.shp',
-               zfield = 'VALUE',
-               algorithm = 'average:radius1=500:radius2=800:angle=20',
+ma = gdal.Grid(p + &#39;ndvi_moving_avg&#39;,
+               p + &#39;sampled_ndvi.shp&#39;,
+               zfield = &#39;VALUE&#39;,
+               algorithm = &#39;average:radius1=500:radius2=800:angle=20&#39;,
                outputBounds = [ulx, uly, lrx, lry],
                width = xsize,
                height = ysize)
@@ -283,8 +283,7 @@ atenção.</p>
 <blockquote>
 <p>Obs: Usei como fonte para o código o canal <em>Making Sense Remotely</em>,
 que tem ótimos tutoriais de GIS para R e python.
-Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p>
-</blockquote>
+Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p></blockquote>
 
         </p>
     </div>
@@ -295,7 +294,7 @@ Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>
     
 
         </main><footer class="footer">
-    <span>&copy; 2022 Data thoughts</span>
+    <span>&copy; 2025 Everyday GIS</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

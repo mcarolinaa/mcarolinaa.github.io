@@ -18,21 +18,21 @@
 
     
     <title>Interpolação de dados vetoriais usando IDW</title>
-    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta name="keywords" content='gis, python, GDAL, Interpolação, idw'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/interpolation_gdal_3/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Interpolação de dados vetoriais usando IDW">
-    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
-    <meta property="og:image" content="/images/plant_close.jpg">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Interpolação de dados vetoriais usando IDW">
-    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/interpolation_gdal_3/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/interpolation_gdal_3/">
-    <meta name="twitter:image" content="/images/plant_close.jpg">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
 
     
     <link rel="canonical" href="http://mcarolinaa.github.io/posts/interpolation_gdal_3/" />
@@ -58,13 +58,13 @@
         
         <div class="avatar">
             <a href="http://mcarolinaa.github.io/">
-                <img src="/images/plant_close.jpg" alt="avatar" />
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="http://mcarolinaa.github.io/">Data thoughts</a>
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
         </div>
 
         <div class="nav-links">
@@ -229,7 +229,7 @@ from osgeo import ogr
 # w = 1 / r^p
 # smooth
 
-pts = ogr.Open(p + 'sampled_ndvi.shp', 0)
+pts = ogr.Open(p + &#39;sampled_ndvi.shp&#39;, 0)
 layer = pts.GetLayer()
 
 for field in layer.schema:
@@ -240,16 +240,16 @@ que deverá ser usada na etapa seguinte.</p>
 <pre tabindex="0"><code># Importante: Todos os inputs devem ter a mesma projeção!
 # Caso eu tivesse, por exemplo, o vetor em epsg 4326 e precisasse
 # mudar para o epsg do raster:
-# ds = gdal.Open('path_to_model_raster')
-# dsReprj = gdal.Warp('path_to_reproj_raster',
+# ds = gdal.Open(&#39;path_to_model_raster&#39;)
+# dsReprj = gdal.Warp(&#39;path_to_reproj_raster&#39;,
 #                     ds,
-#                     dstSRS = 'EPSG:4326')
+#                     dstSRS = &#39;EPSG:4326&#39;)
 # ds = dsReprj = None
 # Além disso, uso informações do raster original (de onde tirei os pontos amostrais)
 # para criar o arquivo interpolado
 
 # Continuando, após de acertar projeções 
-ndvi = gdal.Open(p + 'mergedNDVI2.tif')
+ndvi = gdal.Open(p + &#39;mergedNDVI2.tif&#39;)
 gt = ndvi.GetGeoTransform()
 
 ulx = gt[0] # upper left corner
@@ -270,10 +270,10 @@ que serão usados na implementação do algoritmo de fato, a seguir.</p>
 <h2 id="algoritmo-idw">Algoritmo IDW</h2>
 <pre tabindex="0"><code># da mesma maneira que feito p/ o algoritmo Nearest Neighbour
 # agora apenas mudando o algoritmo e seus parâmetros
-idw = gdal.Grid(p + 'ndvi_idw',
-               p + 'sampled_ndvi.shp',
-               zfield = 'VALUE',
-               algorithm = 'invdist:power=3:radius1=1000:radius2=1000',
+idw = gdal.Grid(p + &#39;ndvi_idw&#39;,
+               p + &#39;sampled_ndvi.shp&#39;,
+               zfield = &#39;VALUE&#39;,
+               algorithm = &#39;invdist:power=3:radius1=1000:radius2=1000&#39;,
                outputBounds = [ulx, uly, lrx, lry],
                width = xsize,
                height = ysize)
@@ -290,8 +290,7 @@ os chamados <em>bull`s eyes</em>.</p>
 <blockquote>
 <p>Obs: Usei como fonte para o código o canal <em>Making Sense Remotely</em>,
 que tem ótimos tutoriais de GIS para R e python.
-Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p>
-</blockquote>
+Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p></blockquote>
 
         </p>
     </div>
@@ -302,7 +301,7 @@ Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>
     
 
         </main><footer class="footer">
-    <span>&copy; 2022 Data thoughts</span>
+    <span>&copy; 2025 Everyday GIS</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

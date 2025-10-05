@@ -25,14 +25,14 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Acessar arquivos via Athena e python">
     <meta property="og:description" content="Acessar arquivos AWS usando serviço Athena e python">
-    <meta property="og:image" content="/images/plant_close.jpg">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Acessar arquivos via Athena e python">
     <meta name="twitter:description" content="Acessar arquivos AWS usando serviço Athena e python">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/acessar_athena/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/acessar_athena/">
-    <meta name="twitter:image" content="/images/plant_close.jpg">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
 
     
     <link rel="canonical" href="http://mcarolinaa.github.io/posts/acessar_athena/" />
@@ -58,13 +58,13 @@
         
         <div class="avatar">
             <a href="http://mcarolinaa.github.io/">
-                <img src="/images/plant_close.jpg" alt="avatar" />
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="http://mcarolinaa.github.io/">Data thoughts</a>
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
         </div>
 
         <div class="nav-links">
@@ -189,47 +189,44 @@ import time
 </code></pre><ul>
 <li>Checar em qual perfil estão os dados</li>
 </ul>
-<pre tabindex="0"><code>session = boto3.Session(profile_name='profile_name')
-athena = session.client(service_name='athena', region_name='sa-east-1')
+<pre tabindex="0"><code>session = boto3.Session(profile_name=&#39;profile_name&#39;)
+athena = session.client(service_name=&#39;athena&#39;, region_name=&#39;sa-east-1&#39;)
 </code></pre><p>Aqui, diferença com pegar arquivos diretamente de bucket do S3.</p>
 <p>Para lidar com problema de paginação, numa view ou tabela, por exemplo:</p>
 <blockquote>
-<p>query_string: a SQL-like query that Athena will execute</p>
-</blockquote>
+<p>query_string: a SQL-like query that Athena will execute</p></blockquote>
 <blockquote>
-<p>client: an Athena client created with boto3</p>
-</blockquote>
+<p>client: an Athena client created with boto3</p></blockquote>
 <blockquote>
-<p>source: <a href="https://gist.github.com/schledererj/b2e2a800998d61af2bbdd1cd50e08b76">https://gist.github.com/schledererj/b2e2a800998d61af2bbdd1cd50e08b76</a></p>
-</blockquote>
+<p>source: <a href="https://gist.github.com/schledererj/b2e2a800998d61af2bbdd1cd50e08b76">https://gist.github.com/schledererj/b2e2a800998d61af2bbdd1cd50e08b76</a></p></blockquote>
 <pre tabindex="0"><code>def fetchall_athena(query_string, client):
     query_id = client.start_query_execution(
         QueryString=query_string,
         QueryExecutionContext={
-            'Database': 'zeus'
+            &#39;Database&#39;: &#39;zeus&#39;
         },
         ResultConfiguration={
-            'OutputLocation': 'path_para_a_query'
+            &#39;OutputLocation&#39;: &#39;path_para_a_query&#39;
         }
-    )['QueryExecutionId']
+    )[&#39;QueryExecutionId&#39;]
     query_status = None
-    while query_status == 'QUEUED' or query_status == 'RUNNING' or query_status is None:
-        query_status = client.get_query_execution(QueryExecutionId=query_id)['QueryExecution']['Status']['State']
-        if query_status == 'FAILED' or query_status == 'CANCELLED':
-            raise Exception('Athena query with the string &quot;{}&quot; failed or was cancelled'.format(query_string))
+    while query_status == &#39;QUEUED&#39; or query_status == &#39;RUNNING&#39; or query_status is None:
+        query_status = client.get_query_execution(QueryExecutionId=query_id)[&#39;QueryExecution&#39;][&#39;Status&#39;][&#39;State&#39;]
+        if query_status == &#39;FAILED&#39; or query_status == &#39;CANCELLED&#39;:
+            raise Exception(&#39;Athena query with the string &#34;{}&#34; failed or was cancelled&#39;.format(query_string))
         time.sleep(100)
-    results_paginator = client.get_paginator('get_query_results')
+    results_paginator = client.get_paginator(&#39;get_query_results&#39;)
     results_iter = results_paginator.paginate(
         QueryExecutionId=query_id,
         PaginationConfig={
-            'PageSize': 1000
+            &#39;PageSize&#39;: 1000
         }
     )
     results = []
     column_names = None
     for results_page in results_iter:
-        for row in results_page['ResultSet']['Rows']:
-            column_values = [col.get('VarCharValue', None) for col in row['Data']]
+        for row in results_page[&#39;ResultSet&#39;][&#39;Rows&#39;]:
+            column_values = [col.get(&#39;VarCharValue&#39;, None) for col in row[&#39;Data&#39;]]
             if not column_names:
                 column_names = column_values
             else:
@@ -238,14 +235,14 @@ athena = session.client(service_name='athena', region_name='sa-east-1')
 </code></pre><ul>
 <li>Get</li>
 </ul>
-<pre tabindex="0"><code>query_string = 'SELECT * FROM xxxx' # coloque aqui sua query
+<pre tabindex="0"><code>query_string = &#39;SELECT * FROM xxxx&#39; # coloque aqui sua query
 client = athena
 </code></pre><pre tabindex="0"><code>data_zeus = fetchall_athena(query_string=query_string, client=client)
 df_data = pd.DataFrame(data_frame)
 </code></pre><p>Export, para que não tenha que sempre fazer a query, e
 compressed, porque é relativamente grande:</p>
-<pre tabindex="0"><code>compression_opts = dict(method='zip', archive_name='df.csv')
-df_data.to_csv('df.zip', index=False, compression=compression_opts)
+<pre tabindex="0"><code>compression_opts = dict(method=&#39;zip&#39;, archive_name=&#39;df.csv&#39;)
+df_data.to_csv(&#39;df.zip&#39;, index=False, compression=compression_opts)
 </code></pre>
         </p>
     </div>
@@ -256,7 +253,7 @@ df_data.to_csv('df.zip', index=False, compression=compression_opts)
     
 
         </main><footer class="footer">
-    <span>&copy; 2022 Data thoughts</span>
+    <span>&copy; 2025 Everyday GIS</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

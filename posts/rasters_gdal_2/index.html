@@ -18,21 +18,21 @@
 
     
     <title>Operações com raster GDAL e python - 2</title>
-    <meta name="description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta name="keywords" content='gis, python, raster, GDAL'>
 
     <meta property="og:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_2/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Operações com raster GDAL e python - 2">
-    <meta property="og:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
-    <meta property="og:image" content="/images/plant_close.jpg">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Operações com raster GDAL e python - 2">
-    <meta name="twitter:description" content="Lembretes e pensamentos sobre data science, gis, agricultura e outros">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
     <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/rasters_gdal_2/">
     <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/rasters_gdal_2/">
-    <meta name="twitter:image" content="/images/plant_close.jpg">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
 
     
     <link rel="canonical" href="http://mcarolinaa.github.io/posts/rasters_gdal_2/" />
@@ -58,13 +58,13 @@
         
         <div class="avatar">
             <a href="http://mcarolinaa.github.io/">
-                <img src="/images/plant_close.jpg" alt="avatar" />
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="http://mcarolinaa.github.io/">Data thoughts</a>
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
         </div>
 
         <div class="nav-links">
@@ -212,34 +212,33 @@ um arquivo vetorial (como shape por exemplo) como referência.</p>
 <pre tabindex="0"><code>from osgeo import gdal
 import numpy as np
 
-ds = gdal.Open('path_to_raster')
+ds = gdal.Open(&#39;path_to_raster&#39;)
 # (apenas p/ checar:)
 print(ds.GetGeoTransform()) # upper left corner, spatial resolution
 print(ds.GetProjection()) # proj system
 
 # Usar o método gdal.Warp, bem versátil p/ várias dessas operações
-dsReprj = gdal.Warp('nameRasterOutput.tif',
+dsReprj = gdal.Warp(&#39;nameRasterOutput.tif&#39;,
                     ds,
-                    dstSRS = 'EPSG:4326') # epsg p/ o qual quero mudar
+                    dstSRS = &#39;EPSG:4326&#39;) # epsg p/ o qual quero mudar
 </code></pre><p> </p>
 <h2 id="resample">Resample</h2>
 <p>Nesse caso, tenho um raster de resolução espacial = 3m, e quero
 fazer um resampling para que ele passe a ter resolução espacial = 10m.</p>
-<pre tabindex="0"><code>dsRes = gdal.Warp('ndviRes.tif',
+<pre tabindex="0"><code>dsRes = gdal.Warp(&#39;ndviRes.tif&#39;,
                   ds,
                   xRes = 10, # modificando numero de linhas e colunas
                   yRes = 10,
-                  resampleAlg = 'bilinear') # Metodo. default: nearest neighbour
-
+                  resampleAlg = &#39;bilinear&#39;) # Metodo. default: nearest neighbour
 </code></pre><p> </p>
 <h2 id="clip">Clip</h2>
 <p>Esse é um tipo de atividade bastante comum quando trabalhamos com arquivos
 rasteriais e vetorais. Para arquivos rasteriais, é comum usarmos um
 arquivo tipo shapefile para delimitar e recortar nossa área de interesse
 em um raster (ex: imagem de satélite) maior.</p>
-<pre tabindex="0"><code>dsClip = gdal.Warp('ndviClip.tif', # arquivo que será criado
+<pre tabindex="0"><code>dsClip = gdal.Warp(&#39;ndviClip.tif&#39;, # arquivo que será criado
                    ds, # o raster que foi aberto anteriormente
-                   cutlineDSName = 'path_to_vector_file', # meu shapefile de referencia
+                   cutlineDSName = &#39;path_to_vector_file&#39;, # meu shapefile de referencia
                    cropToCutline = True, # clip to the extent of the vector file
                    dstNodata = np.nan)
 
@@ -249,8 +248,7 @@ ds = dsClip = dsRes = dsReprj = None
 <blockquote>
 <p>Obs: Usei como fonte para o código o canal <em>Making Sense Remotely</em>,
 que tem ótimos tutoriais de GIS para R e python.
-Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p>
-</blockquote>
+Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>.</p></blockquote>
 
         </p>
     </div>
@@ -261,7 +259,7 @@ Veja <a href="https://www.youtube.com/channel/UCrWEjubnm0HenqzOQgAVScw">aqui</a>
     
 
         </main><footer class="footer">
-    <span>&copy; 2022 Data thoughts</span>
+    <span>&copy; 2025 Everyday GIS</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

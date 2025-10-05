@@ -1,244 +1,173 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data thoughts</title>
+    <title>Everyday GIS</title>
     <link>http://mcarolinaa.github.io/</link>
-    <description>Recent content on Data thoughts</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on Everyday GIS</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://mcarolinaa.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to make a contour map</title>
+      <link>http://mcarolinaa.github.io/posts/contour_map/</link>
+      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/posts/contour_map/</guid>
+      <description>&lt;h1 id=&#34;how-to-make-a-contour-map&#34;&gt;How to Make a Contour Map&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Now that the difference between &lt;strong&gt;DEM&lt;/strong&gt; and &lt;strong&gt;SRTM&lt;/strong&gt; (and other data sources) is clearer, the goal of this guide is to create a contour map using SRTM data we got through Topodata.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-a-contour-map&#34;&gt;What is a Contour Map?&lt;/h3&gt;&#xA;&lt;p&gt;This type of map uses &lt;strong&gt;lines&lt;/strong&gt; (called &lt;strong&gt;contour lines&lt;/strong&gt;) that connect points of the &lt;strong&gt;same altitude&lt;/strong&gt; on the Earth&amp;rsquo;s surface. Using this kind of map, we can get a much better feel for a region&amp;rsquo;s terrain, allowing for topographic studies, planning for agriculture, and other area-specific analyses.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SRTM, DEM, what are those?</title>
+      <link>http://mcarolinaa.github.io/posts/srtm_dem_data/</link>
+      <pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/posts/srtm_dem_data/</guid>
+      <description>&lt;h1 id=&#34;srtm-dem-and-others-what-do-they-even-mean-and-whats-the-difference&#34;&gt;SRTM, DEM, and Others&amp;hellip; What Do They Even Mean, and What&amp;rsquo;s the Difference?&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Maybe when you first had to start dealing with &lt;strong&gt;altitude data&lt;/strong&gt;, you heard these terms thrown around and wondered what they meant or if they were the same thing.&lt;/p&gt;&#xA;&lt;p&gt;First off, it&amp;rsquo;s good to know that we can describe the Earth&amp;rsquo;s terrain—its shape and structure—using something called &lt;strong&gt;geomorphometric data&lt;/strong&gt;. A classic example of this is the &lt;strong&gt;contour maps&lt;/strong&gt; we can create for a specific area.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Overlapping areas - QGIS</title>
+      <link>http://mcarolinaa.github.io/posts/overlapping_areas/</link>
+      <pubDate>Wed, 10 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/posts/overlapping_areas/</guid>
+      <description>&lt;h1 id=&#34;checking-out-area-overlap-in-qgis&#34;&gt;Checking Out Area Overlap in QGIS&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Data source:&lt;/strong&gt; &lt;a href=&#34;https://basedosdados.org/&#34;&gt;https://basedosdados.org/&lt;/a&gt;&lt;br&gt;&#xA;&lt;strong&gt;Data&amp;rsquo;s from:&lt;/strong&gt; Brazilian Geographic Data (geobr)&lt;br&gt;&#xA;&lt;strong&gt;Focus:&lt;/strong&gt; Biomes and the Legal Amazon&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Questions about areas overlapping each other pop up all the time.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Do these areas actually overlap?&lt;/li&gt;&#xA;&lt;li&gt;How big is the overlap area?&lt;/li&gt;&#xA;&lt;li&gt;What are the details on that overlap?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Those are the kinds of questions we constantly face when working with spatial data. We need super accurate analysis to answer all those doubts.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Presentation and my trajectory</title>
       <link>http://mcarolinaa.github.io/posts/presentation/</link>
       <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/presentation/</guid>
-      <description>Presentation and How I became a Data Scientist  Hello!
- My name is Maria Carolina. I currently work as a data scientist, and I started working in this area 2.5 years ago.
-  My background is in the area of agricultural sciences, I am an agronomist. Right after graduation, I wanted to work with research, and I went up to the doctorate. I continued in the academic and research path for a few more years, working in undergraduate teaching in agronomy, and in a post-doctorate.</description>
+      <description>&lt;h1 id=&#34;presentation-and-how-i-became-a-data-scientist&#34;&gt;Presentation and How I became a Data Scientist&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Hello!&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;My name is Maria Carolina. I &lt;strong&gt;currently work as a data scientist&lt;/strong&gt;,&#xA;and I started working in this area 2.5 years ago.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://mcarolinaa.github.io/posts/pics/mountains.jpg&#34; alt=&#34;Foto de Marlon Martinez - Pexels&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;My background is in the area of &lt;strong&gt;agricultural sciences&lt;/strong&gt;, I am an agronomist.&#xA;Right after graduation, I wanted to work with research, and I went up to the&#xA;doctorate.&#xA;I continued in the academic and research path for a few more years, working&#xA;in undergraduate teaching in agronomy, and in a post-doctorate.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Utilizando netCDF</title>
       <link>http://mcarolinaa.github.io/posts/arquivo_nc_xarray/</link>
       <pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/arquivo_nc_xarray/</guid>
-      <description>Operações básicas de arquivos tipo .nc: abrir e clip usando shapefile    Um pouco sobre netCDF
-  Libraries usadas
-  Abre arquivo .nc e clipa usando arquivo shapefile
-   Um pouco sobre netCDF netCDF (Network Common Data Form) na verdade refere-se a um conjunto de libraries e tipos de dados, que permitem o uso e manipulação de arquivos do tipo array-oriented, normalmente contendo dados científicos, e multidimensionais.</description>
+      <description>&lt;h1 id=&#34;operações-básicas-de-arquivos-tipo-nc-abrir-e-clip-usando-shapefile&#34;&gt;Operações básicas de arquivos tipo .nc: abrir e clip usando shapefile&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Um pouco sobre netCDF&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Libraries usadas&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Abre arquivo .nc e clipa usando arquivo shapefile&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;um-pouco-sobre-netcdf&#34;&gt;Um pouco sobre netCDF&lt;/h2&gt;&#xA;&lt;p&gt;netCDF (Network Common Data Form) na verdade refere-se a um conjunto de libraries&#xA;e tipos de dados, que permitem o uso e manipulação de arquivos do tipo&#xA;&lt;em&gt;array-oriented&lt;/em&gt;, normalmente contendo dados científicos, e multidimensionais.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Unidata’s Network Common Data Form&#xA;(netCDF) is a set of software libraries and machine-independent data formats that support&#xA;the creation, access, and sharing of array-oriented scientific data. It is also a community&#xA;standard for sharing scientific data.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Entendendo os dados de um raster (1)</title>
       <link>http://mcarolinaa.github.io/posts/entendendo_raster_1/</link>
       <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/entendendo_raster_1/</guid>
-      <description>Características básicas de um arquivo raster e como entendê-las    Ler um raster
-  Esquema para entender algumas das informações
-  Visualização
-   Ler um raster Operações com e entre rasters são bem comuns e importantes nas análises espaciais.
-No python, o uso do GDAL e numpy já permite a realização de muitas dessas operações.
-O uso do GDAL (Geospatial Data Abstraction Library) e entendimento de sua documentação é mais complexo e difícil (quando comparado a outras libraries como rasterio, que faz um ótimo trabalho usando o modelo de dados do GDAL, de maneira mais simplificada), especialmente no início.</description>
+      <description>&lt;h1 id=&#34;características-básicas-de-um-arquivo-raster-e-como-entendê-las&#34;&gt;Características básicas de um arquivo raster e como entendê-las&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Ler um raster&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Esquema para entender algumas das informações&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Visualização&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;ler-um-raster&#34;&gt;Ler um raster&lt;/h2&gt;&#xA;&lt;p&gt;Operações com e entre rasters são bem comuns e importantes nas análises espaciais.&lt;/p&gt;&#xA;&lt;p&gt;No python, o uso do &lt;strong&gt;GDAL e numpy&lt;/strong&gt; já permite a realização de muitas dessas&#xA;operações.&lt;/p&gt;&#xA;&lt;p&gt;O uso do GDAL (Geospatial Data Abstraction Library) e entendimento de sua&#xA;documentação é mais complexo e difícil (quando&#xA;comparado a outras libraries como rasterio, que faz um ótimo trabalho usando o&#xA;modelo de dados do GDAL, de maneira mais simplificada), especialmente no início.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Conceitos Fundamentais em SIG - 3</title>
       <link>http://mcarolinaa.github.io/posts/conceitos_fund_3/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/conceitos_fund_3/</guid>
-      <description>WGS 84 e SRID integer    O que é o WGS 84
-  O que é SRID integer
-   WGS 84 WGS 84 refere-se ao World Geodetic System. Como já apontado nos tópicos anteriores, para identificarmos uma localização no planeta, precisamos inicialmente do datum, que irá &amp;ldquo;descrever&amp;rdquo; o formato do planeta, e um sistema de projeção, que irá transformar as medidas em uma superfície.
-O WGS 84 foi criado para ser um sistema de posicionamento global, usando o sistema de coordenadas geográficas (lat/lon) para localização.</description>
+      <description>&lt;h1 id=&#34;wgs-84-e-srid-integer&#34;&gt;WGS 84 e SRID integer&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é o WGS 84&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é SRID integer&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;wgs-84&#34;&gt;WGS 84&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;WGS 84&lt;/strong&gt; refere-se ao &lt;em&gt;World Geodetic System&lt;/em&gt;.&#xA;Como já apontado nos tópicos&#xA;anteriores, para identificarmos uma localização no planeta, precisamos inicialmente&#xA;do datum, que irá &amp;ldquo;descrever&amp;rdquo; o formato do planeta, e um sistema de projeção,&#xA;que irá transformar as medidas em uma superfície.&lt;/p&gt;&#xA;&lt;p&gt;O WGS 84 foi criado para ser um sistema de posicionamento global, usando&#xA;o sistema de coordenadas geográficas (lat/lon) para localização.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Conceitos Fundamentais em SIG - 2</title>
       <link>http://mcarolinaa.github.io/posts/conceitos_fund_2/</link>
       <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/conceitos_fund_2/</guid>
-      <description>Map Projection, UTM, Horizontal and Vertical Datum, NAVD88, Geodetic Datum    O que é Map Projection
-  O que é UTM
-  O que são Horizontal e Vertical Datum
-  O que é o NAVD88
-  O que é Geodetic Datum
-   Map projection Sendo o Datum uma ferramenta para que entendamos a localização das coordenadas de features num elipsoide, a map projection ou projeção do mapa, é o processo posterior para que possamos transferir essa localização para um mapa plano.</description>
+      <description>&lt;h1 id=&#34;map-projection-utm-horizontal-and-vertical-datum-navd88-geodetic-datum&#34;&gt;Map Projection, UTM, Horizontal and Vertical Datum, NAVD88, Geodetic Datum&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é Map Projection&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é UTM&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que são Horizontal e Vertical Datum&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é o NAVD88&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é Geodetic Datum&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;map-projection&#34;&gt;Map projection&lt;/h2&gt;&#xA;&lt;p&gt;Sendo o &lt;em&gt;Datum&lt;/em&gt; uma ferramenta para que entendamos a localização das coordenadas&#xA;de features num elipsoide, a &lt;strong&gt;map projection&lt;/strong&gt; ou projeção do mapa, é o processo&#xA;posterior para que possamos transferir essa localização para um mapa plano.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Conceitos Fundamentais em SIG - 1</title>
       <link>http://mcarolinaa.github.io/posts/conceitos_fund_1/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/conceitos_fund_1/</guid>
-      <description>Georreferenciamento, Pontos de Controle, CRS e ITRS    O que é georreferenciamento
-  O que são pontos de controle
-  Conceito de CRS ou SRS
-  Conceito de ITRS
-   Georreferenciamento Georreferenciamento se refere ao processo de associar uma imagem/mapa a um sistema de coordenadas, ou seja, associar uma imagem a determinadas localizações num certo espaço físico.
-Esse processo pode ser feito com qualquer objeto no qual se possa associar a uma localização geográfica.</description>
+      <description>&lt;h1 id=&#34;georreferenciamento-pontos-de-controle-crs-e-itrs&#34;&gt;Georreferenciamento, Pontos de Controle, CRS e ITRS&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é georreferenciamento&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que são pontos de controle&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Conceito de CRS ou SRS&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Conceito de ITRS&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;georreferenciamento&#34;&gt;Georreferenciamento&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Georreferenciamento&lt;/strong&gt; se refere ao processo de associar uma imagem/mapa a um sistema&#xA;de coordenadas, ou seja, associar uma imagem a determinadas localizações num certo&#xA;espaço físico.&lt;/p&gt;&#xA;&lt;p&gt;Esse processo pode ser feito com qualquer objeto no qual se possa associar a uma&#xA;localização geográfica.&lt;/p&gt;&#xA;&lt;p&gt;Os produtos modernos, como imagens de satélite, já possuem relativa precisão com&#xA;relação à sua localização. Porém outros tipos de informações, como alguns bancos&#xA;de dados, figuras, fotos podem não possuir informações referentes à localização&#xA;geográfica. E é aí que o processo de georreferenciamento pode ajudar a trazer&#xA;uma adequada associação com o espaço geográfico a esses materiais.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Acessar arquivos S3 via python</title>
       <link>http://mcarolinaa.github.io/posts/acessar_s3/</link>
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/acessar_s3/</guid>
-      <description>Acessando arquivos no Amazon S3 Objetivo: Acessar arquivos contidos no serviço de armazenamento da Amazon Web Services via python.
-Sobre o serviço:
-https://aws.amazon.com/pt/s3/
-A rotina abaixo contempla uma situação de identificar e avaliar alguns arquivos que você possa ter no S3.
-Considera-se que as credenciais de acesso já estejam corretamente setadas na sua máquina.
-from osgeo import gdal import numpy as np import pandas as pd import matplotlib.pyplot as plt import boto3 import io 1.</description>
+      <description>&lt;h1 id=&#34;acessando-arquivos-no-amazon-s3&#34;&gt;Acessando arquivos no Amazon S3&lt;/h1&gt;&#xA;&lt;p&gt;Objetivo: Acessar arquivos contidos no serviço de armazenamento da Amazon&#xA;Web Services via python.&lt;/p&gt;&#xA;&lt;p&gt;Sobre o serviço:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aws.amazon.com/pt/s3/&#34;&gt;https://aws.amazon.com/pt/s3/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;A rotina abaixo contempla uma situação de identificar e avaliar alguns arquivos&#xA;que você possa ter no S3.&lt;/p&gt;&#xA;&lt;p&gt;Considera-se que as credenciais de acesso já estejam corretamente setadas&#xA;na sua máquina.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;from osgeo import gdal&#xA;import numpy as np&#xA;import pandas as pd&#xA;import matplotlib.pyplot as plt&#xA;import boto3&#xA;import io&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;1-acessar-bucket-do-s3-por-meio-do-boto3-client&#34;&gt;1. Acessar bucket do S3 por meio do boto3 client&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;session = boto3.Session(profile_name=&amp;#39;default&amp;#39;)&#xA;s3_client = session.client(&amp;#39;s3&amp;#39;)&#xA;s3_bucket_name = &amp;#39;nome_do_bucket&amp;#39;&#xA;s3 = boto3.resource(&amp;#39;s3&amp;#39;)&#xA;my_bucket = s3.Bucket(s3_bucket_name)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;21-listar-todos-os-arquivos-sem-filtros&#34;&gt;2.1 Listar todos os arquivos, sem filtros&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;bucket_list = []&#xA;for file in my_bucket.objects.filter(Prefix=&amp;#39;path_do_bucket_e_arquivos&amp;#39;):&#xA;    file_name = file.key&#xA;    bucket_list.append(file.key)  # lista arquivos com nomes e paths&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Em outro cenário, no qual tenho diferentes tipos de arquivos&#xA;e gostaria de separá-los:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Acessar arquivos via Athena e python</title>
       <link>http://mcarolinaa.github.io/posts/acessar_athena/</link>
       <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/acessar_athena/</guid>
-      <description>Rodando queries no Amazon Athena por usando python O Amazon Athena é um serviço de queries que facilita o acesso de dados no S3 por meio do uso do SQL.
-É interessante ler mais sobre as estruturas de serviços do Amazon e como elas se conectam para que fique um pouco mais claro.
-Boto3 é um grande aliado nisso para quem usará python para pegar/analisar os dados. A sua documentação é bem completa e ajuda bastante no entendimento:</description>
+      <description>&lt;h1 id=&#34;rodando-queries-no-amazon-athena-por-usando-python&#34;&gt;Rodando queries no Amazon Athena por usando python&lt;/h1&gt;&#xA;&lt;p&gt;O Amazon Athena é um serviço de queries que facilita o acesso de dados no&#xA;S3 por meio do uso do SQL.&lt;/p&gt;&#xA;&lt;p&gt;É interessante ler mais sobre as estruturas de serviços do Amazon e como&#xA;elas se conectam para que fique um pouco mais claro.&lt;/p&gt;&#xA;&lt;p&gt;Boto3 é um grande aliado nisso para quem usará python para pegar/analisar&#xA;os dados. A sua documentação é bem completa e ajuda bastante no entendimento:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Environments python</title>
       <link>http://mcarolinaa.github.io/posts/criar_envs/</link>
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/criar_envs/</guid>
-      <description>Criar e manejar environments python Objetivo: reunir e resumir principais comandos e passos utilizandos na criação e principais operações de um novo environment usando pyhton.
-Duas maneiras são abordadas aqui: por meio do conda e do pip.
-Conda e pip, apesar de aqui estarem sendo usados como exemplos para o mesmo resultado final, não são ferramentas iguais.
-Para entender um pouco melhor o que cada um deles representa, alguns materiais como esse https://www.</description>
+      <description>&lt;h1 id=&#34;criar-e-manejar-environments-python&#34;&gt;Criar e manejar environments python&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;Objetivo:&lt;/strong&gt; reunir e resumir principais comandos e passos utilizandos na&#xA;criação e principais operações de um novo environment usando pyhton.&lt;/p&gt;&#xA;&lt;p&gt;Duas maneiras são abordadas aqui: por meio do &lt;strong&gt;conda e do pip&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Conda e pip, apesar de aqui estarem sendo usados como exemplos para o mesmo&#xA;resultado final, não são ferramentas iguais.&lt;/p&gt;&#xA;&lt;p&gt;Para entender um pouco melhor o que cada um deles representa, alguns materiais&#xA;como esse &lt;a href=&#34;https://www.anaconda.com/blog/understanding-conda-and-pip&#34;&gt;https://www.anaconda.com/blog/understanding-conda-and-pip&lt;/a&gt;&#xA;podem ajudar.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Interpolação de dados vetoriais por método linear</title>
       <link>http://mcarolinaa.github.io/posts/interpolation_gdal_4/</link>
       <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_4/</guid>
-      <description>Manipulações de arquivos raster usando GDAL e python O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.
-o GDAL tem API para diversas linguagens, incluindo o python. A API para python pode ser consultada aqui:</description>
+      <description>&lt;h1 id=&#34;manipulações-de-arquivos-raster-usando-gdal-e-python&#34;&gt;Manipulações de arquivos raster usando GDAL e python&lt;/h1&gt;&#xA;&lt;p&gt;O &lt;strong&gt;GDAL&lt;/strong&gt; é uma &lt;em&gt;translator library&lt;/em&gt; para dados vetoriais e rasteriais, com&#xA;modelos próprios para trabalhar esses dados.&lt;/p&gt;&#xA;&lt;p&gt;Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados&#xA;no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor&#xA;a estrutura dos dados no contexto de GIS.&lt;/p&gt;&#xA;&lt;p&gt;o GDAL tem API para diversas linguagens, incluindo o python.&#xA;A API para python pode ser consultada aqui:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Interpolação de dados vetoriais usando Moving Average</title>
       <link>http://mcarolinaa.github.io/posts/interpolation_gdal_2/</link>
       <pubDate>Sat, 23 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_2/</guid>
-      <description>Veja aqui um exemplo de como interpolar dados vetoriais, trazendo-os para o formato raster usando o método Inverse Distance Weighting, mais conhecido como IDW, por meio do uso do python e GDAL.
- Apenas lembrando que:
-O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+      <description>&lt;p&gt;Veja aqui um exemplo de como interpolar dados vetoriais, trazendo-os para&#xA;o formato raster usando o método &lt;strong&gt;Inverse Distance Weighting&lt;/strong&gt;,&#xA;mais conhecido como &lt;strong&gt;IDW&lt;/strong&gt;, por meio do uso do python e GDAL.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Apenas lembrando que:&lt;/p&gt;&#xA;&lt;p&gt;O &lt;strong&gt;GDAL&lt;/strong&gt; é uma &lt;em&gt;translator library&lt;/em&gt; para dados vetoriais e rasteriais, com&#xA;modelos próprios para trabalhar esses tipos de dados.&lt;/p&gt;&#xA;&lt;p&gt;Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados&#xA;no GDAL.&#xA;Acredito que vale muito a pena saber usá-la até para entender melhor&#xA;a estrutura dos dados no contexto de GIS.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Interpolação de dados vetoriais usando IDW</title>
       <link>http://mcarolinaa.github.io/posts/interpolation_gdal_3/</link>
       <pubDate>Fri, 22 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_3/</guid>
-      <description>Veja aqui um exemplo de como interpolar dados vetoriais, trazendo-os para o formato raster usando o método Inverse Distance Weighting, mais conhecido como IDW, por meio do uso do python e GDAL.
- Apenas lembrando que:
-O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+      <description>&lt;p&gt;Veja aqui um exemplo de como interpolar dados vetoriais, trazendo-os para&#xA;o formato raster usando o método &lt;strong&gt;Inverse Distance Weighting&lt;/strong&gt;,&#xA;mais conhecido como &lt;strong&gt;IDW&lt;/strong&gt;, por meio do uso do python e GDAL.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Apenas lembrando que:&lt;/p&gt;&#xA;&lt;p&gt;O &lt;strong&gt;GDAL&lt;/strong&gt; é uma &lt;em&gt;translator library&lt;/em&gt; para dados vetoriais e rasteriais, com&#xA;modelos próprios para trabalhar esses tipos de dados.&lt;/p&gt;&#xA;&lt;p&gt;Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados&#xA;no GDAL.&#xA;Acredito que vale muito a pena saber usá-la até para entender melhor&#xA;a estrutura dos dados no contexto de GIS.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Interpolação de dados vetoriais usando Nearest Neighbour</title>
       <link>http://mcarolinaa.github.io/posts/interpolation_gdal_1/</link>
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/interpolation_gdal_1/</guid>
-      <description>Veja aqui um exemplo de como interpolar dados vetoriais, trazendo-os para o formato raster usando o método Nearest neighbour, por meio do uso do python e GDAL.
- Apenas lembrando que:
-O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+      <description>&lt;p&gt;Veja aqui um exemplo de como interpolar dados vetoriais, trazendo-os para&#xA;o formato raster usando o método &lt;strong&gt;Nearest neighbour&lt;/strong&gt;, por meio do uso&#xA;do python e GDAL.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Apenas lembrando que:&lt;/p&gt;&#xA;&lt;p&gt;O &lt;strong&gt;GDAL&lt;/strong&gt; é uma &lt;em&gt;translator library&lt;/em&gt; para dados vetoriais e rasteriais, com&#xA;modelos próprios para trabalhar esses tipos de dados.&lt;/p&gt;&#xA;&lt;p&gt;Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados&#xA;no GDAL.&#xA;Acredito que vale muito a pena saber usá-la até para entender melhor&#xA;a estrutura dos dados no contexto de GIS.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Operações com raster GDAL e python - 4</title>
       <link>http://mcarolinaa.github.io/posts/rasters_gdal_4/</link>
       <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/rasters_gdal_4/</guid>
-      <description>Manipulações básicas de arquivos raster usando GDAL e python   Merge (ou &amp;lsquo;juntar&amp;rsquo;) os pedaços de um raster   O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+      <description>&lt;h1 id=&#34;manipulações-básicas-de-arquivos-raster-usando-gdal-e-python&#34;&gt;Manipulações básicas de arquivos raster usando GDAL e python&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Merge (ou &amp;lsquo;juntar&amp;rsquo;) os pedaços de um raster&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;O &lt;strong&gt;GDAL&lt;/strong&gt; é uma &lt;em&gt;translator library&lt;/em&gt; para dados vetoriais e rasteriais, com&#xA;modelos próprios para trabalhar esses tipos de dados.&lt;/p&gt;&#xA;&lt;p&gt;Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados&#xA;no GDAL.&#xA;Acredito que vale muito a pena saber usá-la até para entender melhor&#xA;a estrutura dos dados no contexto de GIS.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Operações com raster GDAL e python - 3</title>
       <link>http://mcarolinaa.github.io/posts/rasters_gdal_3/</link>
       <pubDate>Sun, 10 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/rasters_gdal_3/</guid>
-      <description>Manipulações básicas de arquivos raster usando GDAL e python   Dividir (ou split) o raster em &amp;ldquo;pedaços&amp;rdquo; igualmente espaçados   O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+      <description>&lt;h1 id=&#34;manipulações-básicas-de-arquivos-raster-usando-gdal-e-python&#34;&gt;Manipulações básicas de arquivos raster usando GDAL e python&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dividir (ou &lt;em&gt;split&lt;/em&gt;) o raster em &amp;ldquo;pedaços&amp;rdquo; igualmente espaçados&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;O &lt;strong&gt;GDAL&lt;/strong&gt; é uma &lt;em&gt;translator library&lt;/em&gt; para dados vetoriais e rasteriais, com&#xA;modelos próprios para trabalhar esses tipos de dados.&lt;/p&gt;&#xA;&lt;p&gt;Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados&#xA;no GDAL.&#xA;Acredito que vale muito a pena saber usá-la até para entender melhor&#xA;a estrutura dos dados no contexto de GIS.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Operações com raster GDAL e python - 2</title>
       <link>http://mcarolinaa.github.io/posts/rasters_gdal_2/</link>
       <pubDate>Tue, 05 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/rasters_gdal_2/</guid>
-      <description>Manipulações básicas de arquivos raster usando GDAL e python    Reprojetar raster;
-  Fazer resample de raster;
-  Clipar raster
-   O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+      <description>&lt;h1 id=&#34;manipulações-básicas-de-arquivos-raster-usando-gdal-e-python&#34;&gt;Manipulações básicas de arquivos raster usando GDAL e python&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Reprojetar raster;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Fazer resample de raster;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Clipar raster&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;O &lt;strong&gt;GDAL&lt;/strong&gt; é uma &lt;em&gt;translator library&lt;/em&gt; para dados vetoriais e rasteriais, com&#xA;modelos próprios para trabalhar esses tipos de dados.&lt;/p&gt;&#xA;&lt;p&gt;Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados&#xA;no GDAL.&#xA;Acredito que vale muito a pena saber usá-la até para entender melhor&#xA;a estrutura dos dados no contexto de GIS.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Operações com raster GDAL e python - 1</title>
       <link>http://mcarolinaa.github.io/posts/rasters_gdal_1/</link>
       <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/rasters_gdal_1/</guid>
-      <description>Manipulações básicas de arquivos raster usando GDAL e python    Lê e plota arquivo raster usando GDAL
-  cria binary mask e exporta arquivo
-   O GDAL é uma translator library para dados vetoriais e rasteriais, com modelos próprios para trabalhar esses tipos de dados.
-Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados no GDAL. Acredito que vale muito a pena saber usá-la até para entender melhor a estrutura dos dados no contexto de GIS.</description>
+      <description>&lt;h1 id=&#34;manipulações-básicas-de-arquivos-raster-usando-gdal-e-python&#34;&gt;Manipulações básicas de arquivos raster usando GDAL e python&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Lê e plota arquivo raster usando GDAL&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;cria binary mask e exporta arquivo&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;O &lt;strong&gt;GDAL&lt;/strong&gt; é uma &lt;em&gt;translator library&lt;/em&gt; para dados vetoriais e rasteriais, com&#xA;modelos próprios para trabalhar esses tipos de dados.&lt;/p&gt;&#xA;&lt;p&gt;Uma grande diversidade de pacotes e libraries em diversas linguagens são baseados&#xA;no GDAL.&#xA;Acredito que vale muito a pena saber usá-la até para entender melhor&#xA;a estrutura dos dados no contexto de GIS.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Blüdhaven</title>
       <link>http://mcarolinaa.github.io/projects/bludhaven/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/projects/bludhaven/</guid>
-      <description>History Blüdhaven was a former whaling town, which was officially incorporated as a &amp;ldquo;Commonwealth&amp;rdquo; in 1912. The town had a generally poor socio-economic populace, owing in part to failed efforts to transform itself into a manufacturing and shipping center.</description>
+      <description>&lt;h3 id=&#34;history&#34;&gt;History&lt;/h3&gt;&#xA;&lt;p&gt;Blüdhaven was a former whaling town, which was officially incorporated as a &amp;ldquo;Commonwealth&amp;rdquo; in 1912. The town had a generally poor socio-economic populace, owing in part to failed efforts to transform itself into a manufacturing and shipping center.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Hydra</title>
       <link>http://mcarolinaa.github.io/projects/hydra/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/projects/hydra/</guid>
-      <description>Motto Cut off one head and two will take their place</description>
+      <description>&lt;h3 id=&#34;motto&#34;&gt;Motto&lt;/h3&gt;&#xA;&lt;p&gt;Cut off one head and two will take their place&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Tatooine</title>
       <link>http://mcarolinaa.github.io/projects/tatooine/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/projects/tatooine/</guid>
-      <description>A long time ago in a galaxy far, far away&amp;hellip;. A project was planned, but never completed</description>
+      <description>&lt;h3 id=&#34;a-long-time-ago-in-a-galaxy-far-far-away&#34;&gt;A long time ago in a galaxy far, far away&amp;hellip;.&lt;/h3&gt;&#xA;&lt;p&gt;A project was planned, but never completed&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

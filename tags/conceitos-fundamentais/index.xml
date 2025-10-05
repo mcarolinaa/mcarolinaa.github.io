@@ -1,51 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>conceitos fundamentais on Data thoughts</title>
+    <title>Conceitos Fundamentais on Everyday GIS</title>
     <link>http://mcarolinaa.github.io/tags/conceitos-fundamentais/</link>
-    <description>Recent content in conceitos fundamentais on Data thoughts</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Conceitos Fundamentais on Everyday GIS</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://mcarolinaa.github.io/tags/conceitos-fundamentais/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://mcarolinaa.github.io/tags/conceitos-fundamentais/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conceitos Fundamentais em SIG - 3</title>
       <link>http://mcarolinaa.github.io/posts/conceitos_fund_3/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/conceitos_fund_3/</guid>
-      <description>WGS 84 e SRID integer    O que é o WGS 84
-  O que é SRID integer
-   WGS 84 WGS 84 refere-se ao World Geodetic System. Como já apontado nos tópicos anteriores, para identificarmos uma localização no planeta, precisamos inicialmente do datum, que irá &amp;ldquo;descrever&amp;rdquo; o formato do planeta, e um sistema de projeção, que irá transformar as medidas em uma superfície.
-O WGS 84 foi criado para ser um sistema de posicionamento global, usando o sistema de coordenadas geográficas (lat/lon) para localização.</description>
+      <description>&lt;h1 id=&#34;wgs-84-e-srid-integer&#34;&gt;WGS 84 e SRID integer&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é o WGS 84&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é SRID integer&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;wgs-84&#34;&gt;WGS 84&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;WGS 84&lt;/strong&gt; refere-se ao &lt;em&gt;World Geodetic System&lt;/em&gt;.&#xA;Como já apontado nos tópicos&#xA;anteriores, para identificarmos uma localização no planeta, precisamos inicialmente&#xA;do datum, que irá &amp;ldquo;descrever&amp;rdquo; o formato do planeta, e um sistema de projeção,&#xA;que irá transformar as medidas em uma superfície.&lt;/p&gt;&#xA;&lt;p&gt;O WGS 84 foi criado para ser um sistema de posicionamento global, usando&#xA;o sistema de coordenadas geográficas (lat/lon) para localização.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Conceitos Fundamentais em SIG - 2</title>
       <link>http://mcarolinaa.github.io/posts/conceitos_fund_2/</link>
       <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/conceitos_fund_2/</guid>
-      <description>Map Projection, UTM, Horizontal and Vertical Datum, NAVD88, Geodetic Datum    O que é Map Projection
-  O que é UTM
-  O que são Horizontal e Vertical Datum
-  O que é o NAVD88
-  O que é Geodetic Datum
-   Map projection Sendo o Datum uma ferramenta para que entendamos a localização das coordenadas de features num elipsoide, a map projection ou projeção do mapa, é o processo posterior para que possamos transferir essa localização para um mapa plano.</description>
+      <description>&lt;h1 id=&#34;map-projection-utm-horizontal-and-vertical-datum-navd88-geodetic-datum&#34;&gt;Map Projection, UTM, Horizontal and Vertical Datum, NAVD88, Geodetic Datum&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é Map Projection&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é UTM&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que são Horizontal e Vertical Datum&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é o NAVD88&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é Geodetic Datum&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;map-projection&#34;&gt;Map projection&lt;/h2&gt;&#xA;&lt;p&gt;Sendo o &lt;em&gt;Datum&lt;/em&gt; uma ferramenta para que entendamos a localização das coordenadas&#xA;de features num elipsoide, a &lt;strong&gt;map projection&lt;/strong&gt; ou projeção do mapa, é o processo&#xA;posterior para que possamos transferir essa localização para um mapa plano.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Conceitos Fundamentais em SIG - 1</title>
       <link>http://mcarolinaa.github.io/posts/conceitos_fund_1/</link>
       <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>http://mcarolinaa.github.io/posts/conceitos_fund_1/</guid>
-      <description>Georreferenciamento, Pontos de Controle, CRS e ITRS    O que é georreferenciamento
-  O que são pontos de controle
-  Conceito de CRS ou SRS
-  Conceito de ITRS
-   Georreferenciamento Georreferenciamento se refere ao processo de associar uma imagem/mapa a um sistema de coordenadas, ou seja, associar uma imagem a determinadas localizações num certo espaço físico.
-Esse processo pode ser feito com qualquer objeto no qual se possa associar a uma localização geográfica.</description>
+      <description>&lt;h1 id=&#34;georreferenciamento-pontos-de-controle-crs-e-itrs&#34;&gt;Georreferenciamento, Pontos de Controle, CRS e ITRS&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que é georreferenciamento&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;O que são pontos de controle&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Conceito de CRS ou SRS&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Conceito de ITRS&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h2 id=&#34;georreferenciamento&#34;&gt;Georreferenciamento&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Georreferenciamento&lt;/strong&gt; se refere ao processo de associar uma imagem/mapa a um sistema&#xA;de coordenadas, ou seja, associar uma imagem a determinadas localizações num certo&#xA;espaço físico.&lt;/p&gt;&#xA;&lt;p&gt;Esse processo pode ser feito com qualquer objeto no qual se possa associar a uma&#xA;localização geográfica.&lt;/p&gt;&#xA;&lt;p&gt;Os produtos modernos, como imagens de satélite, já possuem relativa precisão com&#xA;relação à sua localização. Porém outros tipos de informações, como alguns bancos&#xA;de dados, figuras, fotos podem não possuir informações referentes à localização&#xA;geográfica. E é aí que o processo de georreferenciamento pode ajudar a trazer&#xA;uma adequada associação com o espaço geográfico a esses materiais.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
