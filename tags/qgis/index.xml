@@ -6,14 +6,21 @@
     <description>Recent content in Qgis on Everyday GIS</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://mcarolinaa.github.io/tags/qgis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GeoPDF can be quite useful</title>
+      <link>http://mcarolinaa.github.io/posts/create_geopdf/</link>
+      <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/posts/create_geopdf/</guid>
+      <description>&lt;h1 id=&#34;how-to-create-a-geopdf-file&#34;&gt;How to Create a GeoPDF File&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;You might not know this yet, but &lt;strong&gt;.pdf files can be geospatial&lt;/strong&gt;, meaning you can open them in software like QGIS, Avenza, and use them to navigate in the field, mark points, and more. So, if you&amp;rsquo;re into geospatial analysis and use this type of data every day, working with a GeoPDF can be super helpful.&lt;/p&gt;&#xA;&lt;p&gt;For example, let&amp;rsquo;s say I&amp;rsquo;m working with some spatial info for a specific place—in this case, the &lt;strong&gt;Chapada dos Guimarães&lt;/strong&gt;. I have some established base layers, like the state&amp;rsquo;s hydrography (rivers/water) and Conservation Units.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How to make a contour map</title>
       <link>http://mcarolinaa.github.io/posts/contour_map/</link>
       <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://mcarolinaa.github.io/posts/contour_map/</guid>
-      <description>&lt;h1 id=&#34;how-to-make-a-contour-map&#34;&gt;How to Make a Contour Map&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;Now that the difference between &lt;strong&gt;DEM&lt;/strong&gt; and &lt;strong&gt;SRTM&lt;/strong&gt; (and other data sources) is clearer, the goal of this guide is to create a contour map using SRTM data we got through Topodata.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-a-contour-map&#34;&gt;What is a Contour Map?&lt;/h3&gt;&#xA;&lt;p&gt;This type of map uses &lt;strong&gt;lines&lt;/strong&gt; (called &lt;strong&gt;contour lines&lt;/strong&gt;) that connect points of the &lt;strong&gt;same altitude&lt;/strong&gt; on the Earth&amp;rsquo;s surface. Using this kind of map, we can get a much better feel for a region&amp;rsquo;s terrain, allowing for topographic studies, planning for agriculture, and other area-specific analyses.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Now that the difference between &lt;strong&gt;DEM&lt;/strong&gt; and &lt;strong&gt;SRTM&lt;/strong&gt; (and other data sources) is clearer, the goal of this guide is to create a contour map using SRTM data we got through Topodata.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h1 id=&#34;how-to-make-a-contour-map&#34;&gt;How to Make a Contour Map&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h3 id=&#34;what-is-a-contour-map&#34;&gt;What is a Contour Map?&lt;/h3&gt;&#xA;&lt;p&gt;This type of map uses &lt;strong&gt;lines&lt;/strong&gt; (called &lt;strong&gt;contour lines&lt;/strong&gt;) that connect points of the &lt;strong&gt;same altitude&lt;/strong&gt; on the Earth&amp;rsquo;s surface. Using this kind of map, we can get a much better feel for a region&amp;rsquo;s terrain, allowing for topographic studies, planning for agriculture, and other area-specific analyses.&lt;/p&gt;</description>
     </item>
     <item>
       <title>SRTM, DEM, what are those?</title>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Geopdf on Everyday GIS</title>
+    <link>http://mcarolinaa.github.io/tags/geopdf/</link>
+    <description>Recent content in Geopdf on Everyday GIS</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://mcarolinaa.github.io/tags/geopdf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GeoPDF can be quite useful</title>
+      <link>http://mcarolinaa.github.io/posts/create_geopdf/</link>
+      <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/posts/create_geopdf/</guid>
+      <description>&lt;h1 id=&#34;how-to-create-a-geopdf-file&#34;&gt;How to Create a GeoPDF File&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;You might not know this yet, but &lt;strong&gt;.pdf files can be geospatial&lt;/strong&gt;, meaning you can open them in software like QGIS, Avenza, and use them to navigate in the field, mark points, and more. So, if you&amp;rsquo;re into geospatial analysis and use this type of data every day, working with a GeoPDF can be super helpful.&lt;/p&gt;&#xA;&lt;p&gt;For example, let&amp;rsquo;s say I&amp;rsquo;m working with some spatial info for a specific place—in this case, the &lt;strong&gt;Chapada dos Guimarães&lt;/strong&gt;. I have some established base layers, like the state&amp;rsquo;s hydrography (rivers/water) and Conservation Units.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

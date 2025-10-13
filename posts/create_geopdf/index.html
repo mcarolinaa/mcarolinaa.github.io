@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>GeoPDF can be quite useful</title>
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta name="keywords" content='gis, qgis, geopdf'>
+
+    <meta property="og:url" content="http://mcarolinaa.github.io/posts/create_geopdf/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GeoPDF can be quite useful">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GeoPDF can be quite useful">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/create_geopdf/">
+    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/create_geopdf/">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
+
+    
+    <link rel="canonical" href="http://mcarolinaa.github.io/posts/create_geopdf/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/svg-injector.min.js"></script>
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://mcarolinaa.github.io/">
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/projects/"> Projects </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/mcarolinaa"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.buymeacoffee.com/xxxxxx"><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/index.xml"><span data-feather='rss'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/projects/"> Projects </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/mcarolinaa"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.buymeacoffee.com/xxxxxx"><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/index.xml"><span data-feather='rss'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>GeoPDF can be quite useful</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            October 13, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/gis">gis</a></li>
+        
+            <li class="post-tag"><a href="/tags/qgis">qgis</a></li>
+        
+            <li class="post-tag"><a href="/tags/geopdf">geopdf</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="how-to-create-a-geopdf-file">How to Create a GeoPDF File</h1>
+<p> </p>
+<p>You might not know this yet, but <strong>.pdf files can be geospatial</strong>, meaning you can open them in software like QGIS, Avenza, and use them to navigate in the field, mark points, and more. So, if you&rsquo;re into geospatial analysis and use this type of data every day, working with a GeoPDF can be super helpful.</p>
+<p>For example, let&rsquo;s say I&rsquo;m working with some spatial info for a specific place—in this case, the <strong>Chapada dos Guimarães</strong>. I have some established base layers, like the state&rsquo;s hydrography (rivers/water) and Conservation Units.</p>
+<p><img src="/posts/pics/apa_e_hidrografia_chapada.png" alt="geopdf">
+ </p>
+<p>I also want to create a few new features, like points and polygons, for other places I&rsquo;m interested in. To do this, I need to create vector data layers.</p>
+<p>Go to <strong>New Layer</strong> &ndash;&gt; <strong>New GeoPackage Layer</strong></p>
+<p>With a <strong>GeoPackage</strong>, you can create multiple types of geometry in one single &ldquo;package,&rdquo; which is much more efficient than making a bunch of separate shapefiles.</p>
+<p>Here, you&rsquo;ll select the geometry type and CRS for the new layer, then save it as a new file.</p>
+<p><img src="/posts/pics/cria_geopackage_cacho.png" alt="geopdf">
+ </p>
+<p>I created the first GeoPackage layer, called <code>pontos_cachoeiras</code> (waterfall points), because I want to mark some of the waterfalls on the map.</p>
+<p>To actually create the points, you need to <strong>Toggle Editing</strong>. You do this by right-clicking the layer and then selecting the <strong>Add Point</strong> option from the menu, which only becomes available once editing is active. I created the points, saved the edits, closed the editing mode, and adjusted the styling.</p>
+<p><img src="/posts/pics/pontos_cachoeira.png" alt="geopdf">
+ </p>
+<p>I also want to add more information to my GeoPackage, but this time, <strong>polygons</strong> to show a camping area near the waterfalls.</p>
+<p>You can start the <strong>New GeoPackage Layer</strong> process again, but select the one you already created (in this example, I probably should have used a more generic name for the GeoPackage file, and kept the specific names like <code>pontos_cachoeiras</code> and <code>área_camping</code> just for the tables). Don&rsquo;t forget to select <strong>Add New Layer to Existing GeoPackage</strong>.</p>
+<p><img src="/posts/pics/cria_area_camping.png" alt="geopdf">
+ </p>
+<p>Just like before, you <strong>Toggle Editing</strong> for the layer, and in the top menu, choose to <strong>Add Polygon</strong>.</p>
+<p>I made a polygon (I don&rsquo;t actually know if this is a real camping area, it&rsquo;s just an example!), saved the edits, finished editing, and changed the styling.</p>
+<p><img src="/posts/pics/pol_area_camping.png" alt="geopdf">
+ </p>
+<p>After all that, I want to share this map so other people can use it. Some of them might not be familiar with QGIS, for example, but they can still use it in the field to navigate and mark other points of interest.</p>
+<p>There are two ways (that I know of) to export the map as a GeoPDF:</p>
+<h3 id="1-export-the-geopdf-directly-from-the-qgis-canvas-you-are-working-on">1. Export the GeoPDF directly from the QGIS canvas you are working on.</h3>
+<p>First, you need to make sure the features you want are visible on the map canvas.</p>
+<p><strong>Project</strong> &ndash;&gt; <strong>Import/Export</strong> &ndash;&gt; <strong>Export Map to PDF</strong></p>
+<p>A box of options will pop up, which determines whether you will (or won&rsquo;t) export a GeoPDF file. It is <strong>very important</strong> that you check the box for <strong>&ldquo;Create Geospatial PDF&rdquo;</strong>.</p>
+<p>You&rsquo;ll probably want to change the resolution too—you can test out what looks best for your use.</p>
+<p><img src="/posts/pics/salva_geopdf_canvas.png" alt="geopdf">
+ </p>
+<h3 id="2-create-a-print-layout-using-the-layout-manager-including-things-like-a-north-arrow-legend-scale-bar-etc-and-then-export-the-geopdf-from-there">2. Create a print layout using the Layout Manager, including things like a North arrow, legend, scale bar, etc., and then export the GeoPDF from there.</h3>
+<p><strong>Project</strong> &ndash;&gt; <strong>Layout Manager</strong> &ndash;&gt; <strong>Create</strong></p>
+<p>Here, you name your layout map and start building it based on what you have on the main QGIS page.</p>
+<p><img src="/posts/pics/cria_novo_layout.png" alt="geopdf">
+ </p>
+<p>Creating a layout is a whole context in itself that you can get really detailed with, but here I&rsquo;ll just treat it as another step without going into much detail. You basically add the map, the legend, the North arrow, and the scale bar.</p>
+<p><img src="/posts/pics/mapa_layout.png" alt="geopdf">
+ </p>
+<p>Once the map is ready: <strong>Layout</strong> &ndash;&gt; <strong>Export as PDF</strong></p>
+<p>You&rsquo;ll get the same selection box again to make sure the file will be a GeoPDF.</p>
+<p>In both cases, you&rsquo;ll end up with very similar files, so you can choose whichever way works best for you.</p>
+<p>With either file, when you open it in something like Adobe, you can identify the data layers and &ldquo;turn them off,&rdquo; just like you would in QGIS.</p>
+<p><img src="/posts/pics/mapa_adobe.png" alt="geopdf">
+ </p>
+<p>This GeoPDF can now also be imported into <strong>Avenza</strong> and used to navigate and mark new points of interest when you are out in the field, even for people who aren&rsquo;t familiar with QGIS.</p>
+
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2025 Everyday GIS</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
