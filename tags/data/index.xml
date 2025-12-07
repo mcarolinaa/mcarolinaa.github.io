@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data on Everyday GIS</title>
+    <link>http://mcarolinaa.github.io/tags/data/</link>
+    <description>Recent content in Data on Everyday GIS</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://mcarolinaa.github.io/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Collecting Data in the Field</title>
+      <link>http://mcarolinaa.github.io/posts/data_collection_field/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/posts/data_collection_field/</guid>
+      <description>&lt;h2 id=&#34;fieldwork-the-ground-truth&#34;&gt;Fieldwork: The Ground Truth&lt;/h2&gt;&#xA;&lt;p&gt;Have you ever wonder what happens &lt;em&gt;before&lt;/em&gt; the maps and detailed reports are made? I can say that it starts with (someone) getting your hands dirty! In geospatial analysis—especially in agriculture and environmental work—&lt;strong&gt;collecting accurate data directly from the field&lt;/strong&gt; isn&amp;rsquo;t just a step, it&amp;rsquo;s the foundation of everything. This text start to dive into the practical world of fieldwork, exploring the tools and workflows I use to capture the &amp;ldquo;ground truth&amp;rdquo; that no satellite image can fully replace.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

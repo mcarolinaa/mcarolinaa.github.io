@@ -6,14 +6,21 @@
     <description>Recent content in Gis on Everyday GIS</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://mcarolinaa.github.io/tags/gis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Collecting Data in the Field</title>
+      <link>http://mcarolinaa.github.io/posts/data_collection_field/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://mcarolinaa.github.io/posts/data_collection_field/</guid>
+      <description>&lt;h2 id=&#34;fieldwork-the-ground-truth&#34;&gt;Fieldwork: The Ground Truth&lt;/h2&gt;&#xA;&lt;p&gt;Have you ever wonder what happens &lt;em&gt;before&lt;/em&gt; the maps and detailed reports are made? I can say that it starts with (someone) getting your hands dirty! In geospatial analysis—especially in agriculture and environmental work—&lt;strong&gt;collecting accurate data directly from the field&lt;/strong&gt; isn&amp;rsquo;t just a step, it&amp;rsquo;s the foundation of everything. This text start to dive into the practical world of fieldwork, exploring the tools and workflows I use to capture the &amp;ldquo;ground truth&amp;rdquo; that no satellite image can fully replace.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>GeoPDF can be quite useful</title>
       <link>http://mcarolinaa.github.io/posts/create_geopdf/</link>
       <pubDate>Mon, 13 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://mcarolinaa.github.io/posts/create_geopdf/</guid>
-      <description>&lt;h1 id=&#34;how-to-create-a-geopdf-file&#34;&gt;How to Create a GeoPDF File&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;You might not know this yet, but &lt;strong&gt;.pdf files can be geospatial&lt;/strong&gt;, meaning you can open them in software like QGIS, Avenza, and use them to navigate in the field, mark points, and more. So, if you&amp;rsquo;re into geospatial analysis and use this type of data every day, working with a GeoPDF can be super helpful.&lt;/p&gt;&#xA;&lt;p&gt;For example, let&amp;rsquo;s say I&amp;rsquo;m working with some spatial info for a specific place—in this case, the &lt;strong&gt;Chapada dos Guimarães&lt;/strong&gt;. I have some established base layers, like the state&amp;rsquo;s hydrography (rivers/water) and Conservation Units.&lt;/p&gt;</description>
+      <description>&lt;p&gt;You might not know this yet, but &lt;strong&gt;.pdf files can be geospatial&lt;/strong&gt;, meaning you can open them in software like QGIS, Avenza, and use them to navigate in the field, mark points, and more. So, if you&amp;rsquo;re into geospatial analysis and use this type of data every day, working with a GeoPDF can be super helpful.&lt;/p&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;h1 id=&#34;how-to-create-a-geopdf-file&#34;&gt;How to Create a GeoPDF File&lt;/h1&gt;&#xA;&lt;p&gt; &lt;/p&gt;&#xA;&lt;p&gt;For example, let&amp;rsquo;s say I&amp;rsquo;m working with some spatial info for a specific place—in this case, the &lt;strong&gt;Chapada dos Guimarães&lt;/strong&gt;. I have some established base layers, like the state&amp;rsquo;s hydrography (rivers/water) and Conservation Units.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to make a contour map</title>

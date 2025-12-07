@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Collecting Data in the Field</title>
+    <meta name="description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta name="keywords" content='gis, qgis, avenza, field, data'>
+
+    <meta property="og:url" content="http://mcarolinaa.github.io/posts/data_collection_field/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Collecting Data in the Field">
+    <meta property="og:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="og:image" content="/images/mata-cavalo.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Collecting Data in the Field">
+    <meta name="twitter:description" content="day-to-day GIS tasks in the context of agriculture and land governance">
+    <meta property="twitter:domain" content="http://mcarolinaa.github.io/posts/data_collection_field/">
+    <meta property="twitter:url" content="http://mcarolinaa.github.io/posts/data_collection_field/">
+    <meta name="twitter:image" content="/images/mata-cavalo.jpg">
+
+    
+    <link rel="canonical" href="http://mcarolinaa.github.io/posts/data_collection_field/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/svg-injector.min.js"></script>
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://mcarolinaa.github.io/">
+                <img src="/images/mata-cavalo.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://mcarolinaa.github.io/">Everyday GIS</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/"> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/projects/"> Projects </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/mcarolinaa"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://www.buymeacoffee.com/xxxxxx"><span data-feather='coffee'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/index.xml"><span data-feather='rss'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/projects/"> Projects </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/mcarolinaa"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://www.buymeacoffee.com/xxxxxx"><span data-feather='coffee'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/index.xml"><span data-feather='rss'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>Collecting Data in the Field</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            December 7, 2025
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/gis">gis</a></li>
+        
+            <li class="post-tag"><a href="/tags/qgis">qgis</a></li>
+        
+            <li class="post-tag"><a href="/tags/avenza">avenza</a></li>
+        
+            <li class="post-tag"><a href="/tags/field">field</a></li>
+        
+            <li class="post-tag"><a href="/tags/data">data</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h2 id="fieldwork-the-ground-truth">Fieldwork: The Ground Truth</h2>
+<p>Have you ever wonder what happens <em>before</em> the maps and detailed reports are made? I can say that it starts with (someone) getting your hands dirty! In geospatial analysis—especially in agriculture and environmental work—<strong>collecting accurate data directly from the field</strong> isn&rsquo;t just a step, it&rsquo;s the foundation of everything. This text start to dive into the practical world of fieldwork, exploring the tools and workflows I use to capture the &ldquo;ground truth&rdquo; that no satellite image can fully replace.</p>
+<p> </p>
+<h1 id="collecting-data-in-the-field">Collecting Data in the Field</h1>
+<p> </p>
+<h2 id="context">Context</h2>
+<p>Let’s start talking about field data collection, since this is a critical step because the quality of all your subsequent analysis and reporting depends directly on it. In the fields of agriculture, environmental science, and similar areas, the need for field data is almost always a rule. What isn&rsquo;t always standard, however, is how we obtain that data, and that&rsquo;s my focus here.</p>
+<p>Think about it: when you work exclusively as a data analyst (as I did for a few years), the data usually &ldquo;arrives&rdquo; ready for you (I’m not discounting the immense work involved in research, finding appropriate sources, and efficient distribution—that&rsquo;s a lot of work in itself!). What I mean is that you usually aren&rsquo;t involved in the data&rsquo;s origin.</p>
+<p>In my current situation, I have also the responsibility of properly collecting the data, meaning I have an active role in the entire data genesis. This is interesting and different from what I was used to, and it brings a huge responsibility regarding the data&rsquo;s legitimacy and ensuring it accurately represents the information you need. Note: This doesn&rsquo;t apply to all data, as I still acquire remote sensing data, for example.</p>
+<p>Disclaimer: This describes how I am currently working. This may change. Factors like my current knowledge, team interaction, and familiarity with the tools are all part of deciding which option to use.</p>
+<p> </p>
+<p><img src="/posts/pics/field_workflow.png" alt="workflow">
+ </p>
+<p> </p>
+<h2 id="introduction">Introduction</h2>
+<p>For certain types of rural property assessments, some necessary outputs are maps. These maps provide crucial support for a range of vital assessment information, including location and distance of key features, location of similar properties in the region, land capability classes, slope, land use/occupation classes, and more.</p>
+<p>While remote data is important (and necessary, like using a DEM), adequately recorded field data is supreme. After all, the truth on the ground is unique and irreplaceable in many cases.</p>
+<p>Here’s an example: a property needs to be inspected and have its value assessed (land and its improvements). Some common issues in this type of work are:</p>
+<p>&ndash;&gt; Can you use only a soil map to indicate land capability classes? Yes, you can. But you will certainly miss details that you can only see in the field (and you can get from registering while you&rsquo;re in the field), such as soil patches and other particularities that can heavily impact the total value, depending on the size of the property.</p>
+<p>&ndash;&gt; Can you use a high-resolution image (like Google Satellite) to estimate the size of things like houses, reservoirs, water tanks, lighting poles and others? Maybe for a few of them, depending on the structure&rsquo;s size. But you definitely miss important assessment components like the state of conservation. Not to mention that adequate identification via satellite image might not even be possible, depending on the size and shape of the improvement.</p>
+<p>&ndash;&gt; Another example: fences. You need to record characteristics in the field, such as the fence material (type of wood) and its state of conservation. You also need to mark points where fences exist, where they don&rsquo;t, etc.</p>
+<p>&ndash;&gt; Other relevant points: the hydrographic network obtained from a local environmental agency might not show the correct location of all water courses or even the presence of every one. By observing in the field and using a good DEM, and high resolution satellite image, you can correctly add or adjust these features in their proper locations. This is hugely important because water bodies also impact the valuation of rural properties.</p>
+<p>Note: Using drones could solve some of these issues. But even then, you still need to go to the area, and you’ll likely still do some checks in person. I believe that in this specific case, a drone would make the work much more efficient.</p>
+<p> </p>
+<h2 id="available-tools">Available Tools</h2>
+<p>When talking about relatively simple field data collection—marking and identifying points of interest (with or without photos) and tracking the route taken (on foot or in a vehicle)—as well as using tools for navigation, these are the ones I’m currently utilizing in my workflow:</p>
+<ul>
+<li>
+<p>Avenza</p>
+</li>
+<li>
+<p>QField</p>
+</li>
+<li>
+<p>Geolocated Photos</p>
+</li>
+</ul>
+<p> </p>
+<h2 id="field-work-flow">Field Work Flow</h2>
+<p>The exact use of these tools depends on individual or team organization. Here&rsquo;s how I approach it:</p>
+<p><strong>QField:</strong> I use this for the main map display, including high-resolution satellite imagery, property boundaries, and other relevant targets like roads, hydrography, and public land. I use this map for navigation because it maintains good resolution. However, in my experience, zooming in too much on a cell phone can sometimes cause the image to load slowly. I dedicate one device exclusively to this navigation map and use a separate device for marking points and recording information.</p>
+<p><strong>Avenza:</strong> I create an identical version of the map above, but as a GeoPDF. Resolution is usually slightly reduced here so that the file isn&rsquo;t too large. There is also the limitation of what &ldquo;fit&rdquo; into the PDF file, so if you&rsquo;re very far from your area of interest, you won&rsquo;t be on the map. On the flip side, you get a very light and practical file that&rsquo;s easy to use and share. I use Avenza to mark points of interest and record very brief, relevant information. I take photos at some of the points.
+When passing through unknown or enclosed areas where the return path is unclear or hard to check later on a satellite image, I use the <strong>tracking</strong> tool. I try to limit the use of Avenza only to what is inside my area of interest, such as the rural property itself.</p>
+<p><strong>Geolocated Photos:</strong> For certain parts of the work, I need to document specific locations that are not inside my area of interest, such as properties that will serve as comparative elements for research. Here, I take photos using the native phone camera app, ensuring geolocation logging is enabled, and then save them to correctly identified folders.</p>
+<p> </p>
+<h2 id="whats-best">What&rsquo;s Best?</h2>
+<p>As you might imagine, it depends. It depends on your objective, your familiarity with the tools, whether other people will share the project (and their knowledge of the tools), and so on.</p>
+<p>It&rsquo;s worthwhile to continuously test and adjust along the way, striving for continuous improvement. It’s important to become familiar with what each tool allows you to do and to be very clear about what each one can deliver.</p>
+
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2025 Everyday GIS</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
